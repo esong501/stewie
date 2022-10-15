@@ -27,3 +27,7 @@ yarn-error.log*
 firebase-debug.log
 firebase.js
 firebase.json
+
+# dotenv environment variables file
+.env
+.env.test
