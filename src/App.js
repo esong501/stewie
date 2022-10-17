@@ -1,11 +1,11 @@
 import logo from './logo.svg';
-import './App.css';
-import { db } from './firebase';
-import { useEffect, useState } from 'react';
-import { onValue, set, ref } from 'firebase/database';
+// import './App.css';
+// import { db } from './firebase';
+// import { useEffect, useState } from 'react';
+// import { onValue, set, ref } from 'firebase/database';
 import React from 'react';
-import { Panel, PanelGroup, Placeholder } from 'rsuite';
 import * as ReactDOM from 'react-dom';
+import Recipe from './components/Recipe';
 
   /*
   // Testing, remove later
@@ -34,27 +34,6 @@ import * as ReactDOM from 'react-dom';
         </div>
       </header>
 */
-
-class Recipe extends React.Component {
-  render() {
-    return (
-      <div className='Recipe-panel'>
-        <Panel header={this.props.name} bordered>
-          <div class="grid-container">
-            <div class="grid-child 0">
-              <img src={this.props.tbn} width={100} height={100} alt="tbn" />
-            </div>
-            <div class="grid-child 1">
-              <div className='Recipe-desc'>
-                <p>{this.props.desc}</p>
-              </div>
-            </div>
-          </div>
-        </Panel>
-      </div>
-    );
-  }
-}
 
 function App() {
   return (  
