@@ -2,6 +2,37 @@
   text-align: center;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 30fr;
+  grid-gap: 20px;
+}
+
+.Recipe-panel {
+  background: #EFEAE4;
+  border: 5px solid #999;
+  color: #1A1123;
+  font-size: 24px;
+  font-family: filson-pro, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 34px;
+  height: 20vh;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: left;
+}
+
+.Recipe-desc {
+  color: #4848C1;
+  font-size: 16px;
+  font-family: filson-pro, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  text-align: left;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
