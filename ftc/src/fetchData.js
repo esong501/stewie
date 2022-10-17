@@ -6,6 +6,7 @@
 
 // get the libs
 import fetch from "node-fetch";
+import fileSystem from "fs";
 
 const app_id = '9e19056d';
 const app_key = '4c57ddd569caa4e4fad0e7dc57751635';
@@ -42,12 +43,29 @@ function show_data(data) {
     //let recipe = `<ul>`;
     //console.log(data.hits[0].recipe.label);
     for (var i = 0; i < Object.keys(data.hits).length; i++) {
-        console.log(data.hits[i].recipe.label);
+        var recipeName = data.hits[i].recipe.label;
+        var ingredients = "";
+
+        console.log(recipeName);
         for (var j = 0; j < data.hits[i].recipe.ingredients.length; j++) {
-            console.log('\t STEP ' + j.toString() + ': ' + data.hits[i].recipe.ingredients[j].text);
-        }   
+          var ingredient = data.hits[i].recipe.ingredients[j].text;
+          ingredients += ingredient+'\n';
+          console.log('\t'+ingredient);
+        }
+
+        fileSystem.open('ftc/src/recipes/'+recipeName+'.txt','r+', (err, fd) => {
+          if (err) 
+            throw err
+        });
+
+        fileSystem.writeFile('ftc/src/recipes/'+recipeName+'.txt',ingredients, (err) => {
+          if (err) 
+            throw err
+        });  
+        
     }
 }
+
 
 // THE FULL JSON WITH ALL QUERIES
 /*
