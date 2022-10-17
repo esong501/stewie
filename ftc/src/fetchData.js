@@ -43,6 +43,9 @@ function show_data(data) {
     //console.log(data.hits[0].recipe.label);
     for (var i = 0; i < Object.keys(data.hits).length; i++) {
         console.log(data.hits[i].recipe.label);
+        for (var j = 0; j < data.hits[i].recipe.ingredients.length; j++) {
+            console.log('\t STEP ' + j.toString() + ': ' + data.hits[i].recipe.ingredients[j].text);
+        }   
     }
 }
 
