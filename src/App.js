@@ -19,10 +19,16 @@ class Recipe extends React.Component {
   render() {
     return (
       <div className='Recipe-panel'>
-        <link rel="stylesheet" href="https://use.typekit.net/sur7rep.css"></link>
         <Panel header={this.props.name} bordered>
-          <div className='Recipe-desc'>
-            <p>{this.props.desc}</p>
+          <div class="grid-container">
+            <div class="grid-child 0">
+              <img src={this.props.tbn} width={100} height={100} alt="tbn" />
+            </div>
+            <div class="grid-child 1">
+              <div className='Recipe-desc'>
+                <p>{this.props.desc}</p>
+              </div>
+            </div>
           </div>
         </Panel>
       </div>
@@ -33,10 +39,9 @@ class Recipe extends React.Component {
 function App() {
   return (  
     <div>
-      <Recipe name="chicken" desc="a chicken dish
-      wow how amazing, I truly can't believe how great this chicken dish is
-      I wish I had someone to share it with
-      sadly all my friends are home and now I have no one to share it with"/>
+      <Recipe name="Title Test" tbn={logo} desc="Description Test.
+      The purpose of this string is to make sure that recipes will show up properly,
+      complete with title, thumbnail, and description."/>
       <Recipe />
       <Recipe />
       {/* <div className="App">
