@@ -1,8 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
-import { Panel, PanelGroup, Placeholder } from 'rsuite';
 import * as ReactDOM from 'react-dom';
+
+import logo from './icons/logo.svg';
+import RecipeCard from './components/RecipeCard.js'
+import {fetchData} from './fetchData.js'
+import './App.css';
+
+const app_id = '9e19056d';
+const app_key = '4c57ddd569caa4e4fad0e7dc57751635';
+
+// Example: https://api.edamam.com/api/recipes/v2?type=user&q=chicken&app_id=9e19056d&app_key=4c57ddd569caa4e4fad0e7dc57751635
+// Helper:  https://developer.edamam.com/edamam-docs-recipe-api#/
+const api_url = 'https://api.edamam.com/api/recipes/v2/?app_id='+app_id+'&app_key='+app_key
+    +'&type=public'
+    +'&field=ingredients'
+    +'&field=label'
+    +'&q=chicken';
+
+// const parsedRecipeJSON = [["Title Test", "Description Test."], ["Recipe", "Ingredients"]];
+
+
+const displayData = fetchData(api_url).then(recipeJSON => {
+  recipeJSON.map((data) => {
+    console.log(data);
+    return (
+      <RecipeCard 
+        name={data[0]}
+        tbn={logo} 
+        desc={data[1]}
+      />)
+  });
+});
+
 
 function writeTitle() {
   return (
@@ -15,35 +44,31 @@ function writeTitle() {
   )
 }
 
-class Recipe extends React.Component {
-  render() {
-    return (
-      <div className='Recipe-panel'>
-        <Panel header={this.props.name} bordered>
-          <div class="grid-container">
-            <div class="grid-child 0">
-              <img src={this.props.tbn} width={100} height={100} alt="tbn" />
-            </div>
-            <div class="grid-child 1">
-              <div className='Recipe-desc'>
-                <p>{this.props.desc}</p>
-              </div>
-            </div>
-          </div>
-        </Panel>
-      </div>
-    );
-  }
-}
+// class Recipe extends React.Component {
+//   render() {
+//     return (
+//       <div className='Recipe-panel'>
+//         <Panel header={this.props.name} bordered>
+//           <div class="grid-container">
+//             <div class="grid-child 0">
+//               <img src={this.props.tbn} width={100} height={100} alt="tbn" />
+//             </div>
+//             <div class="grid-child 1">
+//               <div className='Recipe-desc'>
+//                 <p>{this.props.desc}</p>
+//               </div>
+//             </div>
+//           </div>
+//         </Panel>
+//       </div>
+//     );
+//   }
+// }
 
 function App() {
   return (  
     <div>
-      <Recipe name="Title Test" tbn={logo} desc="Description Test.
-      The purpose of this string is to make sure that recipes will show up properly,
-      complete with title, thumbnail, and description."/>
-      <Recipe />
-      <Recipe />
+      
       {/* <div className="App">
         <header className="App-header">
           
@@ -65,6 +90,16 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(
+//   <ul>
+//     {displayData}
+//   </ul>,
+//   document.getElementById('root')
+// );
+
+ReactDOM.render(
+  <App/>, 
+  document.getElementById('root')
+);
 
 export default App;

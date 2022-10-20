@@ -6,66 +6,51 @@
 
 // get the libs
 import fetch from "node-fetch";
-import fileSystem from "fs";
-
-const app_id = '9e19056d';
-const app_key = '4c57ddd569caa4e4fad0e7dc57751635';
-
-// Example: https://api.edamam.com/api/recipes/v2?type=user&q=chicken&app_id=9e19056d&app_key=4c57ddd569caa4e4fad0e7dc57751635
-// Helper:  https://developer.edamam.com/edamam-docs-recipe-api#/
-const api_url = 'https://api.edamam.com/api/recipes/v2/?app_id='+app_id+'&app_key='+app_key
-    +'&type=public'
-    +'&q=chicken'
-    +'&field=ingredients'
-    +'&field=label';
+//import fileSystem from "fs";
 
 // async function; where the keyword await is 
 // used to promise deliver a certain task
-async function getapi(url) {
+// export the function to be used in App.js
+export async function fetchData(url) {
     // using await to yield for fetch command
     const response = await fetch(url);
 
     // turn into JSON String; json-ify
-    var data = await response.json();
+    const data = await response.json();
 
-    /*
-    if (response) {
-        hideloader();
-    }
-    */
-   show_data(data);
-   //console.log(data);
+    // parse the data into a list of [recipe,ingredients] pairs and return
+    return parseData(data);
 }
 
-getapi(api_url);
+function parseData(data) {
+    var recipeJSON = [];
 
-function show_data(data) {
-    //let recipe = `<ul>`;
-    //console.log(data.hits[0].recipe.label);
     for (var i = 0; i < Object.keys(data.hits).length; i++) {
         var recipeName = data.hits[i].recipe.label;
-        var ingredients = "";
+        var ingredientsString = "";
 
-        console.log(recipeName);
+        //console.log(recipeName);
         for (var j = 0; j < data.hits[i].recipe.ingredients.length; j++) {
           var ingredient = data.hits[i].recipe.ingredients[j].text;
-          ingredients += ingredient+'\n';
-          console.log('\t'+ingredient);
+          ingredientsString += ingredient+'\n';
         }
+        recipeJSON.push([recipeName, ingredientsString]);
 
-        fileSystem.open('ftc/src/recipes/'+recipeName+'.txt','r+', (err, fd) => {
-          if (err) 
-            throw err
-        });
+        // FILE RW
+        // fileSystem.open('ftc/src/recipes/'+recipeName+'.txt','r+', (err, fd) => {
+        //   if (err) 
+        //     throw err
+        // });
 
-        fileSystem.writeFile('ftc/src/recipes/'+recipeName+'.txt',ingredients, (err) => {
-          if (err) 
-            throw err
-        });  
+        // fileSystem.writeFile('ftc/src/recipes/'+recipeName+'.txt',ingredients, (err) => {
+        //   if (err) 
+        //     throw err
+        // });  
         
     }
+    //console.log(recipeJSON);
+    return recipeJSON;
 }
-
 
 // THE FULL JSON WITH ALL QUERIES
 /*
