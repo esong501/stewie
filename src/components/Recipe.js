@@ -1,5 +1,6 @@
 import React, { Component } from 'react' 
 import { Panel, PanelGroup, Placeholder } from 'rsuite';
+import './../App.css';
 // import './Recipe.scss';
 
 class Recipe extends React.Component {
