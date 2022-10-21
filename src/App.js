@@ -45,9 +45,9 @@ function App() {
         1/4 teaspoon freshly ground black pepper
         "/> */}
       <Recipe />
+      {/* <Recipe />
       <Recipe />
-      <Recipe />
-      <Recipe />
+      <Recipe /> */}
       {/* <rcolumn /> */}
     </div>
   );

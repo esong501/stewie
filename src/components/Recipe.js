@@ -3,7 +3,7 @@ import { Panel, PanelGroup, Placeholder } from 'rsuite';
 import './Recipe.css';
 // import './Recipe.scss';
 
-class Recipe extends React.Component {
+class RPanel extends React.Component {
     // render() {
     //   return (
     //     <div className='Recipe-panel'>
@@ -31,17 +31,18 @@ class Recipe extends React.Component {
     }
   }
 
-class rcolumn extends React.Component{
+class Recipe extends React.Component{
   renderRecipe () {
-    return <Recipe />;
+    return <RPanel />;
   }
+
   render () {
     return (
-      <rgroup>
-        {this.renderRecipe()}
-        {this.renderRecipe()}
-        {this.renderRecipe()}
-      </rgroup>
+      <div className='grid-container'>
+        <div>{this.renderRecipe()}</div>
+        <div>{this.renderRecipe()}</div>
+        <div>{this.renderRecipe()}</div>
+      </div>
     )
   }
 }

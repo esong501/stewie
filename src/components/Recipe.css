@@ -23,16 +23,10 @@
     text-align: center;
   }
 
-  .rgroup::after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-  
   .grid-container {
     display: grid;
-    grid-template-columns: 1fr 30fr;
-    grid-gap: 20px;
+    gap: 50px;
+    grid-template-columns: auto auto auto;
   }
   
   .Recipe-panel {
