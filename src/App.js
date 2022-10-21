@@ -5,7 +5,8 @@ import logo from './logo.svg';
 // import { onValue, set, ref } from 'firebase/database';
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import Recipe from './components/Recipe';
+import Recipe from './components/Recipe.js';
+import tbn from './img/bakedchicken.jpg'
 
   /*
   // Testing, remove later
@@ -38,11 +39,16 @@ import Recipe from './components/Recipe';
 function App() {
   return (  
     <div>
-      <Recipe name="Title Test" tbn={logo} desc="Description Test.
-      The purpose of this string is to make sure that recipes will show up properly,
-      complete with title, thumbnail, and description."/>
+      {/* <Recipe name="Baked Chicken" tbn={tbn} desc="6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on
+        1/2 teaspoon coarse salt
+        1/2 teaspoon Mrs. Dash seasoning
+        1/4 teaspoon freshly ground black pepper
+        "/> */}
       <Recipe />
       <Recipe />
+      <Recipe />
+      <Recipe />
+      {/* <rcolumn /> */}
     </div>
   );
 
