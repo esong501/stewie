@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './img/logo.svg';
 // import './App.css';
 // import { db } from './firebase';
 // import { useEffect, useState } from 'react';
@@ -6,7 +6,7 @@ import logo from './logo.svg';
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import Recipe from './components/Recipe.js';
-import tbn from './img/bakedchicken.jpg'
+
 
   /*
   // Testing, remove later

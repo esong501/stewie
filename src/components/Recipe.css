@@ -2,6 +2,31 @@
     text-align: center;
   }
 
+  .pagehead{
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 75px;
+    line-height: 91px;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .rtitle{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 25px;
+    
+  }
+
+  .rdesc{
+    font-size: 14px;
+    line-height: 15px;
+  }
+
   .rpanel {
     /* recipe 1 */
 
@@ -12,6 +37,8 @@
     top: 345px; */
     background: #fff;
     float: left;
+    font-family: 'Inter';
+    font-style: normal;
     font-size: 24px;
     font-weight: bold;
     line-height: 34px;
@@ -21,6 +48,7 @@
     margin-bottom: 10px;
     padding: 0;
     text-align: center;
+    overflow: hidden;
   }
 
   .grid-container {
