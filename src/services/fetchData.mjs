@@ -4,54 +4,57 @@
 // https://developer.edamam.com/api/faq
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
 
-// get the libs
-import fetch from "node-fetch";
-//import fileSystem from "fs";
+// MODULARIZING USING PROMISE METHODS, IMPORTS AND EXPORT DEFAULTS FOR .MJS FILE
+// https://dev.to/ramonak/javascript-how-to-access-the-return-value-of-a-promise-object-1bck\
 
 // async function; where the keyword await is 
 // used to promise deliver a certain task
 // export the function to be used in App.js
-export async function fetchData(url) {
-    // using await to yield for fetch command
-    const response = await fetch(url);
 
-    // turn into JSON String; json-ify
-    const data = await response.json();
+import fetch from "node-fetch"; // using await to yield for fetch command
 
-    // parse the data into a list of [recipe,ingredients] pairs and return
-    return parseData(data);
-}
-
-function parseData(data) {
-    var recipeJSON = [];
-
-    for (var i = 0; i < Object.keys(data.hits).length; i++) {
-        var recipeName = data.hits[i].recipe.label;
-        var ingredientsString = "";
-
-        //console.log(recipeName);
-        for (var j = 0; j < data.hits[i].recipe.ingredients.length; j++) {
-          var ingredient = data.hits[i].recipe.ingredients[j].text;
-          ingredientsString += ingredient+'\n';
-        }
-        recipeJSON.push([recipeName, ingredientsString]);
-
-        // FILE RW
-        // fileSystem.open('ftc/src/recipes/'+recipeName+'.txt','r+', (err, fd) => {
-        //   if (err) 
-        //     throw err
-        // });
-
-        // fileSystem.writeFile('ftc/src/recipes/'+recipeName+'.txt',ingredients, (err) => {
-        //   if (err) 
-        //     throw err
-        // });  
-        
+export default async function fetchData(url) {
+  const recipeJSON = await fetch(url)
+    .then((res) => res.json())
+    .then((res) => {
+      return res
     }
-    //console.log(recipeJSON);
-    return recipeJSON;
+  );
+  return parseData(recipeJSON);
 }
 
+// parse the data into a list of [recipe,ingredients] pairs and return
+function parseData(data) {
+  var recipeJSON = [];
+
+  for (var i = 0; i < Object.keys(data.hits).length; i++) {
+      var recipeName = data.hits[i].recipe.label;
+      var ingredientsString = "";
+
+      //console.log(recipeName);
+      for (var j = 0; j < data.hits[i].recipe.ingredients.length; j++) {
+        var ingredient = data.hits[i].recipe.ingredients[j].text;
+        ingredientsString += ingredient+'\n';
+      }
+      recipeJSON.push([recipeName, ingredientsString]);
+
+      // FILE RW
+      // fileSystem.open('ftc/src/recipes/'+recipeName+'.txt','r+', (err, fd) => {
+      //   if (err) 
+      //     throw err
+      // });
+
+      // fileSystem.writeFile('ftc/src/recipes/'+recipeName+'.txt',ingredients, (err) => {
+      //   if (err) 
+      //     throw err
+      // });  
+      
+  }
+  console.log(recipeJSON);
+  return recipeJSON;
+}
+
+// module.exports = { fetchData }
 // THE FULL JSON WITH ALL QUERIES
 /*
 {

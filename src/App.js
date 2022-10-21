@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 
 import logo from './icons/logo.svg';
 import RecipeCard from './components/RecipeCard.js'
-import {fetchData} from './fetchData.js'
+import fetchData from './services/fetchData.mjs'
 import './App.css';
 
 const app_id = '9e19056d';
@@ -17,11 +17,11 @@ const api_url = 'https://api.edamam.com/api/recipes/v2/?app_id='+app_id+'&app_ke
     +'&field=label'
     +'&q=chicken';
 
-// const parsedRecipeJSON = [["Title Test", "Description Test."], ["Recipe", "Ingredients"]];
-
-
-const displayData = fetchData(api_url).then(recipeJSON => {
-  recipeJSON.map((data) => {
+var recipeData = fetchData(api_url).then((res) => {
+  return res
+}); 
+console.log(recipeData)
+const displayData = recipeData.map((data) => {
     console.log(data);
     return (
       <RecipeCard 
@@ -29,8 +29,7 @@ const displayData = fetchData(api_url).then(recipeJSON => {
         tbn={logo} 
         desc={data[1]}
       />)
-  });
-});
+    });
 
 
 function writeTitle() {
@@ -68,7 +67,7 @@ function writeTitle() {
 function App() {
   return (  
     <div>
-      
+      {displayData}
       {/* <div className="App">
         <header className="App-header">
           
@@ -89,13 +88,6 @@ function App() {
     </div>
   );
 }
-
-// ReactDOM.render(
-//   <ul>
-//     {displayData}
-//   </ul>,
-//   document.getElementById('root')
-// );
 
 ReactDOM.render(
   <App/>, 
