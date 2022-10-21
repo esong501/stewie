@@ -17,20 +17,23 @@ const api_url = 'https://api.edamam.com/api/recipes/v2/?app_id='+app_id+'&app_ke
     +'&field=label'
     +'&q=chicken';
 
-var recipeData = fetchData(api_url).then((res) => {
-  return res
-}); 
-console.log(recipeData)
-const displayData = recipeData.map((data) => {
-    console.log(data);
-    return (
-      <RecipeCard 
-        name={data[0]}
-        tbn={logo} 
-        desc={data[1]}
-      />)
-    });
-
+var displayData = fetchData(api_url)
+  .then((res) => { 
+    
+    return (Promise.all(res.map((data) => {
+      //console.log(data)
+      return (
+          <RecipeCard 
+          name={data[0]}
+          tbn={logo} 
+          desc={data[1]}
+        />)
+    }))
+  )})
+  .then((res) => {
+    console.log(res)
+    return res
+  }); 
 
 function writeTitle() {
   return (
