@@ -1,0 +1,96 @@
+.Recipe {
+    text-align: center;
+  }
+
+  .pagehead{
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 75px;
+    line-height: 91px;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .rtitle{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 25px;
+    
+  }
+
+  .rdesc{
+    font-size: 14px;
+    line-height: 15px;
+  }
+
+  .rpanel {
+    /* recipe 1 */
+
+    position: absolute;
+    width: 448px;
+    height: 341px;
+    /* left: 84px;
+    top: 345px; */
+    background: #fff;
+    float: left;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .grid-container {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: auto auto auto;
+  }
+  
+  .Recipe-panel {
+    background: #EFEAE4;
+    border: 5px solid #999;
+    color: #1A1123;
+    font-size: 24px;
+    font-family: filson-pro, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 34px;
+    height: 20vh;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .Recipe-desc {
+    color: #4848C1;
+    font-size: 16px;
+    font-family: filson-pro, sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    text-align: left;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+

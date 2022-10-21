@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Firebase 
+.firebaserc
+firebase-debug.log
+src/firebase.js
+firebase.json
+
+# dotenv environment variables file
+.env
+.env.test

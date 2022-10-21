@@ -1,70 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './img/logo.svg';
+// import './App.css';
+// import { db } from './firebase';
+// import { useEffect, useState } from 'react';
+// import { onValue, set, ref } from 'firebase/database';
 import React from 'react';
-import { Panel, PanelGroup, Placeholder } from 'rsuite';
 import * as ReactDOM from 'react-dom';
+import Recipe from './components/Recipe.js';
 
-function writeTitle() {
+
+  /*
+  // Testing, remove later
+  const [recipe, setRecipe] = useState("");
+  const [recipes, setRecipes] = useState([]);
+
+  //read
+  useEffect(() => {
+    onValue(ref(db), snapshot => {
+      const data = snapshot.val();
+      if (data !== null) {
+        Object.values(data).map((recipe) => {
+          setRecipes((oldArray)  => [...oldArray, recipe]);
+        });
+      }
+    })
+  }, []);
+
   return (
-    <h1>
-      <link rel="stylesheet" href="https://use.typekit.net/sur7rep.css"></link>
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-    </h1>
-  )
-}
-
-class Recipe extends React.Component {
-  render() {
-    return (
-      <div className='Recipe-panel'>
-        <Panel header={this.props.name} bordered>
-          <div class="grid-container">
-            <div class="grid-child 0">
-              <img src={this.props.tbn} width={100} height={100} alt="tbn" />
-            </div>
-            <div class="grid-child 1">
-              <div className='Recipe-desc'>
-                <p>{this.props.desc}</p>
-              </div>
-            </div>
-          </div>
-        </Panel>
-      </div>
-    );
-  }
-}
+    <div className="App">
+      <header className="App-header">
+        <div>
+          {recipes.map((recipe) => ( // Map each recipe and then print out ingredients
+            <h1>Ingredients: {JSON.stringify(recipe.name.ingredients)}</h1>
+          ))}
+        </div>
+      </header>
+*/
 
 function App() {
   return (  
     <div>
-      <Recipe name="Title Test" tbn={logo} desc="Description Test.
-      The purpose of this string is to make sure that recipes will show up properly,
-      complete with title, thumbnail, and description."/>
+      {/* <Recipe name="Baked Chicken" tbn={tbn} desc="6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on
+        1/2 teaspoon coarse salt
+        1/2 teaspoon Mrs. Dash seasoning
+        1/4 teaspoon freshly ground black pepper
+        "/> */}
       <Recipe />
+      {/* <Recipe />
       <Recipe />
-      {/* <div className="App">
-        <header className="App-header">
-          
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div> */}
+      <Recipe /> */}
+      {/* <rcolumn /> */}
     </div>
   );
-}
 
+  
+}
 ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App;
