@@ -1,97 +1,59 @@
+// import logo from './img/logo.svg';
+// import './App.css';
+// import { db } from './firebase';
+// import { useEffect, useState } from 'react';
+// import { onValue, set, ref } from 'firebase/database';
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-
-import logo from './icons/logo.svg';
-import RecipeCard from './components/RecipeCard.js'
-import fetchData from './services/fetchData.mjs'
-import './App.css';
-
-const app_id = '9e19056d';
-const app_key = '4c57ddd569caa4e4fad0e7dc57751635';
-
-// Example: https://api.edamam.com/api/recipes/v2?type=user&q=chicken&app_id=9e19056d&app_key=4c57ddd569caa4e4fad0e7dc57751635
-// Helper:  https://developer.edamam.com/edamam-docs-recipe-api#/
-const api_url = 'https://api.edamam.com/api/recipes/v2/?app_id='+app_id+'&app_key='+app_key
-    +'&type=public'
-    +'&field=ingredients'
-    +'&field=label'
-    +'&q=chicken';
-
-var recipeData = fetchData(api_url).then((res) => {
-  return res
-}); 
-console.log(recipeData)
-const displayData = recipeData.map((data) => {
-    console.log(data);
-    return (
-      <RecipeCard 
-        name={data[0]}
-        tbn={logo} 
-        desc={data[1]}
-      />)
-    });
+import Recipe from './components/Recipe.js';
 
 
-function writeTitle() {
+  /*
+  // Testing, remove later
+  const [recipe, setRecipe] = useState("");
+  const [recipes, setRecipes] = useState([]);
+
+  //read
+  useEffect(() => {
+    onValue(ref(db), snapshot => {
+      const data = snapshot.val();
+      if (data !== null) {
+        Object.values(data).map((recipe) => {
+          setRecipes((oldArray)  => [...oldArray, recipe]);
+        });
+      }
+    })
+  }, []);
+
   return (
-    <h1>
-      <link rel="stylesheet" href="https://use.typekit.net/sur7rep.css"></link>
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-    </h1>
-  )
-}
-
-// class Recipe extends React.Component {
-//   render() {
-//     return (
-//       <div className='Recipe-panel'>
-//         <Panel header={this.props.name} bordered>
-//           <div class="grid-container">
-//             <div class="grid-child 0">
-//               <img src={this.props.tbn} width={100} height={100} alt="tbn" />
-//             </div>
-//             <div class="grid-child 1">
-//               <div className='Recipe-desc'>
-//                 <p>{this.props.desc}</p>
-//               </div>
-//             </div>
-//           </div>
-//         </Panel>
-//       </div>
-//     );
-//   }
-// }
+    <div className="App">
+      <header className="App-header">
+        <div>
+          {recipes.map((recipe) => ( // Map each recipe and then print out ingredients
+            <h1>Ingredients: {JSON.stringify(recipe.name.ingredients)}</h1>
+          ))}
+        </div>
+      </header>
+*/
 
 function App() {
   return (  
     <div>
-      {displayData}
-      {/* <div className="App">
-        <header className="App-header">
-          
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div> */}
+      {/* <Recipe name="Baked Chicken" tbn={tbn} desc="6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on
+        1/2 teaspoon coarse salt
+        1/2 teaspoon Mrs. Dash seasoning
+        1/4 teaspoon freshly ground black pepper
+        "/> */}
+      <Recipe />
+      {/* <Recipe />
+      <Recipe />
+      <Recipe /> */}
+      {/* <rcolumn /> */}
     </div>
   );
-}
 
-ReactDOM.render(
-  <App/>, 
-  document.getElementById('root')
-);
+  
+}
+ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App;
