@@ -6,6 +6,7 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import Recipe from './components/Recipe.js';
+import ExpandRecipe from './components/ExpandRecipe/ExpandRecipe.js';
 
 
   /*
@@ -44,7 +45,8 @@ function App() {
         1/2 teaspoon Mrs. Dash seasoning
         1/4 teaspoon freshly ground black pepper
         "/> */}
-      <Recipe />
+      {/* <Recipe /> */}
+      <ExpandRecipe />
       {/* <Recipe />
       <Recipe />
       <Recipe /> */}

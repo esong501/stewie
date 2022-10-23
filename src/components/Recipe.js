@@ -1,32 +1,18 @@
-import React, { Component } from 'react' 
-import { Panel, PanelGroup, Placeholder } from 'rsuite';
+import React, { Component, useEffect } from 'react' 
+import {Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+// import { Panel, PanelGroup, Placeholder } from 'rsuite';
+
+import ExpandRecipe from './ExpandRecipe/ExpandRecipe.js';
+
 import './Recipe.css';
 // import './Recipe.scss';
-import logo from './../img/logo.svg';
 import bchick from './../img/newbake.png';
 import brchick from './../img/braised-chick.jpeg';
 import cchick from './../img/catalan-chick.jpeg';
 
-class RPanel extends React.Component {
-    // render() {
-    //   return (
-    //     <div className='Recipe-panel'>
-    //       <Panel header={this.props.name} bordered>
-    //         <div class="grid-container">
-    //           <div class="grid-child 0">
-    //             <img src={this.props.tbn} width={100} height={100} alt="tbn" />
-    //           </div>
-    //           <div class="grid-child 1">
-    //             <div className='Recipe-desc'>
-    //               <p>{this.props.desc}</p>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </Panel>
-    //     </div>
-    //   );
-    // }
-    render () {
+// class RPanel extends Component {
+function RPanel(props) {
+    // render () {
       return(
         <button className='rpanel'>
           <img src={this.props.tbn} width={256} height={256} alt='thumbnail'/>
@@ -34,10 +20,10 @@ class RPanel extends React.Component {
           <div className='rdesc'>{this.props.desc}</div>
         </button>
       )
-    }
+    // }
   }
 
-class Recipe extends React.Component{
+class Recipe extends Component{
   renderRecipe (name,desc,tbn) {
     return <RPanel name={name} desc={desc} tbn={tbn}/>;
   }
