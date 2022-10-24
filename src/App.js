@@ -6,6 +6,7 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import Recipe from './components/Recipe.js';
+import ExpandRecipe from './components/ExpandRecipe/ExpandRecipe.js';
 
 
   /*
@@ -45,6 +46,7 @@ function App() {
         1/4 teaspoon freshly ground black pepper
         "/> */}
       <Recipe />
+      {/* <ExpandRecipe /> */}
       {/* <Recipe />
       <Recipe />
       <Recipe /> */}
