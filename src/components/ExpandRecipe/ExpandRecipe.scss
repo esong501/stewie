@@ -1,14 +1,19 @@
+@font-face {
+    font-family: 'FilsonProMedium';
+    src: url(../../fonts/filson-pro-cufonfonts/FilsonProMedium.otf) format('otf');
+}
+
 .Recipe {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    height: 100vh;
 }
 
 .RecipeOverview {
+    padding: 0 4em;
     width: 66%;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
 
     .RecipImg {
         width: 100%;
@@ -17,14 +22,16 @@
 
     .RecipeDesc {
         padding-top: 0.5em;
+        font-family: 'FilsonProMedium';
+        font-size: 1.25em;
     }
     h1 {
         margin-top: 0;
-        font-size: 48px;
+        font-size: 4em;
     }
 }
 .RecipeSidebar {
-    margin-top: 10%;
+    margin-top: 5%;
     text-align: center;
     width: 34%;
     ul {
@@ -38,14 +45,32 @@
     .RecipeTags {
         width: 50%;
         display: inline-block;
+        text-align: left;
         align-items: center;
-        background-color: #997DC6;
-        border-radius: 25px;
+        background-color: #d5d0c9;
+        border-radius: 10px;
         margin: 10px;
+
+        .TagsList {
+            margin-left: 1em;
+        }
     }
 
     .RecipeIngreds {
-        padding-top: 25%;
+        padding-top: 7.5%;
+        width: 50%;
+        display: inline-block;
+        text-align: left;
+        align-items: center;
+
+        h2 {
+            font-size: 2em;
+        }
+
+       .IngredientsList {
+            font-size: 1.25em;
+            font-family: 'FilsonProMedium';
+       }
     }
 
     .CookButton {
@@ -53,6 +78,10 @@
         background-color: #3B9F2B;
         border: none;
         border-radius: 30px;
-        padding: 15px;
+        padding: 2em 0;
+        width: 50%;
+        span {
+            font-size: 1.75em;
+        }
     }
 }
