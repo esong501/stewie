@@ -7,6 +7,7 @@ import React from 'react';
 import * as ReactDOM from 'react-dom';
 import Recipe from './components/Recipe.js';
 
+require('dotenv').config();
 
   /*
   // Testing, remove later
