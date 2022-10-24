@@ -7,7 +7,8 @@ import React from 'react';
 import * as ReactDOM from 'react-dom';
 import Recipe from './components/Recipe.js';
 import ExpandRecipe from './components/ExpandRecipe/ExpandRecipe.js';
-
+import Header from './components/Header/Header.js';
+import Footer from './components/Footer/Footer.js';
 
   /*
   // Testing, remove later
@@ -40,6 +41,7 @@ import ExpandRecipe from './components/ExpandRecipe/ExpandRecipe.js';
 function App() {
   return (  
     <div>
+      <Header />
       {/* <Recipe name="Baked Chicken" tbn={tbn} desc="6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on
         1/2 teaspoon coarse salt
         1/2 teaspoon Mrs. Dash seasoning
@@ -51,6 +53,7 @@ function App() {
       <Recipe />
       <Recipe /> */}
       {/* <rcolumn /> */}
+      <Footer />
     </div>
   );
 

@@ -32,7 +32,7 @@
   .rpanel {
     /* recipe 1 */
 
-    position: absolute;
+    position: relative;
     width: 448px;
     height: 341px;
     /* left: 84px;
