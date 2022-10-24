@@ -7,29 +7,25 @@ import bchick from './../img/newbake.png';
 import brchick from './../img/braised-chick.jpeg';
 import cchick from './../img/catalan-chick.jpeg';
 
+class TimeDisplay extends React.Component {
+  render() {
+    return(
+      <div className='timedisplay'></div>
+    )
+  }
+}
+
 class RPanel extends React.Component {
-    // render() {
-    //   return (
-    //     <div className='Recipe-panel'>
-    //       <Panel header={this.props.name} bordered>
-    //         <div class="grid-container">
-    //           <div class="grid-child 0">
-    //             <img src={this.props.tbn} width={100} height={100} alt="tbn" />
-    //           </div>
-    //           <div class="grid-child 1">
-    //             <div className='Recipe-desc'>
-    //               <p>{this.props.desc}</p>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </Panel>
-    //     </div>
-    //   );
-    // }
     render () {
       return(
         <button className='rpanel'>
-          <img src={this.props.tbn} width={256} height={256} alt='thumbnail'/>
+          <div className='timedisplay'>45 min</div>
+          <div className='rtitle'>{this.props.name}</div>
+          <div className='rdesc'>{this.props.desc}</div>
+          <div className='tbndisplay'>
+            <img src={this.props.tbn} width={270} height={197} alt='thumbnail'/>
+          </div>
+          {/* <img src={this.props.tbn} className='tbn' width={270} height={197} alt='thumbnail'/> */}
           <div className='rtitle'>{this.props.name}</div>
           <div className='rdesc'>{this.props.desc}</div>
         </button>

@@ -16,15 +16,17 @@
   }
 
   .rtitle{
-    font-size: 24px;
+    text-align: center;
+    font-size: 32px;
     font-weight: bold;
-    line-height: 25px;
+    line-height: 38.73px;
     
   }
 
   .rdesc{
-    font-size: 14px;
-    line-height: 15px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 22.03px;
   }
 
   .rpanel {
@@ -42,12 +44,36 @@
     font-size: 24px;
     font-weight: bold;
     line-height: 34px;
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 0;
+    margin-right: 84px;
+    margin-left: 84px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-right: 74px;
+    padding-left: 74px;
+    padding-top: 245px;
     text-align: center;
+    overflow: hidden;
+  }
+
+  .tbndisplay {
+    position: absolute;
+    width: 270px;
+    height: 197px;
+    top: 45px;
+    left: 89px;
+  }
+
+  .timedisplay {
+    /* Rectangle 16 */
+    position: absolute;
+    width: 65px;
+    height: 33px;
+    top: 0px;
+    left: 38px;
+
+    background: rgba(217, 217, 217, 0.76);
+    border-radius: 8px;
+    font-size: 15px;
     overflow: hidden;
   }
 
