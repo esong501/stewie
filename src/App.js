@@ -6,8 +6,7 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import Recipe from './components/Recipe.js';
-
-require('dotenv').config();
+import QueryRecipe from './components/QueryRecipe.js';
 
   /*
   // Testing, remove later
@@ -38,8 +37,15 @@ require('dotenv').config();
 */
 
 function App() {
+  console.log(process.env)
   return (  
     <div>
+      <QueryRecipe/>
+      <script 
+        type='module'
+        src='.services/dataHandler.js'
+        >
+      </script>
       {/* <Recipe name="Baked Chicken" tbn={tbn} desc="6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on
         1/2 teaspoon coarse salt
         1/2 teaspoon Mrs. Dash seasoning

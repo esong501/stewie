@@ -20,3 +20,28 @@ measurementId: "G-B52ZNM4BLZ"
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+import {getDatabase, ref, set, child, update, remove} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+import {fetchData, parseData} from "fetchData.mjs"
+
+const db = getDatabase();
+
+var JSONString = document.getElementById("JSONString");
+var searchBtn = document.getElementById("search-button");
+
+function searchData() {
+    fetchData.fetchData()
+    set(ref(db,"Recipe Name/"+"JSON Ingredients"), {
+        JSONString: JSONString.ariaValueMax,
+        QueryFields: [],
+    })
+    .then(() => {
+        alert("search successful!");
+    })
+    .catch((error) => {
+        alert("search unsuccessful: "+error);
+    })
+}
+
+// assign event listener
+searchBtn.addEventListener('click', searchData);
