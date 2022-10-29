@@ -23,16 +23,30 @@ const analytics = getAnalytics(app);
 
 import {getDatabase, ref, set, child, update, remove} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
 import {fetchData, parseData} from "fetchData.mjs"
+//import parseQuery from "parseQuery.js"
 
 const db = getDatabase();
 
-var JSONString = document.getElementById("JSONString");
+var inputStr = document.getElementById("input-query");
 var searchBtn = document.getElementById("search-button");
 
 function searchData() {
-    fetchData.fetchData()
-    set(ref(db,"Recipe Name/"+"JSON Ingredients"), {
-        JSONString: JSONString.ariaValueMax,
+    // parse the search string
+    console.log("SEARCHING");
+    return null;
+    // fetch with proper format
+    // removing old recipes
+    remove(ref(db,"Recipe Name"))
+    .then(()=> {
+        console.log("old data found.. updating data");
+    })
+    .catch(()=>{
+        console.log("data not found.. insertting new data");
+    });
+
+    // insert the recipe
+    set(ref(db,"Recipe Name"), {
+        json: JSONString.value,
         QueryFields: [],
     })
     .then(() => {
@@ -44,4 +58,4 @@ function searchData() {
 }
 
 // assign event listener
-searchBtn.addEventListener('click', searchData);
+searchBtn.addEventListener('onclick', searchData);
