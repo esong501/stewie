@@ -7,16 +7,16 @@ import Footer from '../Footer/Footer.js';
 import bchick from '../../img/newbake.png';
 
 
-function ExpandRecipe() {
+function ExpandRecipe(props) {
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <div class="Recipe">
                 <div class = "RecipeSidebar">
                     <div class="RecipeTags">
                         <ul class="TagsList">
                             <li>Level 1</li>
-                            <li>8 Ingredients</li>
+                            <li>{props.recipe.ingredientLines.length} Ingredients</li>
                             <li>veg/gf</li>
                             <li>prep time</li>
                             <li>total time</li>
@@ -25,8 +25,8 @@ function ExpandRecipe() {
                     <div class = "RecipeIngreds">
                         <h2>Ingredients</h2>
                         <ul class="IngredientsList">
-                            <li>ingred 1</li>
-                            <li>ingred 2</li>
+                            <li>{props.recipe.ingredientLines[0]}</li>
+                            <li>{props.recipe.ingredientLines[1]}</li>
                             <li>ingred 3</li>
                             <li>ingred 4</li>
                         </ul>
@@ -45,7 +45,7 @@ function ExpandRecipe() {
                     </p>
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }
