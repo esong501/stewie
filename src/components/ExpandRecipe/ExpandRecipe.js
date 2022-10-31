@@ -7,7 +7,7 @@ import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
 import RecipeWalkthrough from '../RecipeWalkthrough/RecipeWalkthrough.js';
 import Recipe from '../Recipe.js';
-import App from '../../App.js';
+import { Button } from '@mui/material';
 
 // temp
 import bchick from '../../img/newbake.png';
@@ -52,10 +52,9 @@ function ExpandRecipe(props) {
                         </ul>
                     </div>
                     <div >
-                        <button class="CookButton" onClick={() => setIsCooking(!isCooking)}>
-                            {console.log(isCooking)}
+                        <Button variant = "contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}>
                             <span>Start Cooking</span>
-                        </button>
+                        </Button>
                         
                     </div>
                 </div>

@@ -1,3 +1,22 @@
+@font-face {
+    font-family: 'FilsonProMedium';
+    src: url(../../fonts/filson-pro-cufonfonts/FilsonProMedium.otf) format('otf');
+}
+
 .steps {
     text-align: left;
+    font-family: 'FilsonProMedium';
+}
+
+.prevButton {
+    margin-right: 1em !important;
+    background-color: #edb2ad !important;
+    color: #F8F5F2 !important;
+    border-radius: 20px !important;
+}
+
+.nextButton {
+    background-color: #edb2ad !important;
+    color: #F8F5F2 !important;
+    border-radius: 20px !important;
 }
