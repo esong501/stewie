@@ -255,7 +255,7 @@
     position: absolute;
     width: 1232px;
     height: 1338px;
-    left: calc(50% - 1232px/2 + 25px);
+    left: calc(50% - 1232px/2 - 50px);
     top: 292px;
   }
 
