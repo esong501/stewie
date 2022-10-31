@@ -1,24 +1,44 @@
-import { Route, Routes, useNavigate } from "react";
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import {Link } from 'react-router-dom';
+
 import './ExpandRecipe.scss';
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
+import RecipeWalkthrough from '../RecipeWalkthrough/RecipeWalkthrough.js';
+import Recipe from '../Recipe.js';
+import App from '../../App.js';
 
 // temp
 import bchick from '../../img/newbake.png';
 
 
 function ExpandRecipe(props) {
+    // const navigate = useNavigate();
+    const [isCooking, setIsCooking] = useState(false);
+
+    const recipeOverview = (
+        <div >
+            <h1>{props.recipe.label}</h1>
+                {/* <img src = {bchick} class ="RecipeImg" alt='thumbnail'/> */}
+            <img src = {props.recipe.image} class ="RecipeImg" alt='thumbnail'/>
+            <p class="RecipeDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    );
+    
     return (
         <div>
             {/* <Header /> */}
             <div class="Recipe">
                 <div class = "RecipeSidebar">
                     <div class="RecipeTags">
+                        {console.log(props)}
                         <ul class="TagsList">
                             <li>Level 1</li>
                             <li>{props.recipe.ingredientLines.length} Ingredients</li>
-                            <li>veg/gf</li>
-                            <li>prep time</li>
+                            <li>{props.recipe.dietLabels[0]}</li>
+                            <li>{props.recipe.healthLabels[0]}</li>
                             <li>total time</li>
                         </ul>
                     </div>
@@ -27,22 +47,21 @@ function ExpandRecipe(props) {
                         <ul class="IngredientsList">
                             <li>{props.recipe.ingredientLines[0]}</li>
                             <li>{props.recipe.ingredientLines[1]}</li>
-                            <li>ingred 3</li>
-                            <li>ingred 4</li>
+                            <li>{props.recipe.ingredientLines[2]}</li>
+                            <li>{props.recipe.ingredientLines[3]}</li>
                         </ul>
                     </div>
                     <div >
-                        <button class="CookButton">
+                        <button class="CookButton" onClick={() => setIsCooking(!isCooking)}>
+                            {console.log(isCooking)}
                             <span>Start Cooking</span>
                         </button>
+                        
                     </div>
                 </div>
                 <div class="RecipeOverview">
-                    <h1>Creamy Mushroom Soup</h1>
-                    <img src = {bchick} class ="RecipeImg" alt='thumbnail'/>
-                    <p class="RecipeDesc">A delicious creamy mushroom soup description. A delicious creamy mushroom soup description.
-                    A delicious creamy mushroom soup description.A delicious creamy mushroom soup description
-                    </p>
+                    {isCooking ? <div><RecipeWalkthrough steps = {props.recipe.instructions} index={0}></RecipeWalkthrough> </div> : recipeOverview}
+
                 </div>
             </div>
             {/* <Footer /> */}

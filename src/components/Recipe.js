@@ -54,7 +54,7 @@ function Recipe(props) {
   return(
   //  <RPanel name={props.name} desc={props.desc}></RPanel>
   <div>
-    <RPanel tbn={props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[1]}></RPanel>
+    <RPanel tbn={props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel>
   </div>
   
   
