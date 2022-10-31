@@ -74,7 +74,7 @@ code {
 }
 
 .p1{
-  font-family: 'Monarcha';
+  font-family: 'Monarcha', Georgia;
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
@@ -83,7 +83,7 @@ code {
 }
 
 .p2{
-  font-family: 'Monarcha';
+  font-family: 'Monarcha', Georgia;
   font-style: normal;
   font-weight: 300;
   font-size: 17px;
