@@ -16,8 +16,8 @@ function RecipeWalkthrough(props) {
     return (
         <div className="steps">
             <h3>{props.steps[index]}</h3>
-            {index > 0 ? <Button variant="contained" className="prevButton" onClick={decClick}>prev step</Button> : null}
-            {index < props.steps.length ? <Button variant="contained" className="nextButton" onClick={handleClick}>next step</Button> : null}
+            {index > 0 ? <Button variant="contained" className="prevButton" onClick={decClick}>Previous Steps</Button> : null}
+            {index < props.steps.length ? <Button variant="contained" className="nextButton" onClick={handleClick}>Next Steps</Button> : null}
         </div> 
     );
 }

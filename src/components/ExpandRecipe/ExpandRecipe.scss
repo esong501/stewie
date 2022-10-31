@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'FilsonProMedium';
-    src: url(../../fonts/filson-pro-cufonfonts/FilsonProMedium.otf) format('otf');
+    src: url(../../fonts/filson-pro-cufonfonts/FilsonProMedium.otf) format('opentype');
 }
 
 .Recipe {
@@ -22,10 +22,11 @@
 
     .RecipeDesc {
         padding-top: 0.5em;
-        font-family: 'FilsonProMedium';
+        font-family: 'Times New Roman', Times, serif;
         font-size: 1.25em;
     }
     h1 {
+        font-family: 'FilsonProMedium';
         margin-top: 0;
         font-size: 4em;
     }
@@ -43,6 +44,7 @@
     }
 
     .RecipeTags {
+        font-family: 'FilsonProMedium';
         width: 50%;
         display: inline-block;
         text-align: left;
@@ -64,18 +66,21 @@
         align-items: center;
 
         h2 {
+            font-family: 'FilsonProMedium';
             font-size: 2em;
         }
 
        .IngredientsList {
             font-size: 1.25em;
-            font-family: 'FilsonProMedium';
+            font-family: 'Times New Roman', Times, serif;
        }
     }
 
     .CookButton {
         // margin-top: 30px;
+        font-family: 'FilsonProMedium' !important;
         background-color: #D1291C !important;
+        text-transform: none !important;
         // border: none;
         border-radius: 20px !important;
         // padding: 2em 0;
