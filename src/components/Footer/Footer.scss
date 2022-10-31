@@ -2,6 +2,13 @@ footer{
     overflow: hidden;
     padding: 30px 10px;
     font-family: sans-serif;
+    background: #E9E3DA;
+    opacity: 0.75;
+    // position: absolute;
+    width: 1344px;
+    height: 1729px;
+    // left: 84px;
+    // top: 20px;
   }
   
   footer #info{
@@ -18,6 +25,7 @@ footer{
     color: #000000;
     position: absolute;
     left: 20px;
+
   }
   
   .main{
@@ -26,4 +34,5 @@ footer{
   height: 1729px;
   left: 84px;
   top: 20px;
+  
   }

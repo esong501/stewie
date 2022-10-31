@@ -1,10 +1,28 @@
 .Recipe {
     text-align: center;
   }
+  @font-face {
+    font-family: 'FilsonProBold';
+    src: url(../fonts/filson-pro-cufonfonts/FilsonProBold.otf) format('opentype');
+  }
+
+  @font-face {
+    font-family: 'FilsonProThin';
+    src: url(../fonts/filson-pro-cufonfonts/FilsonProThin.otf) format('opentype');
+  }
+
+  @font-face {
+    font-family: 'FilsonProBook';
+    src: url(../fonts/filson-pro-cufonfonts/FilsonProBook.otf) format('opentype');
+  }
+
+  img {
+    border-radius: 8px;
+  }
 
   .pagehead{
     text-align: center;
-    font-family: 'Inter';
+    font-family: 'FilsonProBook';
     font-style: normal;
     font-weight: 500;
     font-size: 75px;
@@ -16,17 +34,62 @@
   }
 
   .rtitle{
-    text-align: center;
+    /* text-align: center;
     font-size: 32px;
     font-weight: bold;
-    line-height: 38.73px;
+    line-height: 38.73px; */
+    width: 346px;
+    /* height: 17px; */
+
+    /* H3 */
+
+    font-family: 'FilsonProBold';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 34px;
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+
+    /* poppyseed */
+
+    color: #1A1123;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
     
   }
 
   .rdesc{
-    text-align: center;
+    /* text-align: center;
     font-size: 17px;
-    line-height: 22.03px;
+    line-height: 22.03px; */
+    width: 346px;
+    height: 40px;
+
+    /* P3 */
+
+    font-family: 'FilsonProThin';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 19px;
+
+    /* graypan */
+
+    color: #918B87;
+
+
+    /* Inside auto layout */
+
+    /* flex: none; */
+    order: 1;
+    flex-grow: 0;
   }
 
   .rpanel {
@@ -55,17 +118,44 @@
     overflow: hidden;
   }
 
+  .recipemock {
+    /* recipe 1 */
+
+    background: #EFEAE4;
+    border: 0px;
+    position: relative;
+    width: 352px;
+    height: 382px;
+    /* left: 60px;
+    top: 32px; */
+
+    text-align: center;
+    overflow: hidden;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    align-self: auto
+  }
+
   .tbndisplay {
-    position: absolute;
+    /* position: absolute;
     width: 270px;
     height: 197px;
     top: 45px;
-    left: 89px;
+    left: 89px; */
+    position: absolute;
+    width: 270px;
+    height: 197px;
+    left: 38px;
+    top: 72px;
+
+    /* background: url(catalan-chick.jpg); */
+    border-radius: 8px;
   }
 
   .timedisplay {
     /* Rectangle 16 */
-    position: absolute;
+    /* position: absolute;
     width: 65px;
     height: 33px;
     top: 0px;
@@ -74,7 +164,42 @@
     background: rgba(217, 217, 217, 0.76);
     border-radius: 8px;
     font-size: 15px;
-    overflow: hidden;
+    overflow: hidden; */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 6px 0px;
+
+    position: absolute;
+    width: 188px;
+    height: 27px;
+    left: 40px;
+    top: 45px;
+    width: 188px;
+    height: 15px;
+
+    /* P5 */
+
+    font-family: 'Filson Soft';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    /* graypan */
+
+    color: #918B87;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
   }
 
   .grid-container {
@@ -119,4 +244,56 @@
     color: white;
   }
   
+  .maindiv {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    
+    position: absolute;
+    width: 1232px;
+    height: 1338px;
+    left: calc(50% - 1232px/2 + 25px);
+    top: 292px;
+  }
+
+  .row {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 60px;
+    gap: 28px;
+
+    width: 1232px;
+    height: 446px;
+
+
+    /* Inside auto layout
+
+    flex: none;
+    order: 0;
+    flex-grow: 0; */
+  }
+
+  .rtext {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* padding: 12px 0px 12px 6px; */
+    /* gap: 16px; */
+
+    position: absolute;
+    width: 352px;
+    height: 97px;
+    left: 0px;
+    top: 285px;
+  }
+
+
+
 
