@@ -6,7 +6,7 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import Recipe from './components/Recipe.js';
-import QueryRecipe from './components/QueryRecipe.js';
+import QueryRecipe from './components/QueryRecipe.jsx';
 
   /*
   // Testing, remove later

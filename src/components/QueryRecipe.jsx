@@ -1,30 +1,37 @@
-import React from "react"
+import React, { useState } from "react"
 
-const RecipeCard = (props) => {
+const RecipeCard = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+
+    function searchData(props) {
+        // parse the search string
+        console.log("SEARCHING FOR QUERY: ", searchTerm);
+        const queryField = parseQuery(searchTerm);
+        console.log(queryField);
+    }
+
+    function parseQuery(str) {
+        var arr = str.split(",");
+        var queryField = "";
+        for (var i = 0; i < arr.length; i++) {
+            queryField = queryField+"&="+arr[i];
+        }
+        return queryField;
+    };
+
     return (
-        <div className='query-box'>
+        <React.Fragment>
             <label>Search for recipes</label> 
-            <input id="input-query" type="text"/>
+            <input 
+                id="input-query" 
+                type="text"
+                onChange={event => {
+                    setSearchTerm(event.target.value)
+                }}/>
             <hr/>
-                {/* <searchData inputStr={document.getElementById("input-query").value}/> */}
-        </div>
+            <button onClick={searchData}>Search</button>
+        </React.Fragment>
     );
 }
+
 export default RecipeCard;
-
-// function parseQuery(str) {
-//     var arr = str.split(",");
-//     var queryField = "";
-//     for (var i = 0; i < arr.length; i++) {
-//         queryField = queryField+"&="+arr[i];
-//     }
-//     return queryField;
-// };
-
-// function searchData(inputStr) {
-//     // parse the search string
-//     console.log("SEARCHING FOR QUERY: ", inputStr.value);
-//     //const queryField = parseQuery(inputStr);
-//     //console.log(queryField);
-//     return null;
-// }

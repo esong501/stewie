@@ -24,7 +24,7 @@ export default async function fetchData(url) {
 }
 
 // parse the data into a list of [recipe,ingredients] pairs and return
-export function parseData(data) {
+function parseData(data) {
   var recipeJSON = [];
 
   for (var i = 0; i < Object.keys(data.hits).length; i++) {
