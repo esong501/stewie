@@ -1,0 +1,38 @@
+footer{
+    overflow: hidden;
+    padding: 30px 10px;
+    font-family: sans-serif;
+    background: #E9E3DA;
+    opacity: 0.75;
+    // position: absolute;
+    width: 1344px;
+    height: 1729px;
+    // left: 84px;
+    // top: 20px;
+  }
+  
+  footer #info{
+    text-align: right;
+    color: #000000;
+    display: flex;
+    position: absolute;
+    right: 20px;
+  }
+
+  footer #logo{
+    display: inline;
+    text-align: left;
+    color: #000000;
+    position: absolute;
+    left: 20px;
+
+  }
+  
+  .main{
+  position: absolute;
+  width: 1344px;
+  height: 1729px;
+  left: 84px;
+  top: 20px;
+  
+  }
