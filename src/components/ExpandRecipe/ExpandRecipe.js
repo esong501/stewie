@@ -6,7 +6,9 @@ import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
 import RecipeWalkthrough from '../RecipeWalkthrough/RecipeWalkthrough.js';
 import Recipe from '../Recipe.js';
+import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
 import { Button } from '@mui/material';
+
 
 // temp
 import bchick from '../../img/newbake.png';
@@ -19,11 +21,12 @@ function ExpandRecipe(props) {
 
     const recipeOverview = (
         <div >
-            <h1>{props.recipe.label}</h1>
+            {/* <h1>{props.recipe.label}</h1> */}
                 {/* <img src = {bchick} class ="RecipeImg" alt='thumbnail'/> */}
-            <img src = {props.recipe.image} class ="RecipeImg" alt='thumbnail'/>
-            <p class="RecipeDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            {/* <img src = {props.recipe.image} class ="RecipeImg" alt='thumbnail'/> */}
+            {/* <p class="RecipeDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. */}
+            {/* </p> */}
+            <TabBarRecipe recipe = {props.recipe}/>
         </div>
     );
     
@@ -54,8 +57,7 @@ function ExpandRecipe(props) {
                     <div >
                         <Button variant = "contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}>
                             <span>Start Cooking</span>
-                        </Button>
-                        
+                        </Button>   
                     </div>
                 </div>
                 <div class="RecipeOverview">
