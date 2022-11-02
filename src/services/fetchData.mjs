@@ -15,7 +15,7 @@ import fetch from "node-fetch"; // using await to yield for fetch command
 
 export default async function fetchData(url) {
   const recipeJSON = await fetch(url)
-    .then((res) => res.json())
+    .then((res) => {res.json})
     .then((res) => {
       return res
     }

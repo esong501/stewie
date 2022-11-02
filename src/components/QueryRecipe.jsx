@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import fetchData from "../services/fetchData.mjs";
 
 const RecipeCard = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -30,6 +31,8 @@ const RecipeCard = () => {
                 }}/>
             <hr/>
             <button onClick={searchData}>Search</button>
+            <hr/>
+            {}
         </React.Fragment>
     );
 }

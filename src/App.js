@@ -13,7 +13,7 @@ import RecipeWalkthrough from './components/RecipeWalkthrough/RecipeWalkthrough.
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import bchick from './img/newbake.png';
 
-require('dotenv').config();
+//require('dotenv').config();
 function App() {
   // Testing, remove later
   // const [recipe, setRecipe] = useState("");
