@@ -31,10 +31,9 @@ const RecipeCard = () => {
                 }}/>
             <hr/>
             <button onClick={searchData}>Search</button>
-            <hr/>
-            {}
         </React.Fragment>
     );
 }
 
+export default RecipeCard;
 export default RecipeCard;

@@ -20,7 +20,7 @@ export default async function fetchData(url) {
       return res
     }
   );
-  return parseData(recipeJSON);
+  return recipeJSON;
 }
 
 // parse the data into a list of [recipe,ingredients] pairs and return
