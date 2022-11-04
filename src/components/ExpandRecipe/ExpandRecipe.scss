@@ -9,11 +9,21 @@
     justify-content: flex-start;
 }
 
+.NavTabs {
+    // position: relative;
+    // height: 100%;
+    .Tabs {
+        // position: absolute ;
+        // bottom: 0;
+    }
+}
+
 .RecipeOverview {
     padding: 0 4em;
     width: 66%;
     text-align: center;
     margin-top: 5%;
+    position: relative;
 
     .RecipImg {
         width: 100%;
@@ -77,16 +87,9 @@
     }
 
     .CookButton {
-        // margin-top: 30px;
         font-family: 'FilsonProMedium' !important;
         background-color: #D1291C !important;
         text-transform: none !important;
-        // border: none;
         border-radius: 20px !important;
-        // padding: 2em 0;
-        // width: 50%;
-        // span {
-        //     font-size: 1.75em;
-        // }
     }
 }
