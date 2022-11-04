@@ -1,61 +1,69 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import {ref, get, set, child, update, remove, onValue} from "firebase/database";
+import {db} from "./Firebase.js"
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-apiKey: "AIzaSyCW1ie6WabQheLgw7liLn2sXhVkiJWSxew",
-authDomain: "firsttimechef.firebaseapp.com",
-databaseURL: "https://firsttimechef-default-rtdb.firebaseio.com",
-projectId: "firsttimechef",
-storageBucket: "firsttimechef.appspot.com",
-messagingSenderId: "551750245679",
-appId: "1:551750245679:web:9d8028c300b1b0ff4195da",
-measurementId: "G-B52ZNM4BLZ"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-import {getDatabase, ref, set, child, update, remove} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-import {fetchData, parseData} from "fetchData.mjs"
-//import parseQuery from "parseQuery.js"
-
-const db = getDatabase();
-
-var inputStr = document.getElementById("input-query");
-var searchBtn = document.getElementById("search-button");
-
-function searchData() {
+function insertData(key, val) {
     // parse the search string
     console.log("SEARCHING");
-    return null;
-    // fetch with proper format
-    // removing old recipes
-    remove(ref(db,"Recipe Name"))
-    .then(()=> {
-        console.log("old data found.. updating data");
-    })
-    .catch(()=>{
-        console.log("data not found.. insertting new data");
-    });
-
     // insert the recipe
-    set(ref(db,"Recipe Name"), {
-        json: JSONString.value,
-        QueryFields: [],
+    set(ref(db,key), {
+        value: val
     })
     .then(() => {
-        alert("search successful!");
+        console.log("insert successful!");
+        return 1;
     })
     .catch((error) => {
-        alert("search unsuccessful: "+error);
-    })
+        console.log("insert unsuccessful: "+error);
+        return 1;
+    });
+    return 0;
 }
 
-// assign event listener
-searchBtn.addEventListener('onclick', searchData);
+function selectData(key) {
+    const dbref = ref(db);
+    get(child(dbref,key))
+    .then((snapshot) => {
+        if (snapshot.exists()) {
+            return snapshot.val().value;
+        } else {
+            console.log("no data found");
+            return 1;
+        }
+    })
+    .catch((error) => {
+        console.log("select unsuccessful: "+error);
+        return 1;
+    });
+}
+
+function updateData(key, newValue) {
+    console.log("UPDATING");
+    // update the recipe
+    update(ref(db,key), {
+        value: newValue
+    })
+    .then(() => {
+        console.log("update successful!");
+        return 1;
+    })
+    .catch((error) => {
+        console.log("update unsuccessful: "+ error);
+        return 1;
+    })
+    return 0;
+}
+function removeData(key){
+    console.log("REMOVING");
+    // removing old recipes
+    remove(ref(db,key))
+    .then(()=> {
+        console.log("old data found.. removing "+key);
+        return 0;
+    })
+    .catch((error)=>{
+        console.log("removal unsuccessful: " + error);
+        return 1;
+    });
+}
+
+export {insertData, selectData, updateData, removeData}
