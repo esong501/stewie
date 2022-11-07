@@ -8,7 +8,7 @@ import './CompleteRecipe.scss';
 function CompleteRecipe() {
     let navigate = useNavigate();
     const routeChange = () => {
-        let path = '/recipe'
+        let path = '/'
         // navigate(path, {state:{image:{bchick}, label: 'hi', desc: 'hellohello'}});
         navigate(path);
     }

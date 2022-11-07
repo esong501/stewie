@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Link, Route, Routes } from "react-router-dom";
 
 import './ExpandRecipe.scss';
@@ -9,7 +9,6 @@ import Recipe from '../Recipe.js';
 import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
 import { Button } from '@mui/material';
 
-
 // temp
 import bchick from '../../img/newbake.png';
 
@@ -17,7 +16,7 @@ import bchick from '../../img/newbake.png';
 
 function ExpandRecipe(props) {
     // const navigate = useNavigate();
-    const [isCooking, setIsCooking] = React.useState(false);
+    const [isCooking, setIsCooking] = useState(false);
 
     const recipeOverview = (
         <div class = "NavTabs">

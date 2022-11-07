@@ -37,7 +37,7 @@ function RPanel(props) {
           {/* <img src={this.props.tbn} className='tbn' width={270} height={197} alt='thumbnail'/> */}
           <div className='rtext'>
             <div className='rtitle'>{props.name}</div>
-            <div className='rdesc'>{props.desc}</div>
+            {/* <div className='rdesc'>{props.desc}</div> */}
           </div>
         </button>
         </a>
@@ -80,6 +80,8 @@ function Recipe(props) {
   return(
   //  <RPanel name={props.name} desc={props.desc}></RPanel>
   <div>
+     <Header/>
+        <div className='pagehead'>Recipes</div>
     <RPanel tbn={props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel>
   </div>
   
