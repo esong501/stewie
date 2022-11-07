@@ -13,6 +13,7 @@ import RecipeWalkthrough from './components/RecipeWalkthrough/RecipeWalkthrough.
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import bchick from './img/newbake.png';
 
+//require('dotenv').config();
 function App() {
   // Testing, remove later
   // const [recipe, setRecipe] = useState("");
@@ -64,9 +65,25 @@ function App() {
     
     </div>
   );
-
-  
 }
+
+// function parseQuery(str) {
+//   var arr = str.split(",");
+//   var queryField = "";
+//   for (var i = 0; i < arr.length; i++) {
+//       queryField = queryField+"&="+arr[i];
+//   }
+//   return queryField;
+// };
+
+// function searchData(inputStr) {
+//   // parse the search string
+//   console.log("SEARCHING FOR QUERY: ", inputStr.value);
+//   //const queryField = parseQuery(inputStr);
+//   //console.log(queryField);
+//   return null;
+// }
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App;
