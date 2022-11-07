@@ -1,8 +1,7 @@
 .header {
     overflow: hidden;
     padding: 20px 10px;
-    font-family: sans-serif;
-  
+    font-family: 'filson-soft';
   }
   
   /* Style the header links */
@@ -13,7 +12,7 @@
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
-    line-height: 25px;
+    line-height: 15px;
     border-radius: 30px;
   }
   
@@ -21,6 +20,10 @@
   .header a.logo {
     font-size: 25px;
     font-weight: bold;
+  }
+
+  .header a{
+    margin-left: 1em;
   }
   
   /* Change the background color on mouse-over */
