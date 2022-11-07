@@ -33,7 +33,7 @@ function App() {
     <div>
       {/* <h1>Instructions: {recipe.instructions[0]}</h1> */}
       <div>
-        {console.log(recipes)}
+        {/* {console.log(recipes)} */}
         {recipes.map((recipe) => ( // Map each recipe and then print out ingredients
           // <h1>Instructions: {recipe.instructions[0]}</h1>
           // <Recipe tbn={recipe.image} name={recipe.label} desc={recipe.instructions[1]}></Recipe> // this is an issue where the array has to be init
@@ -41,10 +41,6 @@ function App() {
           <ExpandRecipe recipe={recipe}></ExpandRecipe>
           ))}
       </div>
-        {/* <Routes>
-          <Route path="/recipe" element={<Recipe />}/>
-          <Route path="/recipedetail" element={<ExpandRecipe/>} />
-        </Routes> */}
     </div>
   );
 

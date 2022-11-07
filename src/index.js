@@ -5,13 +5,17 @@ import App from './App.js';
 import Recipe from './components/Recipe.js'
 import ExpandRecipe from './components/ExpandRecipe/ExpandRecipe.js';
 import RecipeWalkthrough from './components/RecipeWalkthrough/RecipeWalkthrough.js';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
     <Router>
+       <Routes>
+          <Route path="/recipe" element={<Recipe />}/>
+          <Route path="/recipedetail" element={<ExpandRecipe/>} />
+        </Routes>
       <App/>
     </Router>
      

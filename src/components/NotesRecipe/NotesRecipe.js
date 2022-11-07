@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './NotesRecipe.scss';
 // import { Button, Tabs, Tab} from '@mui/material';
 
 function NotesRecipe(props) {

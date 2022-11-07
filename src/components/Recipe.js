@@ -14,11 +14,11 @@ import Header from './Header/Header.js';
 import Footer from './Footer/Footer.js';
 
 function RPanel(props) {
-  // const navigate = useNavigate();
+  // let navigate = useNavigate();
 
   // const navigateRecipe = () => {
-  //   // 👇️ navigate to /contacts
-  //   navigate('/recipedetail');
+  //   let path = '/recipedetail';
+  //   navigate(path, {props});
   // };
     // render () {
 
@@ -52,39 +52,39 @@ function RPanel(props) {
 
  }
 
-class Recipe extends Component{
-  renderRecipe (name,desc,tbn,time) {
-    return <RPanel name={name} desc={desc} tbn={tbn} time={time}/>;
-  }
-
-  render () {
-    return (
-      <div>
-        <Header/>
-        <div className='pagehead'>Recipes</div>
-        <div className='maindiv'>
-          <div className='row'>
-            <div>{this.renderRecipe('Baked Chicken','6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on \n 1/2 teaspoon coarse salt 1/2 teaspoon Mrs. Dash seasoning \n 1/4 teaspoon freshly ground black pepper',bchick,'45 min')}</div>
-            <div>{this.renderRecipe('Braised Chicken', '1 tablespoon extra-virgin olive oil\n1 medium red or green bell pepper, diced\n2 tablespoons all-purpose flour\n2 cups sauce from Wine & Tomato Braised Chicken\n2 cups reduced-sodium chicken broth\n1 cup sliced okra, fresh or frozen (thawed)\n¾ cup instant brown rice (see Tip)\n⅛- ¼ teaspoon cayenne pepper',brchick,'50 min')}</div>
-            <div>{this.renderRecipe('Catalan Chicken', '1 whole 4-pound chicken, quartered\n8 slices bacon\n30 cloves garlic\n3 lemons, peeled, rinds thinly sliced and reserved\n½ cup Banyuls or another fortified dessert wine\n1 cup veal or chicken stock',cchick, '55 min')}</div>
-          </div>
-          <Footer/>
-        </div>
-        
-      </div>
-    )
-  }
-}
-
-// function Recipe(props) {
-//   return(
-//   //  <RPanel name={props.name} desc={props.desc}></RPanel>
-//   <div>
-//     <RPanel tbn={props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel>
-//   </div>
-  
-  
-//   )
+// class Recipe extends Component{
+//   renderRecipe (name,desc,tbn,time) {
+//     return <RPanel name={name} desc={desc} tbn={tbn} time={time}/>;
 //   }
+
+//   render () {
+//     return (
+//       <div>
+//         <Header/>
+//         <div className='pagehead'>Recipes</div>
+//         <div className='maindiv'>
+//           <div className='row'>
+//             <div>{this.renderRecipe('Baked Chicken','6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on \n 1/2 teaspoon coarse salt 1/2 teaspoon Mrs. Dash seasoning \n 1/4 teaspoon freshly ground black pepper',bchick,'45 min')}</div>
+//             <div>{this.renderRecipe('Braised Chicken', '1 tablespoon extra-virgin olive oil\n1 medium red or green bell pepper, diced\n2 tablespoons all-purpose flour\n2 cups sauce from Wine & Tomato Braised Chicken\n2 cups reduced-sodium chicken broth\n1 cup sliced okra, fresh or frozen (thawed)\n¾ cup instant brown rice (see Tip)\n⅛- ¼ teaspoon cayenne pepper',brchick,'50 min')}</div>
+//             <div>{this.renderRecipe('Catalan Chicken', '1 whole 4-pound chicken, quartered\n8 slices bacon\n30 cloves garlic\n3 lemons, peeled, rinds thinly sliced and reserved\n½ cup Banyuls or another fortified dessert wine\n1 cup veal or chicken stock',cchick, '55 min')}</div>
+//           </div>
+//           <Footer/>
+//         </div>
+        
+//       </div>
+//     )
+//   }
+// }
+
+function Recipe(props) {
+  return(
+  //  <RPanel name={props.name} desc={props.desc}></RPanel>
+  <div>
+    <RPanel tbn={props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel>
+  </div>
+  
+  
+  )
+  }
 
 export default Recipe;

@@ -3,6 +3,12 @@
     src: url(../../fonts/filson-pro-cufonfonts/FilsonProMedium.otf) format('opentype');
 }
 
+@font-face {
+    font-family:"filson-soft";
+    src:url("https://use.typekit.net/af/0ceada/00000000000000003b9ade5c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/0ceada/00000000000000003b9ade5c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/0ceada/00000000000000003b9ade5c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+    font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
+  }
+
 .Recipe {
     display: flex;
     flex-direction: row;
@@ -10,19 +16,15 @@
 }
 
 .NavTabs {
-    // position: relative;
-    // height: 100%;
-    .Tabs {
-        // position: absolute ;
-        // bottom: 0;
-    }
+    position: relative;
+    height: 100%;
 }
 
 .RecipeOverview {
     padding: 0 4em;
     width: 66%;
     text-align: center;
-    margin-top: 5%;
+    margin-top: 2.5%;
     position: relative;
 
     .RecipImg {
@@ -32,17 +34,17 @@
 
     .RecipeDesc {
         padding-top: 0.5em;
-        font-family: 'Times New Roman', Times, serif;
+        font-family: 'monarcha';
         font-size: 1.25em;
     }
     h1 {
-        font-family: 'FilsonProMedium';
+        font-family: 'filson-soft';
         margin-top: 0;
         font-size: 4em;
     }
 }
 .RecipeSidebar {
-    margin-top: 5%;
+    margin-top: 2.5%;
     text-align: center;
     width: 34%;
     ul {
@@ -54,12 +56,12 @@
     }
 
     .RecipeTags {
-        font-family: 'FilsonProMedium';
+        font-family: 'filson-soft';
         width: 50%;
         display: inline-block;
         text-align: left;
         align-items: center;
-        background-color: #d5d0c9;
+        box-shadow: 0 0 0 2pt #d5d0c9;
         border-radius: 10px;
         margin: 10px;
 
@@ -76,18 +78,18 @@
         align-items: center;
 
         h2 {
-            font-family: 'FilsonProMedium';
+            font-family: 'filson-soft';
             font-size: 2em;
         }
 
        .IngredientsList {
             font-size: 1.25em;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'monarcha';
        }
     }
 
     .CookButton {
-        font-family: 'FilsonProMedium' !important;
+        font-family: 'filson-soft' !important;
         background-color: #D1291C !important;
         text-transform: none !important;
         border-radius: 20px !important;

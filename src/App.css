@@ -1,3 +1,15 @@
+@font-face {
+  font-family:"filson-soft";
+  src:url("https://use.typekit.net/af/0ceada/00000000000000003b9ade5c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/0ceada/00000000000000003b9ade5c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/0ceada/00000000000000003b9ade5c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+  font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
+}
+
+@font-face {
+  font-family:"monarcha";
+  src:url("https://use.typekit.net/af/bc3ddc/00000000000000007735ddfa/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/bc3ddc/00000000000000007735ddfa/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/bc3ddc/00000000000000007735ddfa/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+  font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
+  }
+
 .App {
   text-align: center;
 }
@@ -67,3 +79,71 @@
     transform: rotate(360deg);
   }
 }
+
+/* :root {
+  --poppyseed: #1A1123;
+  --matcha: #CCCC52;
+  --tangerine: #CCCC52;
+  --tomato: #D1291C;
+  --eggwhite:#EFEAE4;
+  --lavender: #997DC6;
+  --blueberry: #4848C1;
+  --lemon: #F5E359;
+  --kale: #3B9F2B
+}
+.h1{
+  font-family: 'Monarcha', 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 84px;
+  line-height: 100px;
+  color: var(--poppyseed);
+}
+.h2{
+  font-family: 'Filson Soft', 'Arial';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 55px;
+  line-height: 55px;
+  color: var(--poppyseed);
+}
+.h3{
+  font-family: 'Filson Soft', 'Arial';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 38px;
+  color: var(--poppyseed);
+}
+.h4{
+  font-family: 'Monarcha', 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 39px;
+  color: var(--poppyseed);
+}
+.h5{
+  font-family: 'Monarcha', 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 39px;
+  color: var(--poppyseed);
+}
+.p1{
+  font-family: 'Monarcha', Georgia;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--poppyseed);
+}
+.p2{
+  font-family: 'Monarcha', Georgia;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+  color: var(--poppyseed);
+} */

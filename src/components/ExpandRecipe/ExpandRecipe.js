@@ -21,19 +21,17 @@ function ExpandRecipe(props) {
 
     const recipeOverview = (
         <div class = "NavTabs">
-            <div className = "Tabs">
-                <TabBarRecipe recipe = {props.recipe}/>
-            </div>
+            <TabBarRecipe recipe = {props.recipe}/>
         </div>
     );
     
     return (
         <div>
-            {/* <Header /> */}
+            <Header />
             <div class="Recipe">
                 <div class = "RecipeSidebar">
+                    {isCooking ? <h2>{props.recipe.label}</h2> : null}
                     <div class="RecipeTags">
-                        {console.log(props)}
                         <ul class="TagsList">
                             <li>Level 1</li>
                             <li>{props.recipe.ingredientLines.length} Ingredients</li>
@@ -52,13 +50,12 @@ function ExpandRecipe(props) {
                         </ul>
                     </div>
                     <div >
-                        <Button variant = "contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}>
-                            <span>Start Cooking</span>
-                        </Button>   
+                        {isCooking === false ? <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Start Cooking </Button> : <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Stop Cooking </Button>}
+                  
                     </div>
                 </div>
                 <div class="RecipeOverview">
-                    {isCooking ? <div><RecipeWalkthrough steps = {props.recipe.instructions} index={0}></RecipeWalkthrough> </div> : recipeOverview}
+                    {isCooking ? <RecipeWalkthrough steps = {props.recipe.instructions} index={0}></RecipeWalkthrough>: recipeOverview}
 
                 </div>
             </div>
