@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Link, Route, Routes } from "react-router-dom";
 
 import './ExpandRecipe.scss';
@@ -6,6 +6,7 @@ import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
 import RecipeWalkthrough from '../RecipeWalkthrough/RecipeWalkthrough.js';
 import Recipe from '../Recipe.js';
+import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
 import { Button } from '@mui/material';
 
 // temp
@@ -15,25 +16,21 @@ import bchick from '../../img/newbake.png';
 
 function ExpandRecipe(props) {
     // const navigate = useNavigate();
-    const [isCooking, setIsCooking] = React.useState(false);
+    const [isCooking, setIsCooking] = useState(false);
 
     const recipeOverview = (
-        <div >
-            <h1>{props.recipe.label}</h1>
-                {/* <img src = {bchick} class ="RecipeImg" alt='thumbnail'/> */}
-            <img src = {props.recipe.image} class ="RecipeImg" alt='thumbnail'/>
-            <p class="RecipeDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+        <div class = "NavTabs">
+            <TabBarRecipe recipe = {props.recipe}/>
         </div>
     );
     
     return (
         <div>
-            {/* <Header /> */}
+            <Header />
             <div class="Recipe">
                 <div class = "RecipeSidebar">
+                    {isCooking ? <h2>{props.recipe.label}</h2> : null}
                     <div class="RecipeTags">
-                        {console.log(props)}
                         <ul class="TagsList">
                             <li>Level 1</li>
                             <li>{props.recipe.ingredientLines.length} Ingredients</li>
@@ -52,14 +49,12 @@ function ExpandRecipe(props) {
                         </ul>
                     </div>
                     <div >
-                        <Button variant = "contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}>
-                            <span>Start Cooking</span>
-                        </Button>
-                        
+                        {isCooking === false ? <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Start Cooking </Button> : <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Stop Cooking </Button>}
+                  
                     </div>
                 </div>
                 <div class="RecipeOverview">
-                    {isCooking ? <div><RecipeWalkthrough steps = {props.recipe.instructions} index={0}></RecipeWalkthrough> </div> : recipeOverview}
+                    {isCooking ? <RecipeWalkthrough steps = {props.recipe.instructions} index={0}></RecipeWalkthrough>: recipeOverview}
 
                 </div>
             </div>
