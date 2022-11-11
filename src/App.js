@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   return (  
-    <div>
+      <div>
       {/* <Header /> */}
       {/* <Recipe name="Baked Chicken" tbn={bchick} desc="6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on
         1/2 teaspoon coarse salt
