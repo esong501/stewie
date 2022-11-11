@@ -9,9 +9,10 @@ import Recipe from './components/Recipe.js';
 import ExpandRecipe from './components/ExpandRecipe/ExpandRecipe.js';
 import RecipeWalkthrough from './components/RecipeWalkthrough/RecipeWalkthrough.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import bchick from './img/newbake.png';
+import Query from "./components/QueryRecipe.jsx"
 
-
-require('dotenv').config();
+//require('dotenv').config();
 function App() {
   // Testing, remove later
   const [recipe, setRecipe] = useState("");
@@ -31,8 +32,23 @@ function App() {
   }, []);
 
   return (  
-    <Router>
-      <div>
+    <div>
+      {/* <Header /> */}
+      {/* <Recipe name="Baked Chicken" tbn={bchick} desc="6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on
+        1/2 teaspoon coarse salt
+        1/2 teaspoon Mrs. Dash seasoning
+        1/4 teaspoon freshly ground black pepper
+        "/> */}
+      <Query />
+      <Recipe />
+      {/* <ExpandRecipe /> */}
+      {/* <Recipe />
+      <Recipe />
+      <Recipe /> */}
+      {/* <rcolumn /> */}
+    
+      {/* <h1>Instructions: {recipe.instructions[0]}</h1> */}
+      {/* <div>
         {console.log(recipes)}
           {recipes.map((recipe) => ( // Map each recipe and then print out ingredients
             // <h1>Instructions: {recipe.instructions[0]}</h1>
@@ -47,12 +63,28 @@ function App() {
           
         {/* <Footer /> */}
       
-      </div>
+    </div>
     </Router>
   );
-
-  
 }
+
+// function parseQuery(str) {
+//   var arr = str.split(",");
+//   var queryField = "";
+//   for (var i = 0; i < arr.length; i++) {
+//       queryField = queryField+"&="+arr[i];
+//   }
+//   return queryField;
+// };
+
+// function searchData(inputStr) {
+//   // parse the search string
+//   console.log("SEARCHING FOR QUERY: ", inputStr.value);
+//   //const queryField = parseQuery(inputStr);
+//   //console.log(queryField);
+//   return null;
+// }
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App;
