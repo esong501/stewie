@@ -12,6 +12,7 @@ import Footer from './components/Footer/Footer.js';
 import RecipeWalkthrough from './components/RecipeWalkthrough/RecipeWalkthrough.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import bchick from './img/newbake.png';
+import Query from "./components/QueryRecipe.jsx"
 
 //require('dotenv').config();
 function App() {
@@ -40,6 +41,7 @@ function App() {
         1/2 teaspoon Mrs. Dash seasoning
         1/4 teaspoon freshly ground black pepper
         "/> */}
+      <Query />
       <Recipe />
       {/* <ExpandRecipe /> */}
       {/* <Recipe />

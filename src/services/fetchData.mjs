@@ -13,18 +13,15 @@
 
 import fetch from "node-fetch"; // using await to yield for fetch command
 
-export default async function fetchData(url) {
+export async function fetchData(url) {
   const recipeJSON = await fetch(url)
-    .then((res) => {res.json})
-    .then((res) => {
-      return res
-    }
-  );
+    .then((res) => res.json())
+    .then((res) => { return res });
   return recipeJSON;
 }
 
 // parse the data into a list of [recipe,ingredients] pairs and return
-function parseData(data) {
+export function parseData(data) {
   var recipeJSON = [];
 
   for (var i = 0; i < Object.keys(data.hits).length; i++) {

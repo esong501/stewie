@@ -1,21 +1,30 @@
 import React, { useState } from "react"
-import fetchData from "../services/fetchData.mjs";
+import {fetchData, parseData} from "../services/fetchData.mjs";
 
 const RecipeCard = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
-    function searchData(props) {
+    function searchData() {
         // parse the search string
-        console.log("SEARCHING FOR QUERY: ", searchTerm);
         const queryField = parseQuery(searchTerm);
-        console.log(queryField);
+        
+        const api_url = 'https://api.edamam.com/api/recipes/v2/?app_id='+
+                        process.env.REACT_APP_API_ID+'&app_key='+
+                        process.env.REACT_APP_API_KEY+
+                        '&type=public'+
+                        '&field=ingredients'+
+                        '&field=label'+
+                        queryField;
+
+        const queryResponseJSON = fetchData(api_url);
+        console.log(queryResponseJSON);
     }
 
     function parseQuery(str) {
         var arr = str.split(",");
         var queryField = "";
         for (var i = 0; i < arr.length; i++) {
-            queryField = queryField+"&="+arr[i];
+            queryField = queryField+"&q="+arr[i].trim();
         }
         return queryField;
     };
@@ -35,5 +44,4 @@ const RecipeCard = () => {
     );
 }
 
-export default RecipeCard;
 export default RecipeCard;
