@@ -9,14 +9,21 @@ function CookRecipe(props) {
             <h2 class="instructions">Instructions</h2>
             {/* <h3>Prep</h3> */}
             <div class="PreviewIns">
-                <p>{props.instructions[0]}{props.instructions[1]}</p>
-                <p>{props.instructions[2]}</p>
-                <p>{props.instructions[3]}</p>
-                <p>{props.instructions[4]}</p>
-                <p>{props.instructions[5]}{props.instructions[6]}</p>
-                <p>{props.instructions[7]}</p>
-                <p>{props.instructions[8]}</p>
-              
+                <ol>
+                    <li class ="step">{props.instructions[0]}</li>
+                    <li class ="step">{props.instructions[1]}</li>
+                    <li class ="step">{props.instructions[2]}</li>
+                    <li class ="step">{props.instructions[3]}</li>
+                    <li class ="step">{props.instructions[4]}</li>
+                    <li class ="step">{props.instructions[5]}</li>
+                    <li class ="step">{props.instructions[6]}</li>
+                    <li class ="step">{props.instructions[7]}</li>
+                    <li class ="step">{props.instructions[8]}</li>
+                    <li class ="step">{props.instructions[9]}</li>
+                    <li class ="step">{props.instructions[10]}</li>
+                    <li class ="step">{props.instructions[11]}</li>
+                </ol>
+                
             </div>
             
         </div>

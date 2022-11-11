@@ -12,7 +12,14 @@
 
 .PreviewIns {
     font-family: 'monarcha';
+    height: 75%;
+    position: absolute;
+    overflow: auto;
 }
+
+.step:not(:last-child) { 
+    margin-bottom: 1em;  
+ }
 
 .h3 {
     font-family: 'filson-soft';

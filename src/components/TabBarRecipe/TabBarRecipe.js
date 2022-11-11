@@ -13,18 +13,19 @@ function TabBarRecipe(props) {
     
     return (
         <div class="Tabs">
-            <div class="content">  {/* content changes depending on the tab */}
-                {tab === "preview" && <PreviewRecipe recipe={props.recipe}></PreviewRecipe>}
-                {tab === "instruc" && <CookRecipe instructions = {props.recipe.instructions}></CookRecipe>}
-                {tab === "notes" && <NotesRecipe></NotesRecipe>}
-            </div>
-            <div class="TabBar">
+             <div class="TabBar">
                 <Tabs aria-label="" centered indicatorColor='primary'>
                     <Tab icon={<img src={Preview} width="25" height="25" alt="" />} label ="Preview" onClick={() => setTab("preview")}/>
                     <Tab icon = {<img src={Cook} width="25" height="25" alt="" />} label="Cook" onClick={() => setTab("instruc")}/>
                     <Tab icon = {<img src={Notes} width="25" height="25" alt="" />} label="Notes" onClick={() => setTab("notes")}/>
                 </Tabs>
             </div> 
+            <div class="content">  {/* content changes depending on the tab */}
+                {tab === "preview" && <PreviewRecipe recipe={props.recipe}></PreviewRecipe>}
+                {tab === "instruc" && <CookRecipe instructions = {props.recipe.instructions}></CookRecipe>}
+                {tab === "notes" && <NotesRecipe></NotesRecipe>}
+            </div>
+           
          </div>
     );
 }
