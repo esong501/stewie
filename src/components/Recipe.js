@@ -82,7 +82,7 @@ function Recipe(props) {
   <div>
      <Header/>
         <div className='pagehead'>Recipes</div>
-    <RPanel tbn={props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel>
+    <RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel>
   </div>
   
   
