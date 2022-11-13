@@ -1,13 +1,15 @@
 import { useState } from 'react';
 // import { Button, Tabs, Tab} from '@mui/material';
 import './PreviewRecipe.scss';
+import bchick from '../../img/newbake.png';
 
 function PreviewRecipe(props) {
     
     return (
     <div class="Preview">
         <div class="PreviewScrollElems">
-            <img src = {props.recipe.image} class ="RecipeImg" alt='thumbnail' referrerpolicy="no-referrer"/>
+            {/* <img src = {props.recipe.image} class ="RecipeImg" alt='thumbnail' referrerpolicy="no-referrer"/> */}
+             <img src = {bchick} class ="RecipeImg" alt='thumbnail' referrerpolicy="no-referrer"/>
             <div class="PreviewInst">
                 <ol>
                     <li class ="step">{props.recipe.instructions[0]}</li>

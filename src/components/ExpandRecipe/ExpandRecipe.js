@@ -22,9 +22,9 @@ function ExpandRecipe(props) {
         <div class = "NavTabs">
             <h1>{props.recipe.label}</h1>
             <TabBarRecipe recipe = {props.recipe}/>
-            <div >
-                {isCooking === false ? <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Start Cooking </Button> : <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Stop Cooking </Button>}
-            </div>
+            
+            {isCooking === false ? <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Start Cooking </Button> : <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Stop Cooking </Button>}
+            
         </div>
     );
     

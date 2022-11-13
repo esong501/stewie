@@ -1,7 +1,9 @@
 .PreviewScrollElems {
+    margin-top: 1em;
     overflow: auto;
-    height: 65%;
+    height: 75%;
     position:absolute;
+    box-shadow: 0 10px 5px -2px rgb(206, 196, 196);
 }
 
 .PreviewInst {

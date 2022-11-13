@@ -134,9 +134,10 @@
        .IngredientsList {
             font-size: 17px;
             font-family: 'monarcha';
-            height: 200px;
+            height: 100%;
             // position: absolute;
             overflow: auto;
+            // box-shadow: 0 10px 5px -2px rgb(206, 196, 196);
        }
     }
 }
