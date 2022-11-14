@@ -8,6 +8,9 @@ import RecipeWalkthrough from '../RecipeWalkthrough/RecipeWalkthrough.js';
 import Recipe from '../Recipe.js';
 import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
 import { Button } from '@mui/material';
+import { FormGroup } from '@mui/material';
+import { FormControlLabel } from '@mui/material';
+import { Checkbox } from '@mui/material';
 
 // temp
 import bchick from '../../img/newbake.png';
@@ -47,6 +50,12 @@ function ExpandRecipe(props) {
                             <li>{props.recipe.ingredientLines[2]}</li>
                             <li>{props.recipe.ingredientLines[3]}</li>
                         </ul>
+                        {/* <FormGroup className="IngredientsList">
+                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[0]} />
+                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[1]} />
+                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[2]} />
+                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[3]} />
+                        </FormGroup> */}
                     </div>
                     <div >
                         {isCooking === false ? <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Start Cooking </Button> : <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Stop Cooking </Button>}
