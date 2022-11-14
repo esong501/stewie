@@ -65,7 +65,7 @@ function RecipeWalkthrough(props) {
             <h2>
                 <div className="iheader">Instructions</div>
             </h2>
-            <div className="PreviewScrollElems">
+            <div className="WalkthruScrollElems">
                 {/* {console.log(props.steps)}
                 {console.log(checked)} */}
                 
