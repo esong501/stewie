@@ -7,15 +7,33 @@ import Footer from '../Footer/Footer.js';
 import RecipeWalkthrough from '../RecipeWalkthrough/RecipeWalkthrough.js';
 import Recipe from '../Recipe.js';
 import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
-import { Button } from '@mui/material';
-import { FormGroup } from '@mui/material';
-import { FormControlLabel } from '@mui/material';
-import { Checkbox } from '@mui/material';
+import { Typography, Checkbox, LinearProgress, Box, Button, FormControlLabel, FormGroup } from '@mui/material';
 
 // temp
 import bchick from '../../img/newbake.png';
 
-
+// function LinearProgressWithLabel(props) {
+//     return (
+//       <Box sx={{ display: 'flex', alignItems: 'center' }}>
+//         <Box sx={{ width: '100%', mr: 1 }}>
+//           <LinearProgress variant="determinate" {...props} />
+//         </Box>
+//         <Box sx={{ minWidth: 35 }}>
+//           <Typography variant="body2" color="text.secondary">{`${Math.round(
+//             props.value,
+//           )}%`}</Typography>
+//         </Box>
+//       </Box>
+//     );
+//   }
+  
+//   LinearProgressWithLabel.propTypes = {
+//     /**
+//      * The value of the progress indicator for the determinate and buffer variants.
+//      * Value between 0 and 100.
+//      */
+//     value: PropTypes.number.isRequired,
+//   };
 
 function ExpandRecipe(props) {
     // const navigate = useNavigate();

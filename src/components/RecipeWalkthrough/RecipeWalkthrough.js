@@ -1,11 +1,9 @@
 import { Route, Routes, useState , useEffect} from "react";
 import CompleteRecipe from "../CompleteRecipe/CompleteRecipe.js";
 import './RecipeWalkthrough.scss'
-import { Button } from '@mui/material';
-import { FormGroup } from '@mui/material';
-import { FormControlLabel } from '@mui/material';
-import { Checkbox } from '@mui/material';
-import { Typography } from '@mui/material';
+import PropTypes from 'prop-types';
+import { FormGroup, FormControlLabel, Checkbox, LinearProgress, Box, Typography, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // const theme = createTheme({
@@ -14,13 +12,40 @@ import { Typography } from '@mui/material';
 //     },
 //   });
 
-function RecipeWalkthrough(props) {
-    // const [index, setIndex] = useState(props.index);
-    const [finish, setFinish] = useState(false);
+function LinearProgressWithLabel(props) {
+    return (
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ width: '100%', mr: 1 }}>
+          <LinearProgress variant="determinate" {...props} />
+        </Box>
+        <Box sx={{ minWidth: 35 }}>
+          <Typography variant="body2" color="text.secondary">{`${Math.round(
+            props.value,
+          )}%`}</Typography>
+        </Box>
+      </Box>
+    );
+  }
+  
+LinearProgressWithLabel.propTypes = {
+/**
+ * The value of the progress indicator for the determinate and buffer variants.
+ * Value between 0 and 100.
+ */
+value: PropTypes.number.isRequired,
+};
 
-    // const handleClick = () => {
-    //     setIndex(index + 1);
-    // };
+
+
+function RecipeWalkthrough(props) {
+    const [finish, setFinish] = useState(false);
+    const [checked, setChecked] = useState(Array(props.steps.length).fill(false));
+
+    const handleClick = (index) => {
+        setChecked(() => 
+            checked[index] = !checked[index]
+        );
+    };
 
     // const decClick = () => {
     //     setIndex(index - 1);
@@ -37,22 +62,29 @@ function RecipeWalkthrough(props) {
 
     const recipeWalk = (
         <div>
-            {console.log(props.steps)}
-            <tbody>
-                {props.steps.map((steps, index) =>
-                    <tr key={index}>
-                        <td>
-                            <h4>
-                                {/* <ThemeProvider> */}
+            <h2>
+                <div className="iheader">Instructions</div>
+            </h2>
+            <div className="PreviewScrollElems">
+                {/* {console.log(props.steps)}
+                {console.log(checked)} */}
+                
+                <tbody>
+                    {props.steps.map((steps, index) =>
+                        <tr key={index}>
+                            <td>
+                                <h4>
                                     <FormGroup className="steps">
-                                        <FormControlLabel sx={{fontFamily: 'monarcha'}} control={<Checkbox size="large"/>} label={<Typography className="steps">{steps}</Typography>}/>
+                                        {console.log(steps)}
+                                        {console.log(index)} 
+                                        <FormControlLabel sx={{fontFamily: 'monarcha'}} control={<Checkbox size="large" style ={{color: "#3B9F2B",}} onChange={() => checked[index] = !checked[index]}/>} label={<Typography className="steps">{steps}</Typography>}/>
                                     </FormGroup>
-                                {/* </ThemeProvider> */}
-                            </h4>
-                        </td>
-                    </tr>
-                )}
-            </tbody>
+                                </h4>
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
+            </div>
         </div>
     )
 
