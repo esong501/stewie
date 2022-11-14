@@ -42,7 +42,11 @@ function ExpandRecipe(props) {
 
     const recipeOverview = (
         <div class = "NavTabs">
+            <h1>{props.recipe.label}</h1>
             <TabBarRecipe recipe = {props.recipe}/>
+            
+            {isCooking === false ? <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Start Cooking </Button> : <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Stop Cooking </Button>}
+            
         </div>
     );
 
@@ -82,6 +86,8 @@ function ExpandRecipe(props) {
                             <li>{props.recipe.ingredientLines[1]}</li>
                             <li>{props.recipe.ingredientLines[2]}</li>
                             <li>{props.recipe.ingredientLines[3]}</li>
+                            <li>{props.recipe.ingredientLines[4]}</li>
+                            {/* <li>{props.recipe.ingredientLines[5]}</li> */}
                         </ul>
                         {/* <FormGroup className="IngredientsList">
                             <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[0]} />
@@ -90,14 +96,9 @@ function ExpandRecipe(props) {
                             <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[3]} />
                         </FormGroup> */}
                     </div>
-                    <div >
-                        {isCooking === false ? <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Start Cooking </Button> : <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Stop Cooking </Button>}
-                  
-                    </div>
                 </div>
                 <div class="RecipeOverview">
                     {isCooking ? <RecipeWalkthrough steps = {props.recipe.instructions} index={0}></RecipeWalkthrough>: recipeOverview}
-
                 </div>
             </div>
             {/* <Footer /> */}
