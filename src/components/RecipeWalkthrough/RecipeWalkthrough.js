@@ -3,6 +3,7 @@ import CompleteRecipe from "../CompleteRecipe/CompleteRecipe.js";
 import './RecipeWalkthrough.scss'
 import PropTypes from 'prop-types';
 import { FormGroup, FormControlLabel, Checkbox, LinearProgress, Box, Typography, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import Instruction from "../Instruction/Instruction.js";
 
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -47,19 +48,6 @@ function RecipeWalkthrough(props) {
         );
     };
 
-    // const decClick = () => {
-    //     setIndex(index - 1);
-    // }
-
-    // const recipeWalk = (
-    //     <div className="steps">
-    //         <h4>{props.steps[index]}</h4>
-    //         {index > 0 ? <Button variant="contained" className="prevButton" onClick={decClick}>Previous Steps</Button> : null}
-    //         {index < (props.steps.length - 1) ? <Button variant="contained" className="nextButton" onClick={handleClick}>Next Steps</Button> : null}
-    //         {index === (props.steps.length - 1) ? <Button variant="contained" className="nextButton" onClick={() => setFinish(!finish)}>Finish Recipe!</Button> : null}
-    //     </div> 
-    // );
-
     const recipeWalk = (
         <div>
             <h2>
@@ -83,6 +71,7 @@ function RecipeWalkthrough(props) {
                             </td>
                         </tr>
                     )}
+                    <Instruction />
                 </tbody>
             </div>
         </div>
