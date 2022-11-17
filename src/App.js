@@ -1,6 +1,6 @@
 // import logo from './img/logo.svg';
 // import './App.css';
-import { db } from './firebase.js'
+import { db } from './services/Firebase.js'
 import { useEffect, useState } from 'react';
 import { onValue, ref } from 'firebase/database';
 import React from 'react';
@@ -39,7 +39,7 @@ function App() {
         1/2 teaspoon Mrs. Dash seasoning
         1/4 teaspoon freshly ground black pepper
         "/> */}
-      <Query />
+      {/* <Query /> */}
       <Recipe />
       {/* <ExpandRecipe /> */}
       {/* <Recipe />

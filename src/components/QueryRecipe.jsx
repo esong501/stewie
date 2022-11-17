@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import {fetchData, parseData} from "../services/fetchData.mjs";
+import {fetchData, parseData} from "../services/FetchData.mjs";
 
 const RecipeCard = () => {
     const [searchTerm, setSearchTerm] = useState('');
