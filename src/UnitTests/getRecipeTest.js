@@ -1,11 +1,18 @@
-import {insertData, selectData, updateData, removeData} from "../Services/FirebaseModule.js"
+import { db } from '.././services/Firebase.js'
+import { useState } from 'react';
+import { onValue, ref } from 'firebase/database';
 
-const data = selectData("recipe");
-// if (data == 1){
-//     console.log("selected failed");
-// } else {
-//     console.log(data);
-// //     Object.values(data).map((recipe) => {
-// //     setRecipes((oldArray)  => [recipe]); // Add each recipe to the recipes array
-// //   });
-// }
+//const [recipes, setRecipes] = useState([]);
+var data = null;
+const recipeRef = ref(db,"recipe");
+
+onValue(recipeRef, (snapshot) => {
+    snapshot.forEach((childSnapshot) => {
+        const childKey = childSnapshot.key;
+        const childData = childSnapshot.val();
+    });
+}, {
+    onlyOnce: true
+});
+
+console.log(data);

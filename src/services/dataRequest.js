@@ -1,1 +1,0 @@
-import FirebaseModule from "FirebaseModule"
