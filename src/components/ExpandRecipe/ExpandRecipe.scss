@@ -88,6 +88,7 @@
     h1 {
         font-family: 'filson-soft';
         margin-top: 0;
+        margin-bottom: 0;
         font-size: 4em;
     }
 }
@@ -133,13 +134,17 @@
        .IngredientsList {
             font-size: 17px;
             font-family: 'monarcha';
+            height: 100%;
+            // position: absolute;
+            overflow: auto;
+            // box-shadow: 0 10px 5px -2px rgb(206, 196, 196);
        }
     }
+}
 
-    .CookButton {
-        font-family: 'filson-soft' !important;
-        background-color: #D1291C !important;
-        text-transform: none !important;
-        border-radius: 20px !important;
-    }
+.CookButton {
+    font-family: 'filson-soft' !important;
+    background-color: #D1291C !important;
+    text-transform: none !important;
+    border-radius: 20px !important;
 }
