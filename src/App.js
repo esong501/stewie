@@ -41,6 +41,7 @@ function App() {
             // <Recipe recipe={recipe}></Recipe> 
             // <ExpandRecipe recipe={recipe}></ExpandRecipe>
             <Routes>
+              {console.log(recipe)}
               <Route path="/" element={<Recipe recipe={recipe}/>}/>
               <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} />
             </Routes>
