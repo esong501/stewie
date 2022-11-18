@@ -64,28 +64,6 @@
     line-height: 26px;
 }
 
-.prevButton {
-    font-family: 'filson-soft' !important;
-    margin-right: 1em !important;
-    background-color: rgba(209, 41, 28, 0.11) !important;
-    color: #1A1123 !important;
-    // border-radius: 20px !important;
-    border-radius: 100px !important;
-    padding: 10px 24px !important;
-    text-transform: none !important;
-
-}
-
-.nextButton {
-    font-family: 'filson-soft' !important;
-    background-color: rgba(209, 41, 28, 0.11) !important;
-    color: #1A1123 !important;
-    // border-radius: 20px !important;
-    border-radius: 100px !important;
-    padding: 10px 24px !important;
-    text-transform: none !important;
-}
-
 .WalkthruScrollElems {
     margin-top: 1em;
     overflow: auto;
@@ -95,26 +73,13 @@
     padding: 18px;
     padding-right: 180px;
     top: 84px;
+    border-radius: 5px;
 }
 
-.iheader{
-    /* Instructions */
+.backbutton{
     position: absolute;
-    width: 623px;
-    height: 54px;
-    left: 147px;
-    top: 0px;
-
-    /* H2 */
-    font-family: 'filson-soft';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 55px;
-    line-height: 55px;
-    align-items: center;
-    text-align: center;
-
-    /* tomato */
-
-    color: #D1291C;
+    width: 163px;
+    height: 48px;
+    left: 796px;
+    top: 6px;
 }

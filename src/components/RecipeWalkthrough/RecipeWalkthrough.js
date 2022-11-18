@@ -62,9 +62,6 @@ function RecipeWalkthrough(props) {
 
     const recipeWalk = (
         <div>
-            <h2>
-                <div className="iheader">Instructions</div>
-            </h2>
             <div className="WalkthruScrollElems">
                 {/* {console.log(props.steps)}
                 {console.log(checked)} */}
