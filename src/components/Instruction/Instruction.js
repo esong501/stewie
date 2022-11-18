@@ -17,13 +17,14 @@ function Instruction() { // later props can be like props.dictitem and props des
     return (
         <div class="IndivInstruction">
             <FormControlLabel
-                label={<p class="InstructionText"><button class="DictButton" onClick={()=>setDict(!dict)}>cook</button> something</p>}
+                label={<p class="InstructionText"><button class="DictButton" onClick={()=>setDict(!dict)}>Cook</button> something askdjfklasdj flkasdjflkasdjfklasjdklfjasdlkjflksdj</p>}
                 control={
                     <Checkbox
                         size="large"
                         style ={{color: "#3B9F2B",}}
                     />
                 }
+                className="CheckBoxInstruct"
             />
             {dict === false ? null : showDictionary}
         </div>

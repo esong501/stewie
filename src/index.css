@@ -13,3 +13,70 @@ code {
     monospace;
 }
 
+:root {
+  --poppyseed: #1A1123;
+  --matcha: #CCCC52;
+  --tangerine: #F49227;
+  --tomato: #D1291C;
+  --eggwhite:#EFEAE4;
+  --lavender: #997DC6;
+  --blueberry: #4848C1;
+  --lemon: #F5E359;
+  --kale: #3B9F2B
+}
+.h1{
+  font-family: 'Monarcha', 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 84px;
+  line-height: 100px;
+  color: var(--poppyseed);
+}
+.h2{
+  font-family: 'Filson Soft', 'Arial';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 55px;
+  line-height: 55px;
+  color: var(--poppyseed);
+}
+.h3{
+  font-family: 'Filson Soft', 'Arial';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 38px;
+  color: var(--poppyseed);
+}
+.h4{
+  font-family: 'Monarcha', 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 39px;
+  color: var(--poppyseed);
+}
+.h5{
+  font-family: 'Monarcha', 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 39px;
+  color: var(--poppyseed);
+}
+.p1{
+  font-family: 'Monarcha', Georgia;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--poppyseed);
+}
+.p2{
+  font-family: 'Monarcha', Georgia;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+  color: var(--poppyseed);
+}
