@@ -14,8 +14,18 @@
     padding: 18px;
     // padding-right: 180px;
     top: 84px;
-    padding-right: 1em;
+    margin-right: 2em;
     border-radius: 5px;
+}
+
+.WalkthruScrollElems::-webkit-scrollbar{
+    background-color: #EFEAE4;
+    width: 10px;
+}
+
+.WalkthruScrollElems::-webkit-scrollbar-thumb{
+    background-color: #908B87;
+    border-radius: 10px;
 }
 
 .backbutton{
