@@ -72,8 +72,8 @@ function RecipeWalkthrough(props) {
                             <td>
                                 <h4>
                                     <FormGroup className="steps">
-                                        {console.log(steps)}
-                                        {console.log(index)} 
+                                        {/* {console.log(steps)}
+                                        {console.log(index)}  */}
                                         <FormControlLabel sx={{fontFamily: 'monarcha'}} control={<Checkbox size="large" style ={{color: "#3B9F2B",}} onChange={() => checked[index] = !checked[index]}/>} label={<Typography className="steps">{steps}</Typography>}/>
                                     </FormGroup>
                                 </h4>

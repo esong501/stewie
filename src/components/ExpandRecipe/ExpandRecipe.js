@@ -38,15 +38,6 @@ function LinearProgressWithLabel(props) {
     value: PropTypes.number.isRequired,
   };
 
-  
-// function BackIcon(props) {
-//     return (
-//         <SvgIcon {...props}>
-//         <path d={KeyboardBackspaceIcon} />
-//         </SvgIcon>
-//     );
-// }
-
 function ExpandRecipe(props) {
     // const navigate = useNavigate();
     const [isCooking, setIsCooking] = useState(false);
@@ -61,7 +52,7 @@ function ExpandRecipe(props) {
     );
 
     const recipeTitle = (
-        <div>
+        <div className='headerContain'>
             <div class = "RTitle">
                 <h1>{props.recipe.label}</h1>
             </div>
@@ -69,12 +60,12 @@ function ExpandRecipe(props) {
                 <KeyboardBackspace className='backArrow'/>
                 <div className="backButton"><a href='/' style={{textDecoration: 'none', color:'#908B87'}}>Back</a></div>
             </div> */}
-            <Button variant="text" class='backButton' href="/" startIcon={<KeyboardBackspace style={{width:'48px', height: '48px'}}/>}>Back</Button>
+                <Button variant="text" class='backButton' href="/" startIcon={<KeyboardBackspace style={{width:'48px', height: '48px'}}/>}>Back</Button>
         </div>
     )
 
     const instructions = (
-        <div>
+        <div className='headerContain'>
             <div className='IHeader'>
                 <h1>Instructions</h1>
             </div>

@@ -70,10 +70,12 @@
 
 .RTitle {
     position: relative;
+    flex-grow: 6;
 }
 
 .IHeader {
     position: relative; 
+    flex-grow: 6;
     color: #D1291C ;
 }
 
@@ -160,9 +162,13 @@
     border-radius: 20px !important;
 }
 
+.headerContain{
+    display: flex;
+}
+
 .backButton{
-    display: flex   ;
-    font-weight: 400 !important;
+    display:flex;
+    font-weight: 300 !important;
     font-size: 20px !important;
     font-family: 'filson-soft' !important;
     color: #908B87;
@@ -170,10 +176,11 @@
     background-color: #EFEAE4;
     // flex-grow: 2;
     text-align: center;
-    position: absolute;
+    position: relative;
     width: 163px;
-    height: 48px;
-    left: 880px;
-    top: 6px;
+    height:50px;
+    // left: 880px;
+    // top: 6px;
     line-height: 2.25;
+    cursor: pointer;
 }
