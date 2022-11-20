@@ -17,7 +17,7 @@ function Instruction() { // later props can be like props.dictitem and props des
     return (
         <div class="IndivInstruction">
             <FormControlLabel
-                label={<p class="InstructionText"><button class="DictButton" onClick={()=>setDict(!dict)}>Cook</button> something askdjfklasdj flkasdjflkasdjfklasjdklfjasdlkjflksdj</p>}
+                label={<p class="InstructionText"><button class="DictButton" onClick={()=>setDict(!dict)}>Cook</button> something askdjfklasdj flkasdjflkasdjfklasjdklfjasdlkjflksdjjhgjh jkhjklhnjkhljkhjklhjknhnjklhljnhjkhnkjh</p>}
                 control={
                     <Checkbox
                         size="large"
