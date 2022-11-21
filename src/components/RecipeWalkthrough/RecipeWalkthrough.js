@@ -1,10 +1,13 @@
 import { Route, Routes, useState , useEffect, useContext } from "react";
 import CompleteRecipe from "../CompleteRecipe/CompleteRecipe.js";
+import Instruction from "../Instruction/Instruction.js";
 import './RecipeWalkthrough.scss'
 import PropTypes from 'prop-types';
 import { FormGroup, FormControlLabel, Checkbox, LinearProgress, Box, Typography, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Modal } from '@mui/material';
 import { ProgressContext } from './../ExpandRecipe/ExpandRecipe.js'
 import { Close } from '@mui/icons-material/';
+
+
 
 function RecipeWalkthrough(props) {
     const [finish, setFinish] = useState(false);
@@ -57,7 +60,8 @@ function RecipeWalkthrough(props) {
                                 <h4>
                                 
                                     <FormGroup className="steps">
-                                        <FormControlLabel sx={{fontFamily: 'monarcha'}} control={<Checkbox size="large" style ={{color: "#3B9F2B",}} onChange={handleCheck}/>} label={<Typography className="steps">{steps}</Typography>}/>
+                                        {/* <FormControlLabel sx={{fontFamily: 'monarcha'}} control={<Checkbox size="large" style ={{color: "#3B9F2B",}} onChange={handleCheck}/>} label={<Typography className="steps">{steps}</Typography>}/> */}
+                                        <Instruction step = {steps} handleCheck = {handleCheck}/>
                                     </FormGroup>
                                 </h4>
                             </td>
