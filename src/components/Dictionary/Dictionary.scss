@@ -1,0 +1,24 @@
+.Dict {
+    font-family: 'monarcha';
+    background-color: #E9E3DA;
+    padding: 1em 1em;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.Dict::after {
+    // content: "";
+    // position: relative;
+    // left: -60px;
+    // bottom: 40px;
+    // border-width: 10px 50px 10px 0;
+    // border-style: solid;
+    // // border-color: red;
+    // border-color: transparent #E9E3DA;
+    // display: block;
+    // width: 0;
+}
+
+.DictWord {
+    color: var(--tangerine);
+}

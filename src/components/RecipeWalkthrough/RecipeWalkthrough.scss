@@ -1,62 +1,3 @@
-@font-face {
-    font-family: 'FilsonProMedium';
-    src: url('../../fonts/filson-pro-cufonfonts/FilsonProMedium.otf') format('opentype');
-}
-
-@font-face {
-    font-family:"filson-soft";
-    src:url("https://use.typekit.net/af/0ceada/00000000000000003b9ade5c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/0ceada/00000000000000003b9ade5c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/0ceada/00000000000000003b9ade5c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
-    font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
-  }
-
-  @font-face {
-    font-family:"monarcha";
-    src:url("https://use.typekit.net/af/34240e/00000000000000007735ddf6/30/l?subset_id=2&fvd=i3&v=3") format("woff2"),url("https://use.typekit.net/af/34240e/00000000000000007735ddf6/30/d?subset_id=2&fvd=i3&v=3") format("woff"),url("https://use.typekit.net/af/34240e/00000000000000007735ddf6/30/a?subset_id=2&fvd=i3&v=3") format("opentype");
-    font-display:auto;font-style:italic;font-weight:300;font-stretch:normal;
-    }
-    
-    @font-face {
-    font-family:"monarcha";
-    src:url("https://use.typekit.net/af/904d6e/00000000000000007735ddfc/30/l?subset_id=2&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/904d6e/00000000000000007735ddfc/30/d?subset_id=2&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/904d6e/00000000000000007735ddfc/30/a?subset_id=2&fvd=n3&v=3") format("opentype");
-    font-display:auto;font-style:normal;font-weight:300;font-stretch:normal;
-    }
-    
-    @font-face {
-    font-family:"monarcha";
-    src:url("https://use.typekit.net/af/d7d9ce/00000000000000007735ddf7/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/d7d9ce/00000000000000007735ddf7/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/d7d9ce/00000000000000007735ddf7/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
-    font-display:auto;font-style:italic;font-weight:400;font-stretch:normal;
-    }
-    
-    @font-face {
-    font-family:"monarcha";
-    src:url("https://use.typekit.net/af/c2ccf4/00000000000000007735ddfd/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/c2ccf4/00000000000000007735ddfd/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/c2ccf4/00000000000000007735ddfd/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
-    font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
-    }
-    
-    @font-face {
-    font-family:"monarcha";
-    src:url("https://use.typekit.net/af/2a6ce4/00000000000000007735ddf8/30/l?subset_id=2&fvd=i6&v=3") format("woff2"),url("https://use.typekit.net/af/2a6ce4/00000000000000007735ddf8/30/d?subset_id=2&fvd=i6&v=3") format("woff"),url("https://use.typekit.net/af/2a6ce4/00000000000000007735ddf8/30/a?subset_id=2&fvd=i6&v=3") format("opentype");
-    font-display:auto;font-style:italic;font-weight:600;font-stretch:normal;
-    }
-    
-    @font-face {
-    font-family:"monarcha";
-    src:url("https://use.typekit.net/af/439c04/00000000000000007735ddf9/30/l?subset_id=2&fvd=n6&v=3") format("woff2"),url("https://use.typekit.net/af/439c04/00000000000000007735ddf9/30/d?subset_id=2&fvd=n6&v=3") format("woff"),url("https://use.typekit.net/af/439c04/00000000000000007735ddf9/30/a?subset_id=2&fvd=n6&v=3") format("opentype");
-    font-display:auto;font-style:normal;font-weight:600;font-stretch:normal;
-    }
-    
-    @font-face {
-    font-family:"monarcha";
-    src:url("https://use.typekit.net/af/36bc10/00000000000000007735ddfb/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/36bc10/00000000000000007735ddfb/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/36bc10/00000000000000007735ddfb/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
-    font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
-    }
-    
-    @font-face {
-    font-family:"monarcha";
-    src:url("https://use.typekit.net/af/bc3ddc/00000000000000007735ddfa/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/bc3ddc/00000000000000007735ddfa/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/bc3ddc/00000000000000007735ddfa/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
-    font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
-    }
-
 .steps {
     text-align: left;
     font-family: 'monarcha' !important;
@@ -64,57 +5,43 @@
     line-height: 26px;
 }
 
-.prevButton {
-    font-family: 'filson-soft' !important;
-    margin-right: 1em !important;
-    background-color: rgba(209, 41, 28, 0.11) !important;
-    color: #1A1123 !important;
-    // border-radius: 20px !important;
-    border-radius: 100px !important;
-    padding: 10px 24px !important;
-    text-transform: none !important;
-
-}
-
-.nextButton {
-    font-family: 'filson-soft' !important;
-    background-color: rgba(209, 41, 28, 0.11) !important;
-    color: #1A1123 !important;
-    // border-radius: 20px !important;
-    border-radius: 100px !important;
-    padding: 10px 24px !important;
-    text-transform: none !important;
+.StepsOverview {
+    display:flex;
+    padding: 0 4em;
+    width: 66%;
+    text-align: center;
+    margin-top: 2%;
+    position: relative;
 }
 
 .WalkthruScrollElems {
+    flex-grow: 3;
     margin-top: 1em;
     overflow: auto;
     height: 75%;
     position:absolute;
     box-shadow: 0 10px 5px -2px rgb(206, 196, 196);
     padding: 18px;
-    padding-right: 180px;
+    // padding-right: 180px;
     top: 84px;
+    margin-right: 2em;
+    border-radius: 5px;
 }
 
-.iheader{
-    /* Instructions */
+.WalkthruScrollElems::-webkit-scrollbar{
+    background-color: #EFEAE4;
+    width: 10px;
+}
+
+.WalkthruScrollElems::-webkit-scrollbar-thumb{
+    background-color: #908B87;
+    border-radius: 10px;
+}
+
+.backbutton{
     position: absolute;
-    width: 623px;
-    height: 54px;
-    left: 147px;
-    top: 0px;
-
-    /* H2 */
-    font-family: 'filson-soft';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 55px;
-    line-height: 55px;
-    align-items: center;
-    text-align: center;
-
-    /* tomato */
-
-    color: #D1291C;
+    width: 163px;
+    height: 48px;
+    left: 796px;
+    top: 6px;
 }

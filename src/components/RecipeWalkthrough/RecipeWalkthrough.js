@@ -1,8 +1,10 @@
-import { Route, Routes, useState , useEffect} from "react";
+import { Route, Routes, useState , useEffect, useContext } from "react";
 import CompleteRecipe from "../CompleteRecipe/CompleteRecipe.js";
 import './RecipeWalkthrough.scss'
 import PropTypes from 'prop-types';
 import { FormGroup, FormControlLabel, Checkbox, LinearProgress, Box, Typography, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import Instruction from "../Instruction/Instruction.js";
+import {ProgressContext} from './../ExpandRecipe/ExpandRecipe.js'
 
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -39,32 +41,29 @@ value: PropTypes.number.isRequired,
 
 function RecipeWalkthrough(props) {
     const [finish, setFinish] = useState(false);
-    const [checked, setChecked] = useState(Array(props.steps.length).fill(false));
+    // const [checked, setChecked] = useState(Array(props.steps.length).fill(false));
+    const [checked, setChecked] = useState([]);
+    const { progress, setProgress } = useContext(ProgressContext);
+    // console.log(useContext(ProgressContext))
 
     const handleClick = (index) => {
-        setChecked(() => 
-            checked[index] = !checked[index]
-        );
+        checked[index] = !checked[index];
+        console.log(checked)
     };
 
-    // const decClick = () => {
-    //     setIndex(index - 1);
-    // }
-
-    // const recipeWalk = (
-    //     <div className="steps">
-    //         <h4>{props.steps[index]}</h4>
-    //         {index > 0 ? <Button variant="contained" className="prevButton" onClick={decClick}>Previous Steps</Button> : null}
-    //         {index < (props.steps.length - 1) ? <Button variant="contained" className="nextButton" onClick={handleClick}>Next Steps</Button> : null}
-    //         {index === (props.steps.length - 1) ? <Button variant="contained" className="nextButton" onClick={() => setFinish(!finish)}>Finish Recipe!</Button> : null}
-    //     </div> 
-    // );
+    const handleCheck = (event) => {
+        let updatedList = [...checked];
+        if (event.target.checked) {
+          updatedList = [...checked, event.target.value];
+        } else {
+          updatedList.splice(checked.indexOf(event.target.value), 1);
+        }
+        setChecked(updatedList);
+        setProgress((updatedList.length/props.steps.length)*100);
+    };
 
     const recipeWalk = (
         <div>
-            <h2>
-                <div className="iheader">Instructions</div>
-            </h2>
             <div className="WalkthruScrollElems">
                 {/* {console.log(props.steps)}
                 {console.log(checked)} */}
@@ -75,14 +74,13 @@ function RecipeWalkthrough(props) {
                             <td>
                                 <h4>
                                     <FormGroup className="steps">
-                                        {console.log(steps)}
-                                        {console.log(index)} 
-                                        <FormControlLabel sx={{fontFamily: 'monarcha'}} control={<Checkbox size="large" style ={{color: "#3B9F2B",}} onChange={() => checked[index] = !checked[index]}/>} label={<Typography className="steps">{steps}</Typography>}/>
+                                        <FormControlLabel sx={{fontFamily: 'monarcha'}} control={<Checkbox size="large" style ={{color: "#3B9F2B",}} onChange={handleCheck}/>} label={<Typography className="steps">{steps}</Typography>}/>
                                     </FormGroup>
                                 </h4>
                             </td>
                         </tr>
                     )}
+                    <Instruction step = {props.steps[0]} handleCheck = {handleCheck}/>
                 </tbody>
             </div>
         </div>

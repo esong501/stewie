@@ -1,0 +1,28 @@
+.IndivInstruction {
+    text-align: left;
+    width: 100%;
+    // display: inline-block;
+    display: flex;
+    
+}
+
+
+.IndivDict {
+   
+}
+
+.CheckBoxInstruct {
+    // float: left;
+    
+}
+
+
+.InstructionText{
+    font-family: 'monarcha' !important;
+}
+
+.DictButton {
+    all: unset;
+    color: var(--tangerine);
+    text-decoration: underline;
+}
