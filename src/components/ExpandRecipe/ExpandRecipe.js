@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import { Link, Route, Routes } from "react-router-dom";
 
 import './ExpandRecipe.scss';
@@ -38,6 +38,13 @@ function LinearProgressWithLabel(props) {
     value: PropTypes.number.isRequired,
   };
 
+export const ProgressContext = createContext();
+
+// export const progressContext = createContext({
+//     checked: [],
+//     setChecked: () => {}
+// });
+
 function ExpandRecipe(props) {
     // const navigate = useNavigate();
     const [isCooking, setIsCooking] = useState(false);
@@ -73,22 +80,34 @@ function ExpandRecipe(props) {
         </div>
     )
 
-    const [progress, setProgress] = useState(10);
+    const [progress, setProgress] = useState(0);
+    // const [checked, setChecked] = useState([]);
+    // const value = { checked, setChecked };
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-        setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
-        }, 800);
-        return () => {
-        clearInterval(timer);
-        };
-    }, []);
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //     setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
+    //     }, 800);
+    //     return () => {
+    //     clearInterval(timer);
+    //     };
+    // }, []);
+
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //     // console.log(checked)
+    //     // setProgress((checked.length/props.recipe.instructions.length)*100);
+    //     }, 800);
+    //     return () => {
+    //     clearInterval(timer);
+    //     };
+    // }, []);
     
     return (
         <div>
             <Header />
-            <div class="Recipe">
-                
+            <ProgressContext.Provider value={{ progress, setProgress }}>
+            <div class="Recipe">  
                 <div class = "RecipeSidebar">
                     {isCooking ? <Box sx={{ width: '40%', ml: 19 }}>
                                         <LinearProgressWithLabel value={progress} />
@@ -123,9 +142,11 @@ function ExpandRecipe(props) {
                 </div>
                 <div class="RecipeOverview">
                     {!isCooking ? recipeTitle: instructions}
-                    {isCooking ? <RecipeWalkthrough steps = {props.recipe.instructions} index={0}></RecipeWalkthrough>: recipeOverview}
+                        {isCooking ? <RecipeWalkthrough steps = {props.recipe.instructions} index={0}></RecipeWalkthrough>: recipeOverview}
+                    
                 </div>
             </div>
+            </ProgressContext.Provider>
             {/* <Footer /> */}
         </div>
     );
