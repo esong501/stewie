@@ -80,7 +80,7 @@ function RecipeWalkthrough(props) {
                             </td>
                         </tr>
                     )}
-                    <Instruction step = {props.steps[0]} />
+                    <Instruction step = {props.steps[0]} handleCheck = {handleCheck}/>
                 </tbody>
             </div>
         </div>

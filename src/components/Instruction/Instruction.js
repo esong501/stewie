@@ -29,6 +29,7 @@ function Instruction(props) { // later props can be like props.dictitem and prop
                     <Checkbox
                         size="large"
                         style ={{color: "#3B9F2B",}}
+                        onChange={props.handleCheck}
                     />
                 }
                 className="CheckBoxInstruct"
