@@ -10,6 +10,8 @@ import './Recipe.css';
 import bchick from './../img/newbake.png';
 import brchick from './../img/braised-chick.jpeg';
 import cchick from './../img/catalan-chick.jpeg';
+import gcheese from '../img/grilledcheese.svg';
+import churro from '../img/churro.svg';
 import Header from './Header/Header.js';
 import Footer from './Footer/Footer.js';
 
@@ -85,8 +87,8 @@ function Recipe(props) {
     <div className='maindiv'>
       <div className='row'>
         <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel></div>
-        <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel></div>
-        <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel></div>
+        <div><RPanel tbn={gcheese} name="Grilled Cheese" ></RPanel></div>
+        <div><RPanel tbn={churro} name="Churros"></RPanel></div>
       </div>
     </div>
   </div>
