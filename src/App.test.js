@@ -24,10 +24,10 @@ const api_url = 'https://api.edamam.com/api/recipes/v2/?app_id='+app_id+'&app_ke
     +'&q=chicken';
 
 
-// var reicpeData = fetchData(api_url).then((res) => {
-//                     console.log(res)
-//                     return res
-//                   }); 
+var reicpeData = fetchData(api_url).then((res) => {
+                    console.log(res)
+                    return res
+                  }); 
 
 
 

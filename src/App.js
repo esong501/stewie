@@ -2,7 +2,7 @@
 // import './App.css';
 import { db } from './services/Firebase.js'
 import { useEffect, useState } from 'react';
-import { onValue, ref} from 'firebase/database';
+import { onValue, ref } from 'firebase/database';
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import Recipe from './components/Recipe.js';
@@ -19,36 +19,19 @@ function App() {
   // setRecipes((oldArray)  => [...oldArray, recipe]); // spread out the old array, and add the new recipe
 
   useEffect(() => {
-    const recipeRef = ref(db);
-    onValue(recipeRef, (snapshot) => {
+    onValue(ref(db), snapshot => {
       const data = snapshot.val(); // Data is the recipe
-      console.log(data);
       if (data !== null) {
         Object.values(data).map((recipe) => {
-          setRecipes((oldArray) => [recipe]); // Add each recipe to the recipes array
+          setRecipes((oldArray)  => [recipe]); // Add each recipe to the recipes array
         });
       }
     })
   }, []);
 
   return (  
-    <div>
-      {/* <Header /> */}
-      {/* <Recipe name="Baked Chicken" tbn={bchick} desc="6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on
-        1/2 teaspoon coarse salt
-        1/2 teaspoon Mrs. Dash seasoning
-        1/4 teaspoon freshly ground black pepper
-        "/> */}
-      <Query />
-      <Recipe />
-      {/* <ExpandRecipe /> */}
-      {/* <Recipe />
-      <Recipe />
-      <Recipe /> */}
-      {/* <rcolumn /> */}
-    
-      {/* <h1>Instructions: {recipe.instructions[0]}</h1> */}
-      {/* <div>
+    <Router>
+      <div>
         {console.log(recipes)}
           {recipes.map((recipe) => ( // Map each recipe and then print out ingredients
             // <h1>Instructions: {recipe.instructions[0]}</h1>
