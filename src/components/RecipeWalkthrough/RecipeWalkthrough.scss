@@ -45,3 +45,81 @@
     left: 796px;
     top: 6px;
 }
+
+.finishModal{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 16px;
+
+    position: absolute;
+    width: 600px;
+    height: 151px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Core / Empty - $euiColorEmptyShade */
+
+    background: #EFEAE4;
+    /* Shadow / Bottom large */
+
+    box-shadow: 0px 2.7px 9px rgba(0, 0, 0, 0.13), 0px 9.4px 24px rgba(0, 0, 0, 0.09), 0px 21.8px 43px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+}
+
+.modalTitle{
+    /* H4 */
+
+    font-family: 'monarcha' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px !important;
+    line-height: 39px;
+    height: 47px;
+
+    /* blueberry */
+
+    color: #4848C1;
+}
+
+.exitModal{
+    position: absolute;
+    left: 95%;
+    top: 5%;
+    color: #343741;
+    border: 0;
+    background-color: #EFEAE4;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.exitButtons{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    padding-top: 50px;
+    gap: 16px;
+
+    width: 600px;
+    height: 40px;
+
+    top: 90%
+}
+
+.noButton{
+    width: 134px;
+    height: 40px;
+    color: #D1291C !important;
+    font-family: 'FilsonProMedium' !important;
+    font-weight: 500;
+    // font-size: 14px;
+    border: 0;
+    background-color: #EFEAE4;
+    line-height: 21px;
+    text-align: center;
+    cursor: pointer;
+}

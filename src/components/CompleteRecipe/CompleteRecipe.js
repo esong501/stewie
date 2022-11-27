@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { Button, Modal, Box, Typography } from '@mui/material';
+import { Route, Routes, useState , useEffect, useContext } from "react";
 
 import bchick from '../../img/newbake.png';
 
@@ -12,11 +13,31 @@ function CompleteRecipe() {
         // navigate(path, {state:{image:{bchick}, label: 'hi', desc: 'hellohello'}});
         navigate(path);
     }
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     return (
         <div className="CongratsPage">
-           <h1>Congrats!</h1>
-           <Button variant="contained" className="ReturnButton" onClick={routeChange}>Return To Home</Button>
+           {/* <h1>Congrats!</h1> */}
+           <Button variant="contained" className='yesButton' onClick={handleOpen}>Yes!</Button>
+           <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box className='congratsModal'>
+                    <Typography id="modal-modal-title" className='congratsTitle'>
+                        Congratulations!
+                    </Typography>
+                    <Typography id="modal-modal-description" className='congratsMessage'>
+                        You just cooked a meal!
+                    </Typography>
+                    <Button variant="contained" className="ReturnButton" onClick={routeChange}>Return To Home</Button>
+                </Box>
+            </Modal>
+           
         </div> 
     );
 }
