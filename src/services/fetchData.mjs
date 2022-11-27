@@ -20,12 +20,41 @@ export async function fetchData(url) {
   return recipeJSON;
 }
 
+//https://www.w3docs.com/snippets/javascript/how-to-convert-the-image-into-a-base64-string-using-javascript.html
+function toDataURL(src, callback, outputFormat) {
+  let image = document.createElement("img");
+  image.crossOrigin = 'Anonymous';
+  image.onload = function () {
+    let canvas = document.createElement('canvas');
+    let ctx = canvas.getContext('2d');
+    let dataURL;
+    canvas.height = this.naturalHeight;
+    canvas.width = this.naturalWidth;
+    ctx.drawImage(this, 0, 0);
+    dataURL = canvas.toDataURL(outputFormat);
+    callback(dataURL);
+  };
+  image.src = src;
+  if (image.complete || image.complete === undefined) {
+    image.src = "data:image/gif;base64, R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+    image.src = src;
+  }
+}
+
 // parse the data into a list of [recipe,ingredients] pairs and return
 export function parseData(data) {
   var recipeJSON = [];
 
   for (var i = 0; i < Object.keys(data.hits).length; i++) {
       var recipeName = data.hits[i].recipe.label;
+      var recipeImage = data.hits[i].recipe.image;
+
+      toDataURL(recipeImage,
+      function (dataUrl) {
+        dataUrl = recipeImage
+      })
+
+
       var ingredientsString = "";
 
       //console.log(recipeName);
@@ -33,7 +62,8 @@ export function parseData(data) {
         var ingredient = data.hits[i].recipe.ingredients[j].text;
         ingredientsString += ingredient+'\n';
       }
-      recipeJSON.push([recipeName, ingredientsString]);
+
+      recipeJSON.push([recipeName, recipeImage, ingredientsString]);
 
       // FILE RW
       // fileSystem.open('ftc/src/recipes/'+recipeName+'.txt','r+', (err, fd) => {

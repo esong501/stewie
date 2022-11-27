@@ -1,18 +1,8 @@
-import { db } from '.././services/Firebase.js'
-import { useState } from 'react';
-import { onValue, ref } from 'firebase/database';
+import { selectData } from '.././services/FirebaseModule.js'
 
-//const [recipes, setRecipes] = useState([]);
-var data = null;
-const recipeRef = ref(db,"recipe");
-
-onValue(recipeRef, (snapshot) => {
-    snapshot.forEach((childSnapshot) => {
-        const childKey = childSnapshot.key;
-        const childData = childSnapshot.val();
-    });
-}, {
-    onlyOnce: true
-});
+const data = await selectData("recipe")
+.finally((res) => {
+    return res
+})
 
 console.log(data);

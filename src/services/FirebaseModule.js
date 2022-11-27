@@ -1,11 +1,11 @@
 import {ref, get, set, child, update, remove, onValue} from "firebase/database";
 import {db} from "./Firebase.js"
 
-async function insertData(key, val) {
+function insertData(key, val) {
     // parse the search string
     console.log("SEARCHING");
     // insert the recipe
-    const data = await set(ref(db,key), {
+    set(ref(db,key), {
         value: val
     })
     .then(() => {
@@ -16,7 +16,7 @@ async function insertData(key, val) {
         console.log("insert unsuccessful: "+error);
         return 1;
     });
-    return data;
+    console.log("exitting");
 }
 
 async function selectData(key) {
