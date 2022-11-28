@@ -9,6 +9,8 @@ import Recipe from './components/Recipe.js';
 import ExpandRecipe from './components/ExpandRecipe/ExpandRecipe.js';
 import RecipeWalkthrough from './components/RecipeWalkthrough/RecipeWalkthrough.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header.js';
+import { Footer } from 'rsuite';
 
 
 function App() {
@@ -21,19 +23,23 @@ function App() {
   useEffect(() => {
     onValue(ref(db), snapshot => {
       const data = snapshot.val(); // Data is the recipe
+      // console.log(data.recipes_5.value)
       if (data !== null) {
-        Object.values(data).map((recipe) => {
-          setRecipes((oldArray)  => [recipe]); // Add each recipe to the recipes array
-        });
+        // Object.values(data.recipes_5.value).map((recipe) => {
+        //   setRecipes((oldArray)  => [recipe]); // Add each recipe to the recipes array
+        // });
+        setRecipes(Object.values(data.recipes_5.value))
       }
+      {console.log(recipes)}
     })
   }, []);
 
   return (  
     <Router>
       <div>
-        {console.log(recipes)}
-          {recipes.map((recipe) => ( // Map each recipe and then print out ingredients
+        <Header/>
+        {/* {console.log(recipes)} */}
+          {/* {recipes.map((recipe) => ( // Map each recipe and then print out ingredients
             // <h1>Instructions: {recipe.instructions[0]}</h1>
             // <Recipe tbn={recipe.image} name={recipe.label} desc={recipe.instructions[1]}></Recipe> // this is an issue where the array has to be init
             // <Recipe recipe={recipe}></Recipe> 
@@ -43,10 +49,12 @@ function App() {
               <Route path="/" element={<Recipe recipe={recipe}/>}/>
               <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} />
             </Routes>
-            ))}
-          
-        {/* <Footer /> */}
-      
+            ))} */}
+          <Routes>
+              <Route path="/" element={<Recipe recipes={recipes}/>}/>
+              {/* <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} /> */}
+            </Routes>
+        <Footer/>
       </div>
     </Router>
   );

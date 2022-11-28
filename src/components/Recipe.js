@@ -82,13 +82,24 @@ function Recipe(props) {
   return(
   //  <RPanel name={props.name} desc={props.desc}></RPanel>
   <div>
-     <Header/>
+     {/* <Header/> */}
         <div className='pagehead'>Recipes</div>
     <div className='maindiv'>
       <div className='row'>
-        <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel></div>
+        {/* <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel></div>
         <div><RPanel tbn={gcheese} name="Grilled Cheese" ></RPanel></div>
-        <div><RPanel tbn={churro} name="Churros"></RPanel></div>
+        <div><RPanel tbn={churro} name="Churros"></RPanel></div> */}
+        {props.recipes.map((recipe) => ( // Map each recipe and then print out ingredients
+            // <h1>Instructions: {recipe.instructions[0]}</h1>
+            // <Recipe tbn={recipe.image} name={recipe.label} desc={recipe.instructions[1]}></Recipe> // this is an issue where the array has to be init
+            // <Recipe recipe={recipe}></Recipe> 
+            // <ExpandRecipe recipe={recipe}></ExpandRecipe>
+            <Routes>
+              {console.log(recipe)}
+              <Route path="/" element={<RPanel tbn={"data:image/jpeg;base64,"+recipe.image} name={recipe.label} desc={recipe.instructions[0]}></RPanel>}/>
+              <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} />
+            </Routes>
+            ))}
       </div>
     </div>
   </div>
