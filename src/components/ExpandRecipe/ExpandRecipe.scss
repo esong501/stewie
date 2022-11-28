@@ -68,6 +68,17 @@
     height: 100%;
 }
 
+.RTitle {
+    position: relative;
+    flex-grow: 6;
+}
+
+.IHeader {
+    position: relative; 
+    flex-grow: 6;
+    color: #D1291C ;
+}
+
 .RecipeOverview {
     padding: 0 4em;
     width: 66%;
@@ -85,12 +96,14 @@
         font-family: 'monarcha';
         font-size: 1.25em;
     }
+
     h1 {
         font-family: 'filson-soft';
         margin-top: 0;
         margin-bottom: 0;
         font-size: 4em;
     }
+    
 }
 .RecipeSidebar {
     margin-top: 2%;
@@ -147,4 +160,27 @@
     background-color: #D1291C !important;
     text-transform: none !important;
     border-radius: 20px !important;
+}
+
+.headerContain{
+    display: flex;
+}
+
+.backButton{
+    display:flex;
+    font-weight: 300 !important;
+    font-size: 20px !important;
+    font-family: 'filson-soft' !important;
+    color: #908B87;
+    border: 0;
+    background-color: #EFEAE4;
+    // flex-grow: 2;
+    text-align: center;
+    position: relative;
+    width: 163px;
+    height:50px;
+    // left: 880px;
+    // top: 6px;
+    line-height: 2.25;
+    cursor: pointer;
 }

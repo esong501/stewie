@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import { Link, Route, Routes } from "react-router-dom";
 
 import './ExpandRecipe.scss';
@@ -8,10 +8,12 @@ import RecipeWalkthrough from '../RecipeWalkthrough/RecipeWalkthrough.js';
 import Recipe from '../Recipe.js';
 import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
 import { PropTypes } from 'prop-types';
-import { Typography, Checkbox, LinearProgress, Box, Button, FormControlLabel, FormGroup } from '@mui/material';
+import { Typography, Checkbox, LinearProgress, Box, Button, FormControlLabel, FormGroup, SvgIcon, IconButton } from '@mui/material';
+import { KeyboardBackspace } from '@mui/icons-material/';
 
 // temp
 import bchick from '../../img/newbake.png';
+import { textTransform } from '@mui/system';
 
 function LinearProgressWithLabel(props) {
     return (
@@ -36,13 +38,19 @@ function LinearProgressWithLabel(props) {
     value: PropTypes.number.isRequired,
   };
 
+export const ProgressContext = createContext();
+
+// export const progressContext = createContext({
+//     checked: [],
+//     setChecked: () => {}
+// });
+
 function ExpandRecipe(props) {
     // const navigate = useNavigate();
     const [isCooking, setIsCooking] = useState(false);
 
     const recipeOverview = (
         <div class = "NavTabs">
-            <h1>{props.recipe.label}</h1>
             <TabBarRecipe recipe = {props.recipe}/>
             
             {isCooking === false ? <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Start Cooking </Button> : <Button variant="contained" className="CookButton" onClick={() => setIsCooking(!isCooking)}> Stop Cooking </Button>}
@@ -50,21 +58,56 @@ function ExpandRecipe(props) {
         </div>
     );
 
-    const [progress, setProgress] = useState(10);
+    const recipeTitle = (
+        <div className='headerContain'>
+            <div class = "RTitle">
+                <h1>{props.recipe.label}</h1>
+            </div>
+            {/* <div className='backContain'>
+                <KeyboardBackspace className='backArrow'/>
+                <div className="backButton"><a href='/' style={{textDecoration: 'none', color:'#908B87'}}>Back</a></div>
+            </div> */}
+                <Button variant="text" class='backButton' href="/" startIcon={<KeyboardBackspace style={{width:'48px', height: '48px'}}/>}>Back</Button>
+        </div>
+    )
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-        setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
-        }, 800);
-        return () => {
-        clearInterval(timer);
-        };
-    }, []);
+    const instructions = (
+        <div className='headerContain'>
+            <div className='IHeader'>
+                <h1>Instructions</h1>
+            </div>
+            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)} startIcon={<KeyboardBackspace style={{width:'48px', height: '48px'}}/>}>Exit</Button>
+        </div>
+    )
+
+    const [progress, setProgress] = useState(0);
+    // const [checked, setChecked] = useState([]);
+    // const value = { checked, setChecked };
+
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //     setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
+    //     }, 800);
+    //     return () => {
+    //     clearInterval(timer);
+    //     };
+    // }, []);
+
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //     // console.log(checked)
+    //     // setProgress((checked.length/props.recipe.instructions.length)*100);
+    //     }, 800);
+    //     return () => {
+    //     clearInterval(timer);
+    //     };
+    // }, []);
     
     return (
         <div>
             <Header />
-            <div class="Recipe">
+            <ProgressContext.Provider value={{ progress, setProgress }}>
+            <div class="Recipe">  
                 <div class = "RecipeSidebar">
                     {isCooking ? <Box sx={{ width: '40%', ml: 19 }}>
                                         <LinearProgressWithLabel value={progress} />
@@ -98,9 +141,12 @@ function ExpandRecipe(props) {
                     </div>
                 </div>
                 <div class="RecipeOverview">
-                    {isCooking ? <RecipeWalkthrough steps = {props.recipe.instructions} index={0}></RecipeWalkthrough>: recipeOverview}
+                    {!isCooking ? recipeTitle: instructions}
+                        {isCooking ? <RecipeWalkthrough steps = {props.recipe.instructions} index={0}></RecipeWalkthrough>: recipeOverview}
+                    
                 </div>
             </div>
+            </ProgressContext.Provider>
             {/* <Footer /> */}
         </div>
     );
