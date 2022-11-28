@@ -30,7 +30,7 @@ function App() {
         // });
         setRecipes(Object.values(data.recipes_5.value))
       }
-      {console.log(recipes)}
+      // {console.log(recipes)}
     })
   }, []);
 
@@ -38,7 +38,7 @@ function App() {
     <Router>
       <div>
         <Header/>
-        {/* {console.log(recipes)} */}
+        {console.log(recipes)}
           {/* {recipes.map((recipe) => ( // Map each recipe and then print out ingredients
             // <h1>Instructions: {recipe.instructions[0]}</h1>
             // <Recipe tbn={recipe.image} name={recipe.label} desc={recipe.instructions[1]}></Recipe> // this is an issue where the array has to be init
