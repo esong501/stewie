@@ -49,6 +49,7 @@ function ExpandRecipe(props) {
     // const navigate = useNavigate();
     const [isCooking, setIsCooking] = useState(false);
 
+    
     const recipeOverview = (
         <div class = "NavTabs">
             <TabBarRecipe recipe = {props.recipe}/>
@@ -117,8 +118,8 @@ function ExpandRecipe(props) {
                         <ul class="TagsList">
                             <li>Level 1</li>
                             <li>{props.recipe.ingredientLines.length} Ingredients</li>
-                            <li>{props.recipe.dietLabels[0]}</li>
-                            <li>{props.recipe.healthLabels[0]}</li>
+                            {/* <li>{props.recipe.dietLabels[0]}</li>
+                            <li>{props.recipe.healthLabels[0]}</li> */}
                             <li>total time</li>
                         </ul>
                     </div>

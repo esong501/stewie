@@ -28,7 +28,7 @@ function RPanel(props) {
     // <Router>
       <div>
         {/* <Link to='/recipedetails'> */}
-        <a href='recipedetails'>
+        <a href={'recipedetails/'+props?.recipe?.label}>
         <button className='recipemock'>
           <div className='timedisplay'>{props.time}</div>
           {/* <div className='rtitle'>{this.props.name}</div>
@@ -80,21 +80,10 @@ function RPanel(props) {
 
 function Recipe(props) {
   return(
-  //  <RPanel name={props.name} desc={props.desc}></RPanel>
-  <div>
-     <Header/>
-        <div className='pagehead'>Recipes</div>
-    <div className='maindiv'>
-      <div className='row'>
-        <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]}></RPanel></div>
-        <div><RPanel tbn={gcheese} name="Grilled Cheese" ></RPanel></div>
-        <div><RPanel tbn={churro} name="Churros"></RPanel></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  )
-  }
+    <RPanel 
+      tbn={"data:image/jpeg;base64,"+props.recipe.image} 
+      name={props.recipe.label} 
+      desc={props.recipe.instructions[0]}/>
+  )}
 
 export default Recipe;
