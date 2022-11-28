@@ -74,8 +74,8 @@ function ExpandRecipe(props) {
                         <ul class="TagsList">
                             <li>Level 1</li>
                             <li>{props.recipe.ingredientLines.length} Ingredients</li>
-                            <li>{props.recipe.dietLabels[0]}</li>
-                            <li>{props.recipe.healthLabels[0]}</li>
+                            {/* <li>{props.recipe.dietLabels[0]}</li> */}
+                            {/* <li>{props.recipe.healthLabels[0]}</li> */}
                             <li>total time</li>
                         </ul>
                     </div>
