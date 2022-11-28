@@ -112,24 +112,24 @@ function ExpandRecipe(props) {
                     {isCooking ? <Box sx={{ width: '40%', ml: 19 }}>
                                         <LinearProgressWithLabel value={progress} />
                                     </Box> : null}
-                    {isCooking ? <h2>{props.recipe.label}</h2> : null}
+                    {isCooking ? <h2>{props.recipe[1].label}</h2> : null}
                     <div class="RecipeTags">
                         <ul class="TagsList">
                             <li>Level 1</li>
-                            <li>{props.recipe.ingredientLines.length} Ingredients</li>
-                            <li>{props.recipe.dietLabels[0]}</li>
-                            <li>{props.recipe.healthLabels[0]}</li>
+                            <li>{props.recipe[1].ingredientLines.length} Ingredients</li>
+                            {/* <li>{props.recipe.dietLabels[0]}</li> */}
+                            {/* <li>{props.recipe.healthLabels[0]}</li> */}
                             <li>total time</li>
                         </ul>
                     </div>
                     <div class = "RecipeIngreds">
                         <h2>Ingredients</h2>
                         <ul class="IngredientsList">
-                            <li>{props.recipe.ingredientLines[0]}</li>
-                            <li>{props.recipe.ingredientLines[1]}</li>
-                            <li>{props.recipe.ingredientLines[2]}</li>
-                            <li>{props.recipe.ingredientLines[3]}</li>
-                            <li>{props.recipe.ingredientLines[4]}</li>
+                            <li>{props.recipe[1].ingredientLines[0]}</li>
+                            <li>{props.recipe[1].ingredientLines[1]}</li>
+                            <li>{props.recipe[1].ingredientLines[2]}</li>
+                            <li>{props.recipe[1].ingredientLines[3]}</li>
+                            <li>{props.recipe[1].ingredientLines[4]}</li>
                             {/* <li>{props.recipe.ingredientLines[5]}</li> */}
                         </ul>
                         {/* <FormGroup className="IngredientsList">
@@ -142,7 +142,7 @@ function ExpandRecipe(props) {
                 </div>
                 <div class="RecipeOverview">
                     {!isCooking ? recipeTitle: instructions}
-                        {isCooking ? <RecipeWalkthrough steps = {props.recipe.instructions} index={0}></RecipeWalkthrough>: recipeOverview}
+                        {isCooking ? <RecipeWalkthrough steps = {props.recipe[1].instructions} index={0}></RecipeWalkthrough>: recipeOverview}
                     
                 </div>
             </div>

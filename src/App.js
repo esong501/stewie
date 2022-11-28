@@ -10,7 +10,7 @@ import ExpandRecipe from './components/ExpandRecipe/ExpandRecipe.js';
 import RecipeWalkthrough from './components/RecipeWalkthrough/RecipeWalkthrough.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header.js';
-import { Footer } from 'rsuite';
+import Footer from './components/Footer/Footer.js';
 
 
 function App() {
@@ -52,10 +52,11 @@ function App() {
             ))} */}
           <Routes>
               <Route path="/" element={<Recipe recipes={recipes}/>}/>
-              {/* <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} /> */}
-            </Routes>
-        <Footer/>
-      </div>
+              <Route path="/recipedetails" element={<ExpandRecipe recipe={recipes}/>} />
+          </Routes>
+          {/* <Footer/> */}
+          {/* <Recipe recipes={recipes}/> */}
+        </div>
     </Router>
   );
 

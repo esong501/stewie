@@ -94,11 +94,12 @@ function Recipe(props) {
             // <Recipe tbn={recipe.image} name={recipe.label} desc={recipe.instructions[1]}></Recipe> // this is an issue where the array has to be init
             // <Recipe recipe={recipe}></Recipe> 
             // <ExpandRecipe recipe={recipe}></ExpandRecipe>
-            <Routes>
-              {console.log(recipe)}
-              <Route path="/" element={<RPanel tbn={"data:image/jpeg;base64,"+recipe.image} name={recipe.label} desc={recipe.instructions[0]}></RPanel>}/>
-              <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} />
-            </Routes>
+            // <Routes>
+            //   {console.log(recipe)}
+            //   <Route path="/" element={<RPanel tbn={"data:image/jpeg;base64,"+recipe.image} name={recipe.label} desc={recipe.instructions[0]} time={(recipe.instructions.length*3).toString() + " min"}></RPanel>}/>
+            //   <Route path="/recipedetails" element={<ExpandRecipe recipe={props.recipes[1]}/>} />
+            // </Routes>
+            <RPanel tbn={"data:image/jpeg;base64,"+recipe.image} name={recipe.label} desc={recipe.instructions[0]} time={(recipe.instructions.length*3).toString() + " min"}></RPanel>
             ))}
       </div>
     </div>
