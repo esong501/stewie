@@ -22,9 +22,10 @@ function App() {
     onValue(ref(db), snapshot => {
       const data = snapshot.val(); // Data is the recipe
       if (data !== null) {
-        Object.values(data).map((recipe) => {
-          setRecipes((oldArray)  => [recipe]); // Add each recipe to the recipes array
-        });
+      //   Object.values(data).map((recipe) => {
+      //     setRecipes((oldArray)  => [recipe]); // Add each recipe to the recipes array
+      //   });
+        setRecipes([Object.values(data.recipes_5.value)[1]]);
       }
     })
   }, []);
@@ -39,11 +40,16 @@ function App() {
             // <Recipe recipe={recipe}></Recipe> 
             // <ExpandRecipe recipe={recipe}></ExpandRecipe>
             <Routes>
-              {console.log(recipe)}
               <Route path="/" element={<Recipe recipe={recipe}/>}/>
               <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} />
             </Routes>
             ))}
+          {/* {console.log(recipes)}
+          {console.log(recipes[1])} */}
+          {/* <Routes> */}
+              {/* <Route path="/" element={<Recipe recipe={recipes[1]}/>}/>
+              <Route path="/recipedetails" element={<ExpandRecipe recipe={recipes[1]}/>} /> */}
+          {/* </Routes> */}
           
         {/* <Footer /> */}
       
