@@ -3,20 +3,50 @@ import './Instruction.scss';
 import Dictionary from '../Dictionary/Dictionary.js';
 import { FormGroup, FormControlLabel, Checkbox, LinearProgress, Box, Typography, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import reactStringReplace from 'react-string-replace';
+import { set } from 'firebase/database';
+import { useEffect } from 'react';
 
 
 function Instruction(props) { // later props can be like props.dictitem and props description
-    const [dict, setDict] = useState(false)
+    const termBank = new Map([
+        ["dry", "pat dry with paper towel"],
+        ["al dente", "pasta is cooked to just firm as opposed to a softer texture"],
+        ["evenly", "hi"]
+    ]);
+
+
+    const [dict, setDict] = useState(false);
+    const [foundTerm, setTerm] = useState("");
+
+    // useEffect(() => {
+        
+    // })
+
+    
 
     const showDictionary = (
         <div class="IndivDict">
-           <Dictionary word="dry"/>
+           {/* <Dictionary word="dry" def={termBank.get("dry")}/> */}
+           <Dictionary word = {foundTerm} def = {termBank.get(foundTerm)}/>
         </div>
     );
 
+    function find() {
+        const step = props.step;
+        for (const key of termBank.keys()) {
+            // console.log(key);
+            if (step.includes(key)){
+                if (foundTerm === "") {
+                    setTerm(key)
+                }
+                return key;
+            }
+        }
+    }
+
     const dictionaryItem = (
-        reactStringReplace(props.step, 'dry', (match, i) => ( // dry is hardcoded but we can remove this later
-            <button class="DictButton" onClick={()=>setDict(!dict)}>dry</button>
+        reactStringReplace(props.step, find(), (match, i) => ( // dry is hardcoded but we can remove this later
+            <button class="DictButton" onClick={()=>setDict(!dict)}>{match}</button>
         ))
     )
 
