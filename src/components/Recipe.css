@@ -205,6 +205,27 @@
     border-radius: 8px;
   }
 
+  .dietatts{
+    transform-origin: top left;
+    transform: scale(0.67);
+  }
+
+  .attributes{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: absolute;
+    gap: 16px;
+    left: 40px;
+    top: 16px;
+    width: 264px;
+  }
+
+  .timelogo{
+    transform: scale(0.5);
+    
+  }
+
   .timedisplay {
     /* Rectangle 16 */
     /* position: absolute;
@@ -232,7 +253,7 @@
 
     /* P5 */
 
-    font-family: 'Filson Soft';
+    font-family: 'filson-soft';
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
