@@ -31,7 +31,7 @@ const api_url = 'https://api.edamam.com/api/recipes/v2/?app_id='+app_id+'&app_ke
     +'&field=ingredientLines'
     +'&field=label'
     +'&field=image'
-    +'&q=chicken';
+    +'&q=dessert';
 
   console.log(api_url);
 var recipeData = await fetchData(api_url)
@@ -43,10 +43,11 @@ var recipeData = await fetchData(api_url)
 
 var recipe_5 = [];
 for (var i = 0; i < 5; i++) {
-  recipeData.hits[i].recipe.image = labels64[i];
-  recipeData.hits[i].recipe["instructions"] = instructions[i];
-  recipe_5.push(recipeData.hits[i].recipe)
+  //recipeData.hits[i].recipe.image = labels64[i];
+  //recipeData.hits[i].recipe["instructions"] = instructions[i];
+  console.log(recipeData.hits);
+  //recipe_5.push(recipeData.hits[i].recipe)
 }
 
-console.log(recipe_5);
-insertData("recipes_5", recipe_5);
+// console.log(recipe_5);
+// insertData("recipes_5", recipe_5);

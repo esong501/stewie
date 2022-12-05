@@ -23,12 +23,11 @@ function RPanel(props) {
   //   navigate(path, {props});
   // };
     // render () {
-
   return(
     // <Router>
       <div>
         {/* <Link to='/recipedetails'> */}
-        <a href={'recipedetails/'+props?.recipe?.label}>
+        <a href={props.uri}>
         <button className='recipemock'>
           <div className='timedisplay'>{props.time}</div>
           {/* <div className='rtitle'>{this.props.name}</div>
@@ -79,11 +78,14 @@ function RPanel(props) {
 // }
 
 function Recipe(props) {
+  console.log("PROP: "+props.uri);
   return(
     <RPanel 
       tbn={"data:image/jpeg;base64,"+props.recipe.image} 
       name={props.recipe.label} 
-      desc={props.recipe.instructions[0]}/>
+      desc={props.recipe.instructions[0]}
+      uri = {props.uri}
+    />
   )}
 
 export default Recipe;

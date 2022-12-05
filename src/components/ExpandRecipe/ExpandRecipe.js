@@ -118,8 +118,8 @@ function ExpandRecipe(props) {
                         <ul class="TagsList">
                             <li>Level 1</li>
                             <li>{props.recipe.ingredientLines.length} Ingredients</li>
-                            {/* <li>{props.recipe.dietLabels[0]}</li>
-                            <li>{props.recipe.healthLabels[0]}</li> */}
+                            <li>{props.recipe.dietLabels[0]}</li>
+                            <li>{props.recipe.healthLabels[0]}</li>
                             <li>total time</li>
                         </ul>
                     </div>
@@ -133,12 +133,12 @@ function ExpandRecipe(props) {
                             <li>{props.recipe.ingredientLines[4]}</li>
                             {/* <li>{props.recipe.ingredientLines[5]}</li> */}
                         </ul>
-                        {/* <FormGroup className="IngredientsList">
+                        <FormGroup className="IngredientsList">
                             <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[0]} />
                             <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[1]} />
                             <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[2]} />
                             <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[3]} />
-                        </FormGroup> */}
+                        </FormGroup>
                     </div>
                 </div>
                 <div class="RecipeOverview">

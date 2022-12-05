@@ -15,16 +15,18 @@ import { useRef } from 'react';
 
 const RecipeGrid = ({recipes}) => (
   <>
-    {recipes && recipes.map((singleRecipe) => (
-        <Recipe key={singleRecipe.label} recipe={singleRecipe}/>
-    ))}
+    {recipes && recipes.map((singleRecipe) => {
+        const uri = encodeURIComponent(singleRecipe.label);
+        return (
+            <Recipe key={singleRecipe.label} recipe={singleRecipe} uri={uri}/>
+        )
+    })}
 </>
 );
 
 export default function App() {
     // Testing, remove later
     const [recipes, setRecipes] = useState([]);
-    const componentIsMounted = useRef(true);
     // setRecipes((oldArray)  => [...oldArray, recipe]); // spread out the old array, and add the new recipe
 
     // async function getRecipes() {
@@ -45,30 +47,23 @@ export default function App() {
     //     }
     //   })
     // }, []);
-    useEffect(() => {
-        // each useEffect can return a cleanup function
-        return () => {
-            componentIsMounted.current = false;
-        };
-    }, []); // no extra deps => the cleanup function run this on component unmount
-
+    
     useEffect(() => {
         async function getData() {
             const dbRef = ref(db, "recipes_5");
             await get(dbRef).then((snapshot) => {
-                if (snapshot.exists() && componentIsMounted.current) {
+                if (snapshot.exists()) {
                     console.log(snapshot.val().value);
                     setRecipes(snapshot.val().value); // Add each recipe to the recipes array
                 }
             })
         }
-
         getData();
     }, []);
 
-    
-    
-
+    // set empty state
+    // onclick change state to be sepcific recipe
+    // pass into props for expanded recipe
     return (
       <>{recipes && (<Router>
             <Header />
@@ -76,15 +71,14 @@ export default function App() {
             <div className = 'maindiv' >
             <div className = 'row' >
               <Routes >
+                <Route path="/" element={<RecipeGrid recipes={recipes} />}/>
                   {recipes && recipes.map((singleRecipe) => {
-                      console.log("/recipedetails/" + encodeURIComponent(singleRecipe.label));
-                      return (
-                          <Route path = { "/recipedetails/" + encodeURIComponent(singleRecipe.label) }
-                              element = {<ExpandRecipe key = { singleRecipe.label } recipe = { singleRecipe }/> }
-                          />
-                      )
+                    const uri = singleRecipe.label;
+                    console.log("APP: "+uri);
+                    return (
+                        <Route path = {uri} element={ <ExpandRecipe recipe={singleRecipe}/> }/>
+                    )
                   })}
-                  <Route path="/" element={<RecipeGrid recipes={recipes}/>}/>
               </Routes> 
           </div>  
           </div> 
