@@ -2,8 +2,13 @@ import React, { Component, useEffect , useState} from 'react'
 import {Link, Routes, Route, useNavigate, Navigate, Router, Switch } from 'react-router-dom';
 import { ReactComponent as Time } from './../img/time.svg'
 import { SvgIcon } from '@mui/material';
+import { ReactComponent as Level1 } from './../img/level1.svg'
+import { ReactComponent as Level2 } from './../img/level2.svg'
 import { ReactComponent as Level3 } from './../img/level3.svg'
 import { ReactComponent as GlutenF } from './../img/gluten.svg'
+import { ReactComponent as Dairy } from './../img/dairy.svg'
+import { ReactComponent as Veget } from './../img/vegetarian.svg'
+import { ReactComponent as Pesca } from './../img/pescatarian.svg'
 
 // import { Panel, PanelGroup, Placeholder } from 'rsuite';
 
@@ -22,6 +27,33 @@ import Footer from './Footer/Footer.js';
 //   );
 // }
 
+function DrawTags(props) {
+
+  const diff = () => {
+    if (props.level === 1){
+      return <Level1/>
+    }
+    if (props.level === 2){
+      return <Level2/>
+    }
+    if (props.level === 0){
+      return <Level3/>
+    }
+  }
+  
+  return(
+    <div className='attributes'>
+      {diff()}
+      <div className='dietatts'>
+        {props.gluten ? <GlutenF/> : null}
+        {props.veget ? <Veget/> : null}
+        {props.dairy ? <Dairy/> : null}
+        {props.pesca ? <Pesca/> : null}
+      </div>
+    </div>
+  )
+}
+
 function RPanel(props) {
   // let navigate = useNavigate();
 
@@ -37,10 +69,7 @@ function RPanel(props) {
         {/* <Link to='/recipedetails'> */}
         <a href='recipedetails'>
         <button className='recipemock'>
-          <div className='attributes'>
-            <Level3 />
-            <GlutenF className='dietatts'/>
-          </div>
+          <DrawTags level={props.level} gluten={props.gluten} dairy={props.dairy} veget={props.veget} pesca={props.pesca} />
           <div className='timedisplay'>
             <Time className='timelogo' fill='#918B87'/>
             {/* <SvgIcon component={Time} /> */}
@@ -114,7 +143,7 @@ function Recipe(props) {
             //   <Route path="/" element={<RPanel tbn={"data:image/jpeg;base64,"+recipe.image} name={recipe.label} desc={recipe.instructions[0]} time={(recipe.instructions.length*3).toString() + " min"}></RPanel>}/>
             //   <Route path="/recipedetails" element={<ExpandRecipe recipe={props.recipes[1]}/>} />
             // </Routes>
-            <RPanel tbn={"data:image/jpeg;base64,"+recipe.image} name={recipe.label} desc={recipe.instructions[0]} time={(recipe.instructions.length*3).toString() + " min"}></RPanel>
+            <RPanel tbn={"data:image/jpeg;base64,"+recipe.image} name={recipe.label} desc={recipe.instructions[0]} time={(recipe.instructions.length*3).toString() + " min"} level={recipe.instructions.length%3} gluten={recipe.label.length%2 === 1} dairy={recipe.instructions[0].length%2 === 1} veget={false} pesca={false}></RPanel>
             ))}
       </div>
     </div>
