@@ -15,18 +15,13 @@ function Instruction(props) { // later props can be like props.dictitem and prop
         ["broil", "to cook directly over or under high heat, usually in an oven"],
         ["butterfly", "to cut a piece of meat through the middle, without cutting completely in half, and then to spread it out so that it resembles a butterfly"],
         ["chop", "to cut food smaller but not perfectly even (1/4-1/3 inch pieces)"],
-        ["evenly", "hi"]
+        ["evenly", "hitest this will come"],
     ]);
 
 
     const [dict, setDict] = useState(false);
     const [foundTerm, setTerm] = useState("");
 
-    // useEffect(() => {
-        
-    // })
-
-    
 
     const showDictionary = (
         <div class="IndivDict">
@@ -36,7 +31,7 @@ function Instruction(props) { // later props can be like props.dictitem and prop
     );
 
     function find() {
-        const step = props.step;
+        const step = props.step.toLowerCase();
         for (const key of termBank.keys()) {
             // console.log(key);
             if (step.includes(key)){

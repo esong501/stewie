@@ -9,7 +9,8 @@ function LandingPage(props) {
 
     let navigate = useNavigate();
     const routeChange = () => {
-        let path = "/";
+        // let path = "/";
+        let path = "/browse"
         navigate(path);
     }
 

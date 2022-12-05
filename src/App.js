@@ -41,8 +41,10 @@ function App() {
             // <Recipe recipe={recipe}></Recipe> 
             // <ExpandRecipe recipe={recipe}></ExpandRecipe>
             <Routes>
-              <Route path="/landing" element={<LandingPage/>}/>
-              <Route path="/" element={<Recipe recipe={recipe}/>}/>
+              {/* <Route path="/landing" element={<LandingPage/>}/> */}
+              <Route path="/" element={<LandingPage/>}/>
+              {/* <Route path="/" element={<Recipe recipe={recipe}/>}/> */}
+              <Route path="/browse" element={<Recipe recipe={recipe}/>}/>
               <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} />
             </Routes>
             ))}
