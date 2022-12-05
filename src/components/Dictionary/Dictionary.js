@@ -4,8 +4,7 @@ function Dictionary(props) {
 
     return (
         <div class="Dict">
-            {/* <FormControlLabel sx={{fontFamily: 'monarcha'}} /> */}
-            <p><span class="DictWord">{props.word}:</span> pat with paper towel</p>
+            <p><span class="DictWord">{props.word}:</span> {props.def}</p>
         </div>
     );
 }

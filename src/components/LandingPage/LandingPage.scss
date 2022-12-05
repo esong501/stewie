@@ -1,0 +1,76 @@
+.test {
+    // height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.Landing {
+    background-color: var(--apron);
+    height: 100vh;
+    background-image: url('../../img/landingpage/home_page.png');
+    background-size: contain;
+    // background-repeat: no-repeat;
+    background-position: 50% 85px;
+    animation: animatedBackground 40s linear infinite;
+}
+
+.StewieIntro {
+    font-family: 'monarcha';
+    text-align: center;
+    font-size: 40px;
+    line-height: 92px;
+    margin-bottom: 2em;
+}
+
+.StewieText {
+    // position: absolute;
+    font-family: 'filson-soft';
+    text-align: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 924px;
+    height: 419.95px;
+    left: 294px;
+    top: 621px;
+    margin: 0 auto;
+    // filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.25));
+//     position: absolute;
+// width: 924px;
+// height: 419.95px;
+// left: 294px;
+// top: 621px;
+
+filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.25));
+    background-image: url('../../img/landingpage/LandingPageCloud.svg');
+}
+
+.StewieContent {
+   top: 40%;
+   transform:translateY(65%);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 40px;
+}
+
+.StewieContent p {
+    margin-right: 3em;
+    margin-left: 3em;
+    margin-block-end: 0.5em;
+    // width: 500px;
+}
+
+.Pea {
+    position: absolute;
+    left: 31.71%;
+    right: 51.28%;
+    top: -130.78%; //  top: 30.78%;
+    bottom: 48.35%;
+    transform: matrix(1, 0.07, -0.07, 1, 0, 0);
+}
+
+@keyframes animatedBackground {
+    from { background-position: 0 85px; }
+    to { background-position: 100% 85px; }
+}
