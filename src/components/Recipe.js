@@ -1,5 +1,9 @@
 import React, { Component, useEffect , useState} from 'react' 
 import {Link, Routes, Route, useNavigate, Navigate, Router, Switch } from 'react-router-dom';
+import { ReactComponent as Time } from './../img/time.svg'
+import { SvgIcon } from '@mui/material';
+import { ReactComponent as Level3 } from './../img/level3.svg'
+import { ReactComponent as GlutenF } from './../img/gluten.svg'
 
 // import { Panel, PanelGroup, Placeholder } from 'rsuite';
 
@@ -7,13 +11,16 @@ import ExpandRecipe from './ExpandRecipe/ExpandRecipe.js';
 
 import './Recipe.css';
 // import './Recipe.scss';
-import bchick from './../img/newbake.png';
-import brchick from './../img/braised-chick.jpeg';
-import cchick from './../img/catalan-chick.jpeg';
 import gcheese from '../img/grilledcheese.svg';
 import churro from '../img/churro.svg';
 import Header from './Header/Header.js';
 import Footer from './Footer/Footer.js';
+
+// function TimeIcon() {
+//   return (
+//     <SvgIcon component={time} />
+//   );
+// }
 
 function RPanel(props) {
   // let navigate = useNavigate();
@@ -30,7 +37,15 @@ function RPanel(props) {
         {/* <Link to='/recipedetails'> */}
         <a href='recipedetails'>
         <button className='recipemock'>
-          <div className='timedisplay'>{props.time}</div>
+          <div className='attributes'>
+            <Level3 />
+            <GlutenF className='dietatts'/>
+          </div>
+          <div className='timedisplay'>
+            <Time className='timelogo' fill='#918B87'/>
+            {/* <SvgIcon component={Time} /> */}
+            {props.time}
+          </div>
           {/* <div className='rtitle'>{this.props.name}</div>
           <div className='rdesc'>{this.props.desc}</div> */}
           <div className='tbndisplay'>
