@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Modal, Box, Typography } from '@mui/material';
 import { Route, Routes, useState , useEffect, useContext } from "react";
 import congratsGIF from '../../img/celebrate.gif';
+import { Close } from '@mui/icons-material/';
 
 import bchick from '../../img/newbake.png';
 
@@ -32,11 +33,12 @@ function CompleteRecipe() {
                     <Typography id="modal-modal-title" className='congratsTitle'>
                         Congratulations!
                     </Typography>
+                    <Button variant="text" class='exitModalFinish' startIcon={<Close />} onClick={routeChange}/>
                     <Typography id="modal-modal-description" className='congratsMessage'>
                         <h3>You just cooked a meal!</h3>
                         <img src={congratsGIF} alt="congratsGIF"/>
                     </Typography>
-                    <Button variant="contained" className="ReturnButton" onClick={routeChange}>Return To Home</Button>
+                    {/* <Button variant="contained" className="ReturnButton" onClick={routeChange}>Return To Home</Button> */}
                 </Box>
             </Modal>
            

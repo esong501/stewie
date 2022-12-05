@@ -21,7 +21,7 @@
     }
     
     @font-face {
-    font-family:"monarcha";
+    font-family:"monarcha-soft";
     src:url("https://use.typekit.net/af/904d6e/00000000000000007735ddfc/30/l?subset_id=2&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/904d6e/00000000000000007735ddfc/30/d?subset_id=2&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/904d6e/00000000000000007735ddfc/30/a?subset_id=2&fvd=n3&v=3") format("opentype");
     font-display:auto;font-style:normal;font-weight:300;font-stretch:normal;
     }
@@ -70,8 +70,8 @@
     gap: 45px;
 
     position: absolute;
-    width: 1167px;
-    height: 686px;
+    width: 830px; // 1167
+    height: 487.9px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -93,7 +93,7 @@
     
     /* H4 */
 
-    font-family: 'monarcha' !important;
+    font-family: 'filson-soft' !important;
     font-style: normal;
     font-weight: 400;
     font-size: 84px !important;
@@ -106,7 +106,7 @@
 .congratsMessage{
     width: 799px;
     height: 46px;
-    font-family: 'filson-soft' !important;
+    font-family: 'monarcha-soft' !important;
     font-style: normal;
     font-weight: 500;
     font-size: 34px !important;
@@ -137,4 +137,17 @@
     border: 0;
     border-radius: 20px !important;
     text-align: center;
+}
+
+.exitModalFinish{
+    position: absolute;
+    left: 95%;
+    top: 5%;
+    color: #343741;
+    border: 0;
+    background-color: var(--eggwhite);
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    cursor: pointer;
 }

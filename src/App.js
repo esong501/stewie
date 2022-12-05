@@ -7,7 +7,8 @@ import React from 'react';
 import * as ReactDOM from 'react-dom';
 import Recipe from './components/Recipe.js';
 import ExpandRecipe from './components/ExpandRecipe/ExpandRecipe.js';
-import RecipeWalkthrough from './components/RecipeWalkthrough/RecipeWalkthrough.js';
+// import RecipeWalkthrough from './components/RecipeWalkthrough/RecipeWalkthrough.js';
+import LandingPage from './components/LandingPage/LandingPage.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -40,6 +41,7 @@ function App() {
             // <Recipe recipe={recipe}></Recipe> 
             // <ExpandRecipe recipe={recipe}></ExpandRecipe>
             <Routes>
+              <Route path="/landing" element={<LandingPage/>}/>
               <Route path="/" element={<Recipe recipe={recipe}/>}/>
               <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} />
             </Routes>
