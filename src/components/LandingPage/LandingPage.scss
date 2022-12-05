@@ -12,6 +12,7 @@
     background-size: contain;
     // background-repeat: no-repeat;
     background-position: 50% 85px;
+    animation: animatedBackground 40s linear infinite;
 }
 
 .StewieIntro {
@@ -66,4 +67,9 @@ filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.25));
     top: -130.78%; //  top: 30.78%;
     bottom: 48.35%;
     transform: matrix(1, 0.07, -0.07, 1, 0, 0);
+}
+
+@keyframes animatedBackground {
+    from { background-position: 0 85px; }
+    to { background-position: 100% 85px; }
 }
