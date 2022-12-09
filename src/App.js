@@ -2,7 +2,7 @@
 // import './App.css';
 import { db } from './firebase.js'
 import { useEffect, useState } from 'react';
-import { onValue, ref } from 'firebase/database';
+import { onValue, ref, get, child, getDatabase } from 'firebase/database';
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import Recipe from './components/Recipe.js';
@@ -22,6 +22,7 @@ function App() {
   useEffect(() => {
     onValue(ref(db), snapshot => {
       const data = snapshot.val(); // Data is the recipe
+      console.log(data);
       if (data !== null) {
         setRecipes([Object.values(data.recipes_5.value)[1]]);
       }
@@ -37,7 +38,6 @@ function App() {
             <Routes >
             <Route path="/" element={<LandingPage />}/>
             <Route path="/browse" element={<Recipe recipe={recipe}/>}/>
-            {/* <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} /> */}
               {recipes && recipes.map((singleRecipe) => {
                 const uri = singleRecipe.label;
                 console.log("APP: "+uri);
