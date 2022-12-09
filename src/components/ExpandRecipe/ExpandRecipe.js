@@ -67,7 +67,7 @@ function ExpandRecipe(props) {
                 <KeyboardBackspace className='backArrow'/>
                 <div className="backButton"><a href='/' style={{textDecoration: 'none', color:'#908B87'}}>Back</a></div>
             </div> */}
-                <Button variant="text" class='backButton' href="/" startIcon={<KeyboardBackspace style={{width:'48px', height: '48px'}}/>}>Back</Button>
+                <Button variant="text" class='backButton' href="/browse" startIcon={<KeyboardBackspace style={{width:'48px', height: '48px'}}/>}>Back</Button>
         </div>
     )
 

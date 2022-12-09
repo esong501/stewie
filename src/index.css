@@ -1,5 +1,6 @@
 body {
-  background: #EFEAE4;
+  /* background: #EFEAE4; */
+  background: var(--eggwhite);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -14,15 +15,17 @@ code {
 }
 
 :root {
+  --apron: #E9E3DA;
   --poppyseed: #1A1123;
   --matcha: #CCCC52;
   --tangerine: #F49227;
   --tomato: #D1291C;
-  --eggwhite:#EFEAE4;
+  --eggwhite:#F8F5F2;
   --lavender: #997DC6;
   --blueberry: #4848C1;
   --lemon: #F5E359;
-  --kale: #3B9F2B
+  --kale: #3B9F2B;
+  --apron: #E9E3DA
 }
 .h1{
   font-family: 'Monarcha', 'Georgia';
