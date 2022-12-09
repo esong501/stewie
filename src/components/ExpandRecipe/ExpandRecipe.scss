@@ -61,6 +61,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    height: 100vh;
 }
 
 .NavTabs {
@@ -123,9 +124,11 @@
         display: inline-block;
         text-align: left;
         align-items: center;
-        box-shadow: 0 0 0 2pt #d5d0c9;
         border-radius: 10px;
+        border: 3px solid var(--apron);
         margin: 10px;
+        color: var(--graypan);
+        font-weight: 400;
 
         .TagsList {
             margin-left: 1em;

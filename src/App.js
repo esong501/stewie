@@ -42,7 +42,7 @@ function App() {
   return (  
     <Router>
       <div>
-        {/* <Header/> */}
+        <Header/>
         {console.log(recipes)}
           {recipes.map((recipe) => ( // Map each recipe and then print out ingredients
             // <h1>Instructions: {recipe.instructions[0]}</h1>

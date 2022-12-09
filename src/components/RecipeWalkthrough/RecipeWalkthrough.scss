@@ -3,6 +3,8 @@
     font-family: 'monarcha' !important;
     font-size: 20px;
     line-height: 26px;
+    font-weight: 300;
+    color: var(--poppy);
 }
 
 .StepsOverview {
@@ -21,11 +23,18 @@
     height: 75%;
     position:absolute;
     box-shadow: 0 10px 5px -2px rgb(206, 196, 196);
-    padding: 18px;
+    // padding: 18px;
     // padding-right: 180px;
+    // width: 75%;
+    padding: 1em 0;
     top: 84px;
     margin-right: 2em;
     border-radius: 5px;
+}
+
+h4 {
+    margin-block-end: 0em;
+    margin-block-start: 0em;
 }
 
 .WalkthruScrollElems::-webkit-scrollbar{

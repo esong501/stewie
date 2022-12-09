@@ -58,7 +58,6 @@ function RecipeWalkthrough(props) {
                         <tr key={index}>
                             <td>
                                 <h4>
-                                
                                     <FormGroup className="steps">
                                         {/* <FormControlLabel sx={{fontFamily: 'monarcha'}} control={<Checkbox size="large" style ={{color: "#3B9F2B",}} onChange={handleCheck}/>} label={<Typography className="steps">{steps}</Typography>}/> */}
                                         <Instruction step = {steps} handleCheck = {handleCheck}/>

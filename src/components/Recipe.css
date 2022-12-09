@@ -118,9 +118,6 @@
   }
 
   .rdesc{
-    /* text-align: center;
-    font-size: 17px;
-    line-height: 22.03px; */
     width: 346px;
     height: 40px;
 
@@ -150,8 +147,6 @@
     position: relative;
     width: 448px;
     height: 341px;
-    /* left: 84px;
-    top: 345px; */
     background: #fff;
     float: left;
     font-family: 'Inter';
@@ -173,13 +168,11 @@
   .recipemock {
     /* recipe 1 */
 
-    background: eggwhite;
+    background: var(--eggwhite);;
     border: 0px;
     position: relative;
     width: 352px;
     height: 382px;
-    /* left: 60px;
-    top: 32px; */
 
     text-align: center;
     overflow: hidden;
@@ -194,11 +187,6 @@
   }
 
   .tbndisplay {
-    /* position: absolute;
-    width: 270px;
-    height: 197px;
-    top: 45px;
-    left: 89px; */
     position: absolute;
     width: 270px;
     height: 197px;
@@ -290,7 +278,7 @@
   }
   
   .Recipe-panel {
-    background: eggwhite;
+    background: var(--eggwhite);
     border: 5px solid #999;
     color: #1A1123;
     font-size: 24px;
@@ -327,7 +315,7 @@
   
   .maindiv {
     /* Auto layout */
-
+    background: var(--apron);
     display: flex;
     flex-direction: column;
     align-items: flex-start;

@@ -10,6 +10,7 @@ import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
 import { PropTypes } from 'prop-types';
 import { Typography, Checkbox, LinearProgress, Box, Button, FormControlLabel, FormGroup, SvgIcon, IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material/';
+import BackArrow from '../../img/backarrow.svg';
 
 // temp
 import bchick from '../../img/newbake.png';
@@ -40,11 +41,6 @@ function LinearProgressWithLabel(props) {
 
 export const ProgressContext = createContext();
 
-// export const progressContext = createContext({
-//     checked: [],
-//     setChecked: () => {}
-// });
-
 function ExpandRecipe(props) {
     // const navigate = useNavigate();
     const [isCooking, setIsCooking] = useState(false);
@@ -61,13 +57,13 @@ function ExpandRecipe(props) {
     const recipeTitle = (
         <div className='headerContain'>
             <div class = "RTitle">
-                <h1>{props.recipe.label}</h1>
+                <h2>{props.recipe.label}</h2>
             </div>
             {/* <div className='backContain'>
                 <KeyboardBackspace className='backArrow'/>
                 <div className="backButton"><a href='/' style={{textDecoration: 'none', color:'#908B87'}}>Back</a></div>
             </div> */}
-                <Button variant="text" class='backButton' href="/browse" startIcon={<KeyboardBackspace style={{width:'48px', height: '48px'}}/>}>Back</Button>
+                <Button variant="text" class='backButton' href="/browse" startIcon={<img src = {BackArrow} alt="backarrow"/> }>Back</Button>
         </div>
     )
 
@@ -76,43 +72,22 @@ function ExpandRecipe(props) {
             <div className='IHeader'>
                 <h1>Instructions</h1>
             </div>
-            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)} startIcon={<KeyboardBackspace style={{width:'48px', height: '48px'}}/>}>Exit</Button>
+            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)} startIcon={<img src = {BackArrow} alt="backarrow"/>}>Exit</Button>
         </div>
     )
 
     const [progress, setProgress] = useState(0);
-    // const [checked, setChecked] = useState([]);
-    // const value = { checked, setChecked };
-
-    // useEffect(() => {
-    //     const timer = setInterval(() => {
-    //     setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
-    //     }, 800);
-    //     return () => {
-    //     clearInterval(timer);
-    //     };
-    // }, []);
-
-    // useEffect(() => {
-    //     const timer = setInterval(() => {
-    //     // console.log(checked)
-    //     // setProgress((checked.length/props.recipe.instructions.length)*100);
-    //     }, 800);
-    //     return () => {
-    //     clearInterval(timer);
-    //     };
-    // }, []);
     
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <ProgressContext.Provider value={{ progress, setProgress }}>
             <div class="Recipe">  
                 <div class = "RecipeSidebar">
                     {isCooking ? <Box sx={{ width: '40%', ml: 19 }}>
                                         <LinearProgressWithLabel value={progress} />
                                     </Box> : null}
-                    {isCooking ? <h2>{props.recipe.label}</h2> : null}
+                    {isCooking ? <h3>{props.recipe.label}</h3> : null}
                     <div class="RecipeTags">
                         <ul class="TagsList">
                             <li>Level 1</li>

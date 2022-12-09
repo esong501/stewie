@@ -16,7 +16,7 @@ function LandingPage(props) {
 
     return (
         <div class="test">
-            <Header></Header>
+            {/* <Header></Header> */}
             <div class="Landing">
                 <div class="StewieIntro">
                     <h1>Hello! <br/> I'm Stewie</h1>
@@ -24,9 +24,9 @@ function LandingPage(props) {
                 <div class="StewieText">
                     <div class="StewieContent">
                         {/* <img src={Pea} alt="Pea" class="Pea"/> */}
-                        <p>
+                        <h3>
                             The cooking helper that gives you the confidence and support to simply get in the kitchen and cook so that you can relax and eat some good food.
-                        </p>
+                        </h3>
                         <Button variant="contained" className="CookButton" onClick={routeChange}> Start Cooking </Button>
                     </div>
                 </div>    

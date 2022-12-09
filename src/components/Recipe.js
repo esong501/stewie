@@ -55,32 +55,19 @@ function DrawTags(props) {
 }
 
 function RPanel(props) {
-  // let navigate = useNavigate();
-
-  // const navigateRecipe = () => {
-  //   let path = '/recipedetail';
-  //   navigate(path, {props});
-  // };
-    // render () {
-
+ 
   return(
-    // <Router>
       <div>
-        {/* <Link to='/recipedetails'> */}
         <a href='recipedetails'>
         <button className='recipemock'>
           <DrawTags level={props.level} gluten={props.gluten} dairy={props.dairy} veget={props.veget} pesca={props.pesca} />
           <div className='timedisplay'>
             <Time className='timelogo' fill='#918B87'/>
-            {/* <SvgIcon component={Time} /> */}
             {props.time}
           </div>
-          {/* <div className='rtitle'>{this.props.name}</div>
-          <div className='rdesc'>{this.props.desc}</div> */}
           <div className='tbndisplay'>
             <img src={props.tbn} width={270} height={197} alt='thumbnail'/>
           </div>
-          {/* <img src={this.props.tbn} className='tbn' width={270} height={197} alt='thumbnail'/> */}
           <div className='rtext'>
             <div className='rtitle'>{props.name}</div>
             {/* <div className='rdesc'>{props.desc}</div> */}
@@ -126,7 +113,7 @@ function Recipe(props) {
   return(
   //  <RPanel name={props.name} desc={props.desc}></RPanel>
   <div>
-     <Header/>
+     {/* <Header/> */}
         <div className='pagehead'>Recipes</div>
     <div className='maindiv'>
       <div className='row'>

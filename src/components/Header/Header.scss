@@ -8,13 +8,15 @@
   /* Style the header links */
   .header a {
     float: left;
-    color: black;
+    color: var(--lavender);
     text-align: center;
     padding: 12px;
     text-decoration: none;
-    font-size: 18px;
-    line-height: 15px;
+    font-size: 17px;
+    line-height: 17px;
     border-radius: 30px;
+    font-weight: 400;
+
   }
   
   /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
@@ -29,14 +31,16 @@
   
   /* Change the background color on mouse-over */
   .header a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: var(--lavender);
+    opacity: 70%;
+    color: var(--eggwhite);
   }
   
   /* Style the active/current link*/
   .header a.active {
     background-color: #997DC6;
     color: white;
+    opacity: 100%;
   }
   
   /* Float the link section to the right */

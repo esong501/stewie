@@ -21,7 +21,7 @@
 }
 
 .Recipe-panel {
-  background: apron;
+  background: var(--apron);;
   border: 5px solid #999;
   color: #1A1123;
   font-size: 24px;
