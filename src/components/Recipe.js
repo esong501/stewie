@@ -55,10 +55,11 @@ function DrawTags(props) {
 }
 
 function RPanel(props) {
+  const link = props.name.replace(/\s/g, "%20");
  
   return(
       <div>
-        <a href='recipedetails'>
+        <a href={link}>
         <button className='recipemock'>
           <DrawTags level={props.level} gluten={props.gluten} dairy={props.dairy} veget={props.veget} pesca={props.pesca} />
           <div className='timedisplay'>
@@ -76,11 +77,6 @@ function RPanel(props) {
         </a>
         {/* </Link> */}
       </div>
-      // {/* <Switch>
-      //     <Route path="/recipe" element={<Recipe />}/>
-      //     <Route path="/recipedetail" element={<ExpandRecipe/>} />
-      //   </Switch> */}
-    // </Router>
   );
 
  }
