@@ -113,9 +113,9 @@ function Recipe(props) {
         <div className='pagehead'>Recipes</div>
     <div className='maindiv'>
       <div className='row'>
-        <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]} time={(props.recipe.instructions.length*3).toString() + " min"} level={props.recipe.instructions.length%3} gluten={props.recipe.label.length%2 === 1} dairy={props.recipe.instructions[0].length%2 === 1} veget={false} pesca={false}></RPanel></div>
-        <div><RPanel tbn={gcheese} name="Grilled Cheese" ></RPanel></div>
-        <div><RPanel tbn={churro} name="Churros"></RPanel></div>
+        <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe[0].image} name={props.recipe[0].label} desc={props.recipe[0].instructions[0]} time={(props.recipe[0].instructions.length*3).toString() + " min"} level={props.recipe[0].instructions.length%3} gluten={props.recipe[0].label.length%2 === 1} dairy={props.recipe[0].instructions[0].length%2 === 1} veget={false} pesca={false}></RPanel></div>
+        {/* <div><RPanel tbn={gcheese} name="Grilled Cheese" ></RPanel></div>
+        <div><RPanel tbn={churro} name="Churros"></RPanel></div> */}
         {/* {props.recipes.map((recipe) => ( // Map each recipe and then print out ingredients
             // <h1>Instructions: {recipe.instructions[0]}</h1>
             // <Recipe tbn={recipe.image} name={recipe.label} desc={recipe.instructions[1]}></Recipe> // this is an issue where the array has to be init

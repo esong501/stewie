@@ -19,26 +19,43 @@ function App() {
   const [recipe, setRecipe] = useState("");
   const [recipes, setRecipes] = useState([]);
   
+  // useEffect(() => {
+  //   onValue(ref(db), snapshot => {
+  //     const data = snapshot.val(); // Data is the recipe
+  //     console.log(data);
+  //     if (data !== null) {
+  //       setRecipes([Object.values(data.recipes_5.value)[1]]);
+  //     }
+  //   })
+  // }, []);
+
   useEffect(() => {
-    onValue(ref(db), snapshot => {
-      const data = snapshot.val(); // Data is the recipe
-      console.log(data);
-      if (data !== null) {
-        setRecipes([Object.values(data.recipes_5.value)[1]]);
-      }
-    })
-  }, []);
+    async function getData() {
+        const dbRef = ref(db, "recipes_5");
+        await get(dbRef).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log(snapshot.val().value);
+                setRecipes(snapshot.val().value); // Add each recipe to the recipes array
+            }
+        })
+    }
+    getData();
+}, []);
 
   return (  
     <Router>
       <div>
         <Header/>
         {console.log(recipes)}
-          {recipes.map((recipe) => ( // Map each recipe and then print out ingredients
+          {/* {recipes.map((recipe) => ( // Map each recipe and then print out ingredients */}
             <Routes >
             <Route path="/" element={<LandingPage />}/>
-            <Route path="/browse" element={<Recipe recipe={recipe}/>}/>
-              {recipes && recipes.map((singleRecipe) => {
+            {recipes => {
+              <Route path="/browse" element={<Recipe recipe={recipes}/>}/>
+            }}
+            {/* What's broken is the recipe browse page, we need to find a way to display all the recipes maybe we need to pass in the array of recipes as a prop into recipe */}
+            {recipes && recipes.map((singleRecipe) => {
+                
                 const uri = singleRecipe.label;
                 console.log("APP: "+uri);
                 return (
@@ -46,7 +63,7 @@ function App() {
                 )
               })}
           </Routes> 
-          ))}
+           {/* ))} */}
         </div>
       </Router>
 
