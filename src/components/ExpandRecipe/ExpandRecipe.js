@@ -131,7 +131,7 @@ function ExpandRecipe(props) {
                             <li>{props.recipe.ingredientLines[2]}</li>
                             <li>{props.recipe.ingredientLines[3]}</li>
                             <li>{props.recipe.ingredientLines[4]}</li>
-                            {/* <li>{props.recipe.ingredientLines[5]}</li> */}
+                            <li>{props.recipe.ingredientLines[5]}</li>
                         </ul>
                         <FormGroup className="IngredientsList">
                             <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[0]} />

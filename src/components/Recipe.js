@@ -78,7 +78,7 @@ function RPanel(props) {
 // }
 
 function Recipe(props) {
-  console.log("PROP: "+props.uri);
+  //console.log("PROP: "+props.uri);
   return(
     <RPanel 
       tbn={"data:image/jpeg;base64,"+props.recipe.image} 

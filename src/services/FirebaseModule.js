@@ -1,6 +1,7 @@
 import {ref, get, set, child, update, remove, onValue} from "firebase/database";
 import {db} from "./Firebase.js"
 
+
 function insertData(key, val) {
     // parse the search string
     console.log("SEARCHING");

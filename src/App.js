@@ -53,8 +53,8 @@ export default function App() {
             const dbRef = ref(db, "recipes_5");
             await get(dbRef).then((snapshot) => {
                 if (snapshot.exists()) {
-                    console.log(snapshot.val().value);
-                    setRecipes(snapshot.val().value); // Add each recipe to the recipes array
+                    //console.log(snapshot.val().value);
+                    setRecipes(JSON.parse(snapshot.val().value)); // Add each recipe to the recipes array
                 }
             })
         }
@@ -66,7 +66,6 @@ export default function App() {
     // pass into props for expanded recipe
     return (
       <>{recipes && (<Router>
-            <Header />
             <div className = 'pagehead' > Recipes </div>
             <div className = 'maindiv' >
             <div className = 'row' >
@@ -74,7 +73,7 @@ export default function App() {
                 <Route path="/" element={<RecipeGrid recipes={recipes} />}/>
                   {recipes && recipes.map((singleRecipe) => {
                     const uri = singleRecipe.label;
-                    console.log("APP: "+uri);
+                    //console.log("APP: "+uri);
                     return (
                         <Route path = {uri} element={ <ExpandRecipe recipe={singleRecipe}/> }/>
                     )
