@@ -65,7 +65,10 @@ export default function App() {
     // onclick change state to be sepcific recipe
     // pass into props for expanded recipe
     return (
+      <div>
+      <Header /> 
       <>{recipes && (<Router>
+            {/* <Header /> */}
             <div className = 'pagehead' > Recipes </div>
             <div className = 'maindiv' >
             <div className = 'row' >
@@ -82,7 +85,8 @@ export default function App() {
           </div>  
           </div> 
         </Router>)
-      }</>)
+      }</>
+      </div>)
     }
     
 
