@@ -68,11 +68,22 @@
       font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
     }
 
+  .recipepage {
+    height: 100vh;
+    background-color: var(--apron);
+  }
+
   img {
     border-radius: 8px;
   }
 
+  .testtest {
+    height: 100px;
+  }
+
   .pagehead{
+    padding-top: 1em;
+    padding-bottom: 0.75em;
     text-align: center;
     font-family: 'monarcha';
     font-style: normal;
@@ -80,9 +91,10 @@
     font-size: 75px;
     line-height: 91px;
     align-items: center;
-    text-align: center;
-
-    color: #000000;
+    color: var(--eggwhite);
+    background-image: url('../img/banner.jpg');
+    /* background-size: contain; */
+    background-repeat: no-repeat;
   }
 
   .rtitle{
@@ -323,9 +335,9 @@
     
     position: absolute;
     width: 1232px;
-    height: 1338px;
+    /* height: 1338px; */
     left: calc(50% - 1232px/2 - 50px);
-    top: 292px;
+    /* top: 292px; */
   }
 
   .row {
@@ -338,8 +350,6 @@
     align-items: center;
     padding: 32px 60px;
     gap: 28px;
-
-    width: 1232px;
     height: 446px;
 
 

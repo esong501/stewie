@@ -22,10 +22,9 @@
     overflow: auto;
     height: 75%;
     position:absolute;
-    box-shadow: 0 10px 5px -2px rgb(206, 196, 196);
     // padding: 18px;
     // padding-right: 180px;
-    // width: 75%;
+    width: 700px;
     padding: 1em 0;
     top: 84px;
     margin-right: 2em;
@@ -38,12 +37,12 @@ h4 {
 }
 
 .WalkthruScrollElems::-webkit-scrollbar{
-    background-color: #EFEAE4;
+    background-color: var(--eggwhite);
     width: 10px;
 }
 
 .WalkthruScrollElems::-webkit-scrollbar-thumb{
-    background-color: #908B87;
+    background-color: #D9D9D9;
     border-radius: 10px;
 }
 

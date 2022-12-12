@@ -10,7 +10,15 @@ import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
 import { PropTypes } from 'prop-types';
 import { Typography, Checkbox, LinearProgress, Box, Button, FormControlLabel, FormGroup, SvgIcon, IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material/';
-import BackArrow from '../../img/backarrow.svg';
+import { ReactComponent as BackArrow } from '../../img/backarrow.svg';
+import { ReactComponent as Level1 } from './../../img/level1.svg'
+import { ReactComponent as Level2 } from './../../img/level2.svg'
+import { ReactComponent as Level3 } from './../../img/level3.svg'
+import { ReactComponent as GlutenF } from './../../img/gluten.svg'
+import { ReactComponent as Dairy } from './../../img/dairy.svg'
+import { ReactComponent as Veget } from './../../img/vegetarian.svg'
+import { ReactComponent as Pesca } from './../../img/pescatarian.svg'
+import { ReactComponent as Time } from './../../img/time.svg'
 
 // temp
 import bchick from '../../img/newbake.png';
@@ -20,7 +28,7 @@ function LinearProgressWithLabel(props) {
     return (
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Box sx={{ width: '100%', mr: 1 }}>
-          <LinearProgress variant="determinate" sx={{ transform: "scale(1,4)", borderRadius: 8, backgroundColor: `#E9E3DA`,"& .MuiLinearProgress-bar": {backgroundColor: `#CCCC52` } }} {...props} />
+          <LinearProgress variant="determinate" className='progressBar' sx={{ backgroundColor: `#E9E3DA`,"& .MuiLinearProgress-bar": {backgroundColor: `#CCCC52` } }} {...props} />
         </Box>
         <Box sx={{ minWidth: 35 }}>
           <Typography variant="body2" color="text.secondary">{`${Math.round(
@@ -38,6 +46,36 @@ function LinearProgressWithLabel(props) {
      */
     value: PropTypes.number.isRequired,
   };
+
+  function DrawAtts(props) {
+
+    const diff = () => {
+      console.log(props.level)
+      if (props.level === 1){
+        return <div className='diettext'><Level1/> level {props.level}</div>
+      }
+      if (props.level === 2){
+        return <div className='diettext'><Level2/> level {props.level}</div>
+      }
+      if (props.level === 3){
+        return <div className='diettext'><Level3/> level {props.level}</div>
+      }
+    }
+    
+    return(
+      <div className='TagsList'>
+        {diff()}
+        <div className='diettags'>
+            {props.gluten ? <div className='diettext'><GlutenF className='dietlogo'/> gluten-free</div> : null}
+            {props.veget ? <div className='diettext'><Veget className='dietlogo'/> vegetarian</div> : null}
+            {props.dairy ? <div className='diettext'><Dairy className='dietlogo'/> dairy-free</div> : null}
+            {props.pesca ? <div className='diettext'><Pesca className='dietlogo'/> pescatarian</div> : null}
+        </div>
+        <div className='diettext'><Time className='timelogo' fill='#918B87'/>{props.totalTime} min total</div>
+      </div>
+
+    )
+  }
 
 export const ProgressContext = createContext();
 
@@ -57,22 +95,19 @@ function ExpandRecipe(props) {
     const recipeTitle = (
         <div className='headerContain'>
             <div class = "RTitle">
+                {/* <Button variant="text" class='backButton' href="/browse" startIcon={<BackArrow/>}>Back</Button> */}
                 <h2>{props.recipe.label}</h2>
             </div>
-            {/* <div className='backContain'>
-                <KeyboardBackspace className='backArrow'/>
-                <div className="backButton"><a href='/' style={{textDecoration: 'none', color:'#908B87'}}>Back</a></div>
-            </div> */}
-                <Button variant="text" class='backButton' href="/browse" startIcon={<img src = {BackArrow} alt="backarrow"/> }>Back</Button>
+            <Button variant="text" class='backButton' href="/browse"><BackArrow className='backArrow'/>Back</Button>
         </div>
     )
 
     const instructions = (
         <div className='headerContain'>
             <div className='IHeader'>
-                <h1>Instructions</h1>
+                <h1  style={{color: 'var(--tomato)'}}>Instructions</h1>
             </div>
-            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)} startIcon={<img src = {BackArrow} alt="backarrow"/>}>Exit</Button>
+            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)}><BackArrow className='backArrow'/>Exit</Button>
         </div>
     )
 
@@ -80,39 +115,24 @@ function ExpandRecipe(props) {
     
     return (
         <div>
-            {/* <Header /> */}
             <ProgressContext.Provider value={{ progress, setProgress }}>
             <div class="Recipe">  
                 <div class = "RecipeSidebar">
                     {isCooking ? <Box sx={{ width: '40%', ml: 19 }}>
                                         <LinearProgressWithLabel value={progress} />
                                     </Box> : null}
-                    {isCooking ? <h3>{props.recipe.label}</h3> : null}
+                    {isCooking ? <h3  style={{color: 'var(--poppyseed)', fontFamily:'filson-soft'}}>{props.recipe.label}</h3> : null}
                     <div class="RecipeTags">
-                        <ul class="TagsList">
-                            <li>Level 1</li>
-                            <li>{props.recipe.ingredientLines.length} Ingredients</li>
-                            {/* <li>{props.recipe.dietLabels[0]}</li> */}
-                            {/* <li>{props.recipe.healthLabels[0]}</li> */}
-                            <li>total time</li>
-                        </ul>
+
+                        <DrawAtts level={props.recipe.level} gluten={props.recipe.gluten} dairy={props.recipe.dairy} veget={props.recipe.veget} pesca={props.recipe.pesca} totalTime={props.recipe.totalTime}/>
                     </div>
                     <div class = "RecipeIngreds">
                         <h2>Ingredients</h2>
                         <ul class="IngredientsList">
-                            <li>{props.recipe.ingredientLines[0]}</li>
-                            <li>{props.recipe.ingredientLines[1]}</li>
-                            <li>{props.recipe.ingredientLines[2]}</li>
-                            <li>{props.recipe.ingredientLines[3]}</li>
-                            <li>{props.recipe.ingredientLines[4]}</li>
-                            {/* <li>{props.recipe.ingredientLines[5]}</li> */}
+                            {props.recipe.ingredientLines.map((ing) =>
+                                 <li class="IndivIngred">{ing}</li>
+                                )}
                         </ul>
-                        {/* <FormGroup className="IngredientsList">
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[0]} />
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[1]} />
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[2]} />
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[3]} />
-                        </FormGroup> */}
                     </div>
                 </div>
                 <div class="RecipeOverview">
