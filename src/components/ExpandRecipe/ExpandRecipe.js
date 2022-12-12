@@ -26,16 +26,17 @@ import { textTransform } from '@mui/system';
 
 function LinearProgressWithLabel(props) {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <Box sx={{ width: '100%', mr: 1 }}>
-          <LinearProgress variant="determinate" className='progressBar' sx={{ backgroundColor: `#E9E3DA`,"& .MuiLinearProgress-bar": {backgroundColor: `#CCCC52` } }} {...props} />
-        </Box>
-        <Box sx={{ minWidth: 35 }}>
-          <Typography variant="body2" color="text.secondary">{`${Math.round(
-            props.value,
-          )}%`}</Typography>
-        </Box>
-      </Box>
+      <div className='progBox'>
+        {console.log(props.value)}
+        {console.log(props.numSteps)}
+        <div className='progText'>
+          <div className='fracProg'>{`${Math.round((props.value/100)*(props.numSteps),)}`}/{props.numSteps}</div>
+          <div className='percentProg'>{`${Math.round(props.value,)}%`}</div>
+        </div>
+        <div className='progressBar'>
+            <LinearProgress variant="determinate" className='progressBar' sx={{ backgroundColor: `#E9E3DA`,"& .MuiLinearProgress-bar": {backgroundColor: `#CCCC52` } }} {...props} />
+        </div>
+      </div>
     );
   }
   
@@ -50,7 +51,6 @@ function LinearProgressWithLabel(props) {
   function DrawAtts(props) {
 
     const diff = () => {
-      console.log(props.level)
       if (props.level === 1){
         return <div className='diettext'><Level1/> level {props.level}</div>
       }
@@ -119,7 +119,7 @@ function ExpandRecipe(props) {
             <div class="Recipe">  
                 <div class = "RecipeSidebar">
                     {isCooking ? <Box sx={{ width: '40%', ml: 19 }}>
-                                        <LinearProgressWithLabel value={progress} />
+                                        <LinearProgressWithLabel value={progress}  numSteps={props.recipe.instructions.length}/>
                                     </Box> : null}
                     {isCooking ? <h3  style={{color: 'var(--poppyseed)', fontFamily:'filson-soft'}}>{props.recipe.label}</h3> : null}
                     <div class="RecipeTags">
