@@ -58,7 +58,7 @@ function RPanel(props) {
  
   return(
       <div>
-        <a href='recipedetails'>
+        <a href={props.name}>
         <button className='recipemock'>
           <DrawTags level={props.level} gluten={props.gluten} dairy={props.dairy} veget={props.veget} pesca={props.pesca} />
           <div className='timedisplay'>
@@ -121,7 +121,7 @@ function Recipe(props) {
         {/* <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]} time={(props.recipe.instructions.length*3).toString() + " min"} level={props.recipe.instructions.length%3} gluten={props.recipe.label.length%2 === 1} dairy={props.recipe.instructions[0].length%2 === 1} veget={false} pesca={false}></RPanel></div>
         <div><RPanel tbn={gcheese} name="Grilled Cheese" ></RPanel></div>
         <div><RPanel tbn={churro} name="Churros"></RPanel></div> */}
-        
+
         {props.recipes.map((recipe) => ( // Map each recipe and then print out ingredients
             // <h1>Instructions: {recipe.instructions[0]}</h1>
             // <Recipe tbn={recipe.image} name={recipe.label} desc={recipe.instructions[1]}></Recipe> // this is an issue where the array has to be init

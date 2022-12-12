@@ -64,7 +64,14 @@ function App() {
               {/* <Route path="/landing" element={<LandingPage/>}/> */}
               <Route path="/" element={<LandingPage/>}/>
               <Route path="/browse" element={<Recipe recipes={recipes}/>}/>
-              <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} />
+              {/* <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} /> */}
+              {recipes && recipes.map((singleRecipe) => {
+                    const uri = singleRecipe.label;
+                    //console.log("APP: "+uri);
+                    return (
+                        <Route path = {uri} element={ <ExpandRecipe recipe={singleRecipe}/> }/>
+                    )
+                  })}
             </Routes>
            {/* ))} */}
         </div>
