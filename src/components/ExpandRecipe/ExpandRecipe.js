@@ -77,7 +77,7 @@ function ExpandRecipe(props) {
     const instructions = (
         <div className='headerContain'>
             <div className='IHeader'>
-                <h1>Instructions</h1>
+                <h1  style={{color: 'var(--tomato)'}}>Instructions</h1>
             </div>
             <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)}><BackArrow className='backArrow'/>Exit</Button>
         </div>
@@ -94,25 +94,20 @@ function ExpandRecipe(props) {
                     {isCooking ? <Box sx={{ width: '40%', ml: 19 }}>
                                         <LinearProgressWithLabel value={progress} />
                                     </Box> : null}
-                    {isCooking ? <h3>{props.recipe.label}</h3> : null}
+                    {isCooking ? <h3  style={{color: 'var(--poppyseed)', fontFamily:'filson-soft'}}>{props.recipe.label}</h3> : null}
                     <div class="RecipeTags">
                         <ul class="TagsList">
-                            <li><Level1/> level 1</li>
+                            <li><Level1/> level {props.recipe.level}</li>
                             <li>{props.recipe.ingredientLines.length} Ingredients</li>
-                            {/* <li>{props.recipe.dietLabels[0]}</li> */}
-                            {/* <li>{props.recipe.healthLabels[0]}</li> */}
-                            <li>{props.recipe.instructions.length*3} min total time</li>
+                            <li>{props.recipe.totalTime} min total</li>
                         </ul>
                     </div>
                     <div class = "RecipeIngreds">
                         <h2>Ingredients</h2>
                         <ul class="IngredientsList">
-                            <li>{props.recipe.ingredientLines[0]}</li>
-                            <li>{props.recipe.ingredientLines[1]}</li>
-                            <li>{props.recipe.ingredientLines[2]}</li>
-                            <li>{props.recipe.ingredientLines[3]}</li>
-                            <li>{props.recipe.ingredientLines[4]}</li>
-                            {/* <li>{props.recipe.ingredientLines[5]}</li> */}
+                            {props.recipe.ingredientLines.map((ing) =>
+                                 <li class="IndivIngred">{ing}</li>
+                                )}
                         </ul>
                     </div>
                 </div>
