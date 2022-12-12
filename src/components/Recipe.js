@@ -118,11 +118,11 @@ function Recipe(props) {
     <div className='maindiv'>
       <h3>Here's a list of Stewie's curated recipes, straight from her kitchen that are guaranteed to be delish!</h3>
       <div className='row'>
-        <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]} time={(props.recipe.instructions.length*3).toString() + " min"} level={props.recipe.instructions.length%3} gluten={props.recipe.label.length%2 === 1} dairy={props.recipe.instructions[0].length%2 === 1} veget={false} pesca={false}></RPanel></div>
-        {/* <div><RPanel tbn={"data:image/jpeg;base64,"+props.image} name={props.label} desc={props.instructions[0]} time={(props.instructions.length*3).toString() + " min"} level={props.instructions.length%3} gluten={props.label.length%2 === 1} dairy={props.instructions[0].length%2 === 1} veget={false} pesca={false}></RPanel></div> */}
+        {/* <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]} time={(props.recipe.instructions.length*3).toString() + " min"} level={props.recipe.instructions.length%3} gluten={props.recipe.label.length%2 === 1} dairy={props.recipe.instructions[0].length%2 === 1} veget={false} pesca={false}></RPanel></div>
         <div><RPanel tbn={gcheese} name="Grilled Cheese" ></RPanel></div>
-        <div><RPanel tbn={churro} name="Churros"></RPanel></div>
-        {/* {props.recipes.map((recipe) => ( // Map each recipe and then print out ingredients
+        <div><RPanel tbn={churro} name="Churros"></RPanel></div> */}
+        
+        {props.recipes.map((recipe) => ( // Map each recipe and then print out ingredients
             // <h1>Instructions: {recipe.instructions[0]}</h1>
             // <Recipe tbn={recipe.image} name={recipe.label} desc={recipe.instructions[1]}></Recipe> // this is an issue where the array has to be init
             // <Recipe recipe={recipe}></Recipe> 
@@ -133,7 +133,7 @@ function Recipe(props) {
             //   <Route path="/recipedetails" element={<ExpandRecipe recipe={props.recipes[1]}/>} />
             // </Routes>
             <RPanel tbn={"data:image/jpeg;base64,"+recipe.image} name={recipe.label} desc={recipe.instructions[0]} time={(recipe.instructions.length*3).toString() + " min"} level={recipe.instructions.length%3} gluten={recipe.label.length%2 === 1} dairy={recipe.instructions[0].length%2 === 1} veget={false} pesca={false}></RPanel>
-            ))} */}
+            ))}
       </div>
     </div>
   </div>

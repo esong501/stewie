@@ -40,13 +40,13 @@ function App() {
   // }, []);
   useEffect(() => {
     async function getData() {
-        const dbRef = ref(db, "recipe");
+        const dbRef = ref(db, "recipes");
         await get(dbRef).then((snapshot) => {
             if (snapshot.exists()) {
                 // console.log(snapshot.val().value);
                 // setRecipes(snapshot.val().value); // Add each recipe to the recipes array
-                console.log(snapshot.val());
-                setRecipes(snapshot.val()); // Add each recipe to the recipes array
+                console.log(snapshot.val().value);
+                setRecipes(snapshot.val().value); // Add each recipe to the recipes array
                 
             }
         })
@@ -58,24 +58,15 @@ function App() {
     <Router>
       <div>
         <Header/>
-        {console.log(recipes)}
-          {/* {recipes.map((recipe) => ( // Map each recipe and then print out ingredients */}
+        {console.log(recipes)} 
+          {/* {recipes.map((recipe) => ( // Map each recipe and then print out ingredients <_ CURRENTLY BROKEN */}
             <Routes>
-              <Route path="/landing" element={<LandingPage/>}/>
+              {/* <Route path="/landing" element={<LandingPage/>}/> */}
               <Route path="/" element={<LandingPage/>}/>
-              <Route path="/browse" element={<Recipe recipe={recipes}/>}/>
+              <Route path="/browse" element={<Recipe recipes={recipes}/>}/>
               <Route path="/recipedetails" element={<ExpandRecipe recipe={recipe}/>} />
             </Routes>
-          {/*} ))} */}
-          {/* {console.log(recipes)}
-          {console.log(recipes[1])} */}
-          {/* <Routes> */}
-              {/* <Route path="/" element={<Recipe recipe={recipes}/>}/>
-              <Route path="/recipedetails" element={<ExpandRecipe recipe={recipes}/>} /> */}
-          {/* </Routes> */}
-          
-        {/* <Footer /> */}
-      
+           {/* ))} */}
         </div>
       </Router>
   );
