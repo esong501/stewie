@@ -18,7 +18,7 @@ import { ReactComponent as GlutenF } from './../../img/gluten.svg'
 import { ReactComponent as Dairy } from './../../img/dairy.svg'
 import { ReactComponent as Veget } from './../../img/vegetarian.svg'
 import { ReactComponent as Pesca } from './../../img/pescatarian.svg'
-
+import { ReactComponent as Time } from './../../img/time.svg'
 
 // temp
 import bchick from '../../img/newbake.png';
@@ -28,7 +28,7 @@ function LinearProgressWithLabel(props) {
     return (
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Box sx={{ width: '100%', mr: 1 }}>
-          <LinearProgress variant="determinate" sx={{ transform: "scale(1,4)", borderRadius: 8, backgroundColor: `#E9E3DA`,"& .MuiLinearProgress-bar": {backgroundColor: `#CCCC52` } }} {...props} />
+          <LinearProgress variant="determinate" className='progressBar' sx={{ backgroundColor: `#E9E3DA`,"& .MuiLinearProgress-bar": {backgroundColor: `#CCCC52` } }} {...props} />
         </Box>
         <Box sx={{ minWidth: 35 }}>
           <Typography variant="body2" color="text.secondary">{`${Math.round(
@@ -46,6 +46,36 @@ function LinearProgressWithLabel(props) {
      */
     value: PropTypes.number.isRequired,
   };
+
+  function DrawAtts(props) {
+
+    const diff = () => {
+      console.log(props.level)
+      if (props.level === 1){
+        return <div className='diettext'><Level1/> level {props.level}</div>
+      }
+      if (props.level === 2){
+        return <div className='diettext'><Level2/> level {props.level}</div>
+      }
+      if (props.level === 3){
+        return <div className='diettext'><Level3/> level {props.level}</div>
+      }
+    }
+    
+    return(
+      <div className='TagsList'>
+        {diff()}
+        <div className='diettags'>
+            {props.gluten ? <div className='diettext'><GlutenF className='dietlogo'/> gluten-free</div> : null}
+            {props.veget ? <div className='diettext'><Veget className='dietlogo'/> vegetarian</div> : null}
+            {props.dairy ? <div className='diettext'><Dairy className='dietlogo'/> dairy-free</div> : null}
+            {props.pesca ? <div className='diettext'><Pesca className='dietlogo'/> pescatarian</div> : null}
+        </div>
+        <div className='diettext'><Time className='timelogo' fill='#918B87'/>{props.totalTime} min total</div>
+      </div>
+
+    )
+  }
 
 export const ProgressContext = createContext();
 
@@ -93,13 +123,8 @@ function ExpandRecipe(props) {
                                     </Box> : null}
                     {isCooking ? <h3  style={{color: 'var(--poppyseed)', fontFamily:'filson-soft'}}>{props.recipe.label}</h3> : null}
                     <div class="RecipeTags">
-                        <ul class="TagsList">
-                            <li><Level1/> level 1</li>
-                            <li>{props.recipe.ingredientLines.length} Ingredients</li>
-                            {/* <li>{props.recipe.dietLabels[0]}</li> */}
-                            {/* <li>{props.recipe.healthLabels[0]}</li> */}
-                            <li>{props.recipe.instructions.length*3} min total time</li>
-                        </ul>
+
+                        <DrawAtts level={props.recipe.level} gluten={props.recipe.gluten} dairy={props.recipe.dairy} veget={props.recipe.veget} pesca={props.recipe.pesca} totalTime={props.recipe.totalTime}/>
                     </div>
                     <div class = "RecipeIngreds">
                         <h2>Ingredients</h2>
