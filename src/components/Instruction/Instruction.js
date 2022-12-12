@@ -35,7 +35,7 @@ function Instruction(props) { // later props can be like props.dictitem and prop
         const step = props.step.toLowerCase();
         for (const key of termBank.keys()) {
             // console.log(key);
-            if (step.includes(key)){
+            if (step.includes(" " + key + " ")){
                 if (foundTerm === "") {
                     setTerm(key)
                 }

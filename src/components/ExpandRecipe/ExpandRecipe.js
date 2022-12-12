@@ -10,7 +10,7 @@ import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
 import { PropTypes } from 'prop-types';
 import { Typography, Checkbox, LinearProgress, Box, Button, FormControlLabel, FormGroup, SvgIcon, IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material/';
-import BackArrow from '../../img/backarrow.svg';
+import { ReactComponent as BackArrow } from '../../img/backarrow.svg';
 
 // temp
 import bchick from '../../img/newbake.png';
@@ -63,16 +63,16 @@ function ExpandRecipe(props) {
                 <KeyboardBackspace className='backArrow'/>
                 <div className="backButton"><a href='/' style={{textDecoration: 'none', color:'#908B87'}}>Back</a></div>
             </div> */}
-                <Button variant="text" class='backButton' href="/browse" startIcon={<img src = {BackArrow} alt="backarrow"/> }>Back</Button>
+            <Button variant="text" class='backButton' href="/browse" startIcon={<BackArrow/>}>Back</Button>
         </div>
     )
 
     const instructions = (
         <div className='headerContain'>
             <div className='IHeader'>
-                <h1>Instructions</h1>
+                <h1  style={{color: 'var(--tomato)'}}>Instructions</h1>
             </div>
-            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)} startIcon={<img src = {BackArrow} alt="backarrow"/>}>Exit</Button>
+            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)} startIcon={<BackArrow/>}>Exit</Button>
         </div>
     )
 
@@ -87,7 +87,7 @@ function ExpandRecipe(props) {
                     {isCooking ? <Box sx={{ width: '40%', ml: 19 }}>
                                         <LinearProgressWithLabel value={progress} />
                                     </Box> : null}
-                    {isCooking ? <h3>{props.recipe.label}</h3> : null}
+                    {isCooking ? <h3  style={{color: 'var(--poppyseed)', fontFamily:'filson-soft'}}>{props.recipe.label}</h3> : null}
                     <div class="RecipeTags">
                         <ul class="TagsList">
                             <li>Level {props.recipe.level}</li>
