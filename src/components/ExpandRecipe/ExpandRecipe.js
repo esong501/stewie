@@ -57,13 +57,13 @@ function ExpandRecipe(props) {
     const recipeTitle = (
         <div className='headerContain'>
             <div class = "RTitle">
+                <Button variant="text" class='backButton' href="/browse" startIcon={<BackArrow/>}>Back</Button>
                 <h2>{props.recipe.label}</h2>
             </div>
             {/* <div className='backContain'>
                 <KeyboardBackspace className='backArrow'/>
                 <div className="backButton"><a href='/' style={{textDecoration: 'none', color:'#908B87'}}>Back</a></div>
             </div> */}
-            <Button variant="text" class='backButton' href="/browse" startIcon={<BackArrow/>}>Back</Button>
         </div>
     )
 
@@ -80,7 +80,6 @@ function ExpandRecipe(props) {
     
     return (
         <div>
-            {/* <Header /> */}
             <ProgressContext.Provider value={{ progress, setProgress }}>
             <div class="Recipe">  
                 <div class = "RecipeSidebar">
