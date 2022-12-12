@@ -90,29 +90,18 @@ function ExpandRecipe(props) {
                     {isCooking ? <h3>{props.recipe.label}</h3> : null}
                     <div class="RecipeTags">
                         <ul class="TagsList">
-                            <li>Level 1</li>
+                            <li>Level {props.recipe.level}</li>
                             <li>{props.recipe.ingredientLines.length} Ingredients</li>
-                            {/* <li>{props.recipe.dietLabels[0]}</li> */}
-                            {/* <li>{props.recipe.healthLabels[0]}</li> */}
-                            <li>total time</li>
+                            <li>Total time: {props.recipe.totalTime} minutes</li>
                         </ul>
                     </div>
                     <div class = "RecipeIngreds">
                         <h2>Ingredients</h2>
                         <ul class="IngredientsList">
-                            <li>{props.recipe.ingredientLines[0]}</li>
-                            <li>{props.recipe.ingredientLines[1]}</li>
-                            <li>{props.recipe.ingredientLines[2]}</li>
-                            <li>{props.recipe.ingredientLines[3]}</li>
-                            <li>{props.recipe.ingredientLines[4]}</li>
-                            {/* <li>{props.recipe.ingredientLines[5]}</li> */}
+                            {props.recipe.ingredientLines.map((ing) =>
+                                 <li class="IndivIngred">{ing}</li>
+                                )}
                         </ul>
-                        {/* <FormGroup className="IngredientsList">
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[0]} />
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[1]} />
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[2]} />
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[3]} />
-                        </FormGroup> */}
                     </div>
                 </div>
                 <div class="RecipeOverview">

@@ -16,6 +16,7 @@ function Instruction(props) { // later props can be like props.dictitem and prop
         ["butterfly", "to cut a piece of meat through the middle, without cutting completely in half, and then to spread it out so that it resembles a butterfly"],
         ["chop", "to cut food smaller but not perfectly even (1/4-1/3 inch pieces)"],
         ["evenly", "hitest this will come"],
+        ["melt", "test"]
     ]);
 
 
