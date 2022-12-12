@@ -15,8 +15,6 @@ import Footer from './components/Footer/Footer.js';
 
 
 function App() {
-  // Testing, remove later
-  const [recipe, setRecipe] = useState("");
   const [recipes, setRecipes] = useState([]);
   
   useEffect(() => {
@@ -24,7 +22,6 @@ function App() {
         const dbRef = ref(db, "recipesTEST");
         await get(dbRef).then((snapshot) => {
             if (snapshot.exists()) {
-                console.log(snapshot.val().value);
                 setRecipes(snapshot.val().value); // Add each recipe to the recipes array
             }
         })
