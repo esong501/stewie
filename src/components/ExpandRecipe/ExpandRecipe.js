@@ -71,7 +71,7 @@ function LinearProgressWithLabel(props) {
             {props.dairy ? <div className='diettext'><Dairy className='dietlogo'/> dairy-free</div> : null}
             {props.pesca ? <div className='diettext'><Pesca className='dietlogo'/> pescatarian</div> : null}
         </div>
-        <div className='diettext'><Time className='timelogo' fill='#918B87'/>{props.totalTime} min total</div>
+        <div className='diettext'><Time className='time' fill='#918B87'/>{props.totalTime} min total</div>
       </div>
 
     )
