@@ -132,6 +132,10 @@
 
         .TagsList {
             margin-left: 1em;
+            padding-top: 10px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
         }
     }
 
@@ -196,4 +200,48 @@
 .backArrow{
     position: relative;
     top: 20%
+}
+
+.diettags{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .timelogo{
+    transform: scale(0.5);   
+    transform-origin: top left;
+  }
+
+.dietlogo{
+    transform: scale(0.67);
+    transform-origin: top left;
+}
+
+.diettext{
+    display: flex;
+    gap: 6px
+}
+
+.progBox{
+    display: flex;
+    flex-direction: column;
+}
+
+.progText{
+    display: flex;
+    justify-content: space-between;
+}
+
+.fracProg{
+    font-family: 'monarcha';
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--graypan);
+}
+
+.progressBar{
+    height: 16px !important;
+    border-radius: 8px !important; 
 }

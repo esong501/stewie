@@ -36,7 +36,7 @@ function DrawTags(props) {
     if (props.level === 2){
       return <Level2/>
     }
-    if (props.level === 0){
+    if (props.level === 3){
       return <Level3/>
     }
   }
@@ -89,7 +89,7 @@ function Recipe(props) {
     {/* <div className='maindiv'> */}
       <div className='row'>
         {props.recipes.map((recipe) => ( // Map each recipe and then print out ingredients
-            <RPanel tbn={"data:image/jpeg;base64,"+recipe.image} name={recipe.label} desc={recipe.instructions[0]} time={(recipe.instructions.length*3).toString() + " min"} level={recipe.instructions.length%3} gluten={recipe.label.length%2 === 1} dairy={recipe.instructions[0].length%2 === 1} veget={false} pesca={false}></RPanel>
+            <RPanel tbn={"data:image/jpeg;base64,"+recipe.image} name={recipe.label} desc={recipe.instructions[0]} time={recipe.totalTime + " min"} level={recipe.level} gluten={recipe.gluten} dairy={recipe.dairy} veget={recipe.veget} pesca={recipe.pesca}></RPanel>
             ))}
       </div>
     {/* </div> */}
