@@ -22,7 +22,6 @@
     overflow: auto;
     height: 75%;
     position:absolute;
-    box-shadow: 0 10px 5px -2px rgb(206, 196, 196);
     // padding: 18px;
     // padding-right: 180px;
     // width: 75%;
@@ -43,7 +42,7 @@ h4 {
 }
 
 .WalkthruScrollElems::-webkit-scrollbar-thumb{
-    background-color: #908B87;
+    background-color: #D9D9D9;
     border-radius: 10px;
 }
 
