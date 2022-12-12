@@ -68,6 +68,11 @@
       font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
     }
 
+  .recipepage {
+    height: 100vh;
+    background-color: var(--apron);
+  }
+
   img {
     border-radius: 8px;
   }
@@ -323,7 +328,7 @@
     
     position: absolute;
     width: 1232px;
-    height: 1338px;
+    /* height: 1338px; */
     left: calc(50% - 1232px/2 - 50px);
     top: 292px;
   }

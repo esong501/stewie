@@ -11,6 +11,13 @@ import { PropTypes } from 'prop-types';
 import { Typography, Checkbox, LinearProgress, Box, Button, FormControlLabel, FormGroup, SvgIcon, IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material/';
 import { ReactComponent as BackArrow } from '../../img/backarrow.svg';
+import { ReactComponent as Level1 } from './../../img/level1.svg'
+import { ReactComponent as Level2 } from './../../img/level2.svg'
+import { ReactComponent as Level3 } from './../../img/level3.svg'
+import { ReactComponent as GlutenF } from './../../img/gluten.svg'
+import { ReactComponent as Dairy } from './../../img/dairy.svg'
+import { ReactComponent as Veget } from './../../img/vegetarian.svg'
+import { ReactComponent as Pesca } from './../../img/pescatarian.svg'
 
 // temp
 import bchick from '../../img/newbake.png';
@@ -90,11 +97,11 @@ function ExpandRecipe(props) {
                     {isCooking ? <h3>{props.recipe.label}</h3> : null}
                     <div class="RecipeTags">
                         <ul class="TagsList">
-                            <li>Level 1</li>
+                            <li><Level1/> level 1</li>
                             <li>{props.recipe.ingredientLines.length} Ingredients</li>
                             {/* <li>{props.recipe.dietLabels[0]}</li> */}
                             {/* <li>{props.recipe.healthLabels[0]}</li> */}
-                            <li>total time</li>
+                            <li>{props.recipe.instructions.length*3} min total time</li>
                         </ul>
                     </div>
                     <div class = "RecipeIngreds">
@@ -107,12 +114,6 @@ function ExpandRecipe(props) {
                             <li>{props.recipe.ingredientLines[4]}</li>
                             {/* <li>{props.recipe.ingredientLines[5]}</li> */}
                         </ul>
-                        {/* <FormGroup className="IngredientsList">
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[0]} />
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[1]} />
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[2]} />
-                            <FormControlLabel control={<Checkbox defaultChecked />} label={props.recipe.ingredientLines[3]} />
-                        </FormGroup> */}
                     </div>
                 </div>
                 <div class="RecipeOverview">
