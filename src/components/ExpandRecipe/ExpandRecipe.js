@@ -10,7 +10,7 @@ import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
 import { PropTypes } from 'prop-types';
 import { Typography, Checkbox, LinearProgress, Box, Button, FormControlLabel, FormGroup, SvgIcon, IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material/';
-import BackArrow from '../../img/backarrow.svg';
+import { ReactComponent as BackArrow } from '../../img/backarrow.svg';
 
 // temp
 import bchick from '../../img/newbake.png';
@@ -63,7 +63,7 @@ function ExpandRecipe(props) {
                 <KeyboardBackspace className='backArrow'/>
                 <div className="backButton"><a href='/' style={{textDecoration: 'none', color:'#908B87'}}>Back</a></div>
             </div> */}
-                <Button variant="text" class='backButton' href="/browse" startIcon={<img src = {BackArrow} alt="backarrow"/> } sx={{'text-decoration': 'none'}}>Back</Button>
+                <Button variant="text" class='backButton' href="/browse"><BackArrow className='backArrow'/>Back</Button>
         </div>
     )
 
@@ -72,7 +72,7 @@ function ExpandRecipe(props) {
             <div className='IHeader'>
                 <h1>Instructions</h1>
             </div>
-            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)} startIcon={<img src = {BackArrow} alt="backarrow"/>}>Exit</Button>
+            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)}><BackArrow className='backArrow'/>Exit</Button>
         </div>
     )
 

@@ -33,7 +33,7 @@ function App() {
       //   Object.values(data).map((recipe) => {
       //     setRecipes((oldArray)  => [recipe]); // Add each recipe to the recipes array
       //   });
-        setRecipes([Object.values(data.recipes_5.value)[1]]);
+        setRecipes([Object.values(data.recipes.value)[1]]);
       }
       // {console.log(recipes)}
     })
