@@ -112,12 +112,14 @@ function RPanel(props) {
 function Recipe(props) {
   return(
   //  <RPanel name={props.name} desc={props.desc}></RPanel>
-  <div>
+  <div className='recipepage'>
      {/* <Header/> */}
         <div className='pagehead'>Recipes</div>
     <div className='maindiv'>
+      <h3>Here's a list of Stewie's curated recipes, straight from her kitchen that are guaranteed to be delish!</h3>
       <div className='row'>
         <div><RPanel tbn={"data:image/jpeg;base64,"+props.recipe.image} name={props.recipe.label} desc={props.recipe.instructions[0]} time={(props.recipe.instructions.length*3).toString() + " min"} level={props.recipe.instructions.length%3} gluten={props.recipe.label.length%2 === 1} dairy={props.recipe.instructions[0].length%2 === 1} veget={false} pesca={false}></RPanel></div>
+        {/* <div><RPanel tbn={"data:image/jpeg;base64,"+props.image} name={props.label} desc={props.instructions[0]} time={(props.instructions.length*3).toString() + " min"} level={props.instructions.length%3} gluten={props.label.length%2 === 1} dairy={props.instructions[0].length%2 === 1} veget={false} pesca={false}></RPanel></div> */}
         <div><RPanel tbn={gcheese} name="Grilled Cheese" ></RPanel></div>
         <div><RPanel tbn={churro} name="Churros"></RPanel></div>
         {/* {props.recipes.map((recipe) => ( // Map each recipe and then print out ingredients
