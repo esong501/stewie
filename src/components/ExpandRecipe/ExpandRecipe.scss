@@ -78,7 +78,7 @@
 .IHeader {
     position: relative; 
     flex-grow: 6;
-    color: #D1291C ;
+    color: #D1291C !important;
 }
 
 .RecipeOverview {
@@ -192,4 +192,10 @@
     // line-height: 2.25;
     cursor: pointer;
     padding-top: 3em;
+    text-decoration: none;
+}
+
+.backArrow{
+    position: relative;
+    top: 20%
 }

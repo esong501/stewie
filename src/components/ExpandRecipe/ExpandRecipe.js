@@ -11,6 +11,14 @@ import { PropTypes } from 'prop-types';
 import { Typography, Checkbox, LinearProgress, Box, Button, FormControlLabel, FormGroup, SvgIcon, IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material/';
 import { ReactComponent as BackArrow } from '../../img/backarrow.svg';
+import { ReactComponent as Level1 } from './../../img/level1.svg'
+import { ReactComponent as Level2 } from './../../img/level2.svg'
+import { ReactComponent as Level3 } from './../../img/level3.svg'
+import { ReactComponent as GlutenF } from './../../img/gluten.svg'
+import { ReactComponent as Dairy } from './../../img/dairy.svg'
+import { ReactComponent as Veget } from './../../img/vegetarian.svg'
+import { ReactComponent as Pesca } from './../../img/pescatarian.svg'
+
 
 // temp
 import bchick from '../../img/newbake.png';
@@ -57,13 +65,10 @@ function ExpandRecipe(props) {
     const recipeTitle = (
         <div className='headerContain'>
             <div class = "RTitle">
-                <Button variant="text" class='backButton' href="/browse" startIcon={<BackArrow/>}>Back</Button>
+                {/* <Button variant="text" class='backButton' href="/browse" startIcon={<BackArrow/>}>Back</Button> */}
                 <h2>{props.recipe.label}</h2>
             </div>
-            {/* <div className='backContain'>
-                <KeyboardBackspace className='backArrow'/>
-                <div className="backButton"><a href='/' style={{textDecoration: 'none', color:'#908B87'}}>Back</a></div>
-            </div> */}
+            <Button variant="text" class='backButton' href="/browse"><BackArrow className='backArrow'/>Back</Button>
         </div>
     )
 
@@ -72,7 +77,7 @@ function ExpandRecipe(props) {
             <div className='IHeader'>
                 <h1  style={{color: 'var(--tomato)'}}>Instructions</h1>
             </div>
-            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)} startIcon={<BackArrow/>}>Exit</Button>
+            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)}><BackArrow className='backArrow'/>Exit</Button>
         </div>
     )
 
@@ -89,9 +94,11 @@ function ExpandRecipe(props) {
                     {isCooking ? <h3  style={{color: 'var(--poppyseed)', fontFamily:'filson-soft'}}>{props.recipe.label}</h3> : null}
                     <div class="RecipeTags">
                         <ul class="TagsList">
-                            <li>Level {props.recipe.level}</li>
+                            <li><Level1/> level 1</li>
                             <li>{props.recipe.ingredientLines.length} Ingredients</li>
-                            <li>Total time: {props.recipe.totalTime} minutes</li>
+                            {/* <li>{props.recipe.dietLabels[0]}</li> */}
+                            {/* <li>{props.recipe.healthLabels[0]}</li> */}
+                            <li>{props.recipe.instructions.length*3} min total time</li>
                         </ul>
                     </div>
                     <div class = "RecipeIngreds">
