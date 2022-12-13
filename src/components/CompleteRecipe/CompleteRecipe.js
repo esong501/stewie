@@ -12,7 +12,6 @@ function CompleteRecipe() {
     let navigate = useNavigate();
     const routeChange = () => {
         let path = '/browse'
-        // navigate(path, {state:{image:{bchick}, label: 'hi', desc: 'hellohello'}});
         navigate(path);
     }
     const [open, setOpen] = useState(false);
@@ -35,10 +34,9 @@ function CompleteRecipe() {
                     </Typography>
                     <Button variant="text" class='exitModalFinish' startIcon={<Close />} onClick={routeChange}/>
                     <Typography id="modal-modal-description" className='congratsMessage'>
-                        <h3>You just cooked a meal!</h3>
+                        <h3>You did it! Now enjoy, you've earned it!</h3>
                         <img src={congratsGIF} alt="congratsGIF"/>
                     </Typography>
-                    {/* <Button variant="contained" className="ReturnButton" onClick={routeChange}>Return To Home</Button> */}
                 </Box>
             </Modal>
            

@@ -9,10 +9,10 @@
     background-color: var(--apron);
     height: 100vh;
     background-image: url('../../img/landingpage/home_page.png');
-    background-size: contain;
-    // background-repeat: no-repeat;
-    background-position: 50% 85px;
-    animation: animatedBackground 40s linear infinite;
+    // background-size: cover;
+    // background-size: auto;
+    // background-position: 50% 100px;
+    // animation: animatedBackground 40s linear infinite;
 }
 
 .StewieIntro {
@@ -20,7 +20,7 @@
     text-align: center;
     font-size: 40px;
     line-height: 70px !important; 
-    margin-bottom: 4em;
+    margin-bottom: 6.25em;
 }
 
 .StewieText {
@@ -40,7 +40,7 @@
 }
 
 .StewieContent {
-    transform:translateY(60%);
+    transform:translateY(75%);
     font-style: normal;
     font-weight: 500;
     font-size: 26px;
@@ -56,15 +56,6 @@
     font-size: 28px;
     padding-bottom: 20px;
 }
-
-// .Pea {
-//     position: absolute;
-//     left: 31.71%;
-//     right: 51.28%;
-//     top: -130.78%; //  top: 30.78%;
-//     bottom: 48.35%;
-//     transform: matrix(1, 0.07, -0.07, 1, 0, 0);
-// }
 
 @keyframes animatedBackground {
     from { background-position: 0 85px; }

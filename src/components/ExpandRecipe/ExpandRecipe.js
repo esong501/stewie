@@ -1,15 +1,9 @@
 import { useState, useEffect, createContext } from 'react';
-import { Link, Route, Routes } from "react-router-dom";
-
 import './ExpandRecipe.scss';
-import Header from '../Header/Header.js';
-import Footer from '../Footer/Footer.js';
 import RecipeWalkthrough from '../RecipeWalkthrough/RecipeWalkthrough.js';
-import Recipe from '../Recipe.js';
 import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
 import { PropTypes } from 'prop-types';
 import { Typography, Checkbox, LinearProgress, Box, Button, FormControlLabel, FormGroup, SvgIcon, IconButton } from '@mui/material';
-import { KeyboardBackspace } from '@mui/icons-material/';
 import { ReactComponent as BackArrow } from '../../img/backarrow.svg';
 import { ReactComponent as Level1 } from './../../img/level1.svg'
 import { ReactComponent as Level2 } from './../../img/level2.svg'
@@ -20,9 +14,6 @@ import { ReactComponent as Veget } from './../../img/vegetarian.svg'
 import { ReactComponent as Pesca } from './../../img/pescatarian.svg'
 import { ReactComponent as Time } from './../../img/time.svg'
 
-// temp
-import bchick from '../../img/newbake.png';
-import { textTransform } from '@mui/system';
 
 function LinearProgressWithLabel(props) {
     return (
@@ -80,7 +71,6 @@ function LinearProgressWithLabel(props) {
 export const ProgressContext = createContext();
 
 function ExpandRecipe(props) {
-    // const navigate = useNavigate();
     const [isCooking, setIsCooking] = useState(false);
 
     const recipeOverview = (
@@ -94,20 +84,19 @@ function ExpandRecipe(props) {
 
     const recipeTitle = (
         <div className='headerContain'>
+            <Button variant="text" class='backButton' href="/browse" startIcon={<BackArrow/>}>Back</Button>
             <div class = "RTitle">
-                {/* <Button variant="text" class='backButton' href="/browse" startIcon={<BackArrow/>}>Back</Button> */}
-                <h2>{props.recipe.label}</h2>
+                <h2 style={{margin:'auto'}}>{props.recipe.label}</h2>
             </div>
-            <Button variant="text" class='backButton' href="/browse"><BackArrow className='backArrow'/>Back</Button>
         </div>
     )
 
     const instructions = (
         <div className='headerContain'>
+            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)}><BackArrow className='backArrow'/>Exit</Button>
             <div className='IHeader'>
                 <h1  style={{color: 'var(--tomato)'}}>Instructions</h1>
             </div>
-            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)}><BackArrow className='backArrow'/>Exit</Button>
         </div>
     )
 
@@ -142,7 +131,6 @@ function ExpandRecipe(props) {
                 </div>
             </div>
             </ProgressContext.Provider>
-            {/* <Footer /> */}
         </div>
     );
 }

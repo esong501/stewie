@@ -3,8 +3,7 @@ import './Instruction.scss';
 import Dictionary from '../Dictionary/Dictionary.js';
 import { FormGroup, FormControlLabel, Checkbox, LinearProgress, Box, Typography, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import reactStringReplace from 'react-string-replace';
-import { set } from 'firebase/database';
-import { useEffect } from 'react';
+
 
 
 function Instruction(props) { // later props can be like props.dictitem and props description
@@ -15,8 +14,8 @@ function Instruction(props) { // later props can be like props.dictitem and prop
         ["broil", "to cook directly over or under high heat, usually in an oven"],
         ["butterfly", "to cut a piece of meat through the middle, without cutting completely in half, and then to spread it out so that it resembles a butterfly"],
         ["chop", "to cut food smaller but not perfectly even (1/4-1/3 inch pieces)"],
-        ["evenly", "hitest this will come"],
-        ["melt", "test"]
+        ["simmer", "keep stove on lowest heat to keep liquids below boiling point"],
+        ["dice", "to cut food into very small (1/8 - 1/4 inch) cubes"]
     ]);
 
 
@@ -26,7 +25,6 @@ function Instruction(props) { // later props can be like props.dictitem and prop
 
     const showDictionary = (
         <div class="IndivDict">
-           {/* <Dictionary word="dry" def={termBank.get("dry")}/> */}
            <Dictionary word = {foundTerm} def = {termBank.get(foundTerm)}/>
         </div>
     );
@@ -34,8 +32,7 @@ function Instruction(props) { // later props can be like props.dictitem and prop
     function find() {
         const step = props.step.toLowerCase();
         for (const key of termBank.keys()) {
-            // console.log(key);
-            if (step.includes(" " + key + " ")){
+            if (step.includes(" " + key + " ") || step.includes(" " + key )){
                 if (foundTerm === "") {
                     setTerm(key)
                 }
@@ -45,8 +42,8 @@ function Instruction(props) { // later props can be like props.dictitem and prop
     }
 
     const dictionaryItem = (
-        reactStringReplace(props.step, find(), (match, i) => ( // dry is hardcoded but we can remove this later
-            <button class="DictButton" onClick={()=>setDict(!dict)}>{match}</button>
+        reactStringReplace(props.step, find(), (match, i) => ( 
+            <button class="DictButton" title="View Tip!" onClick={()=>setDict(!dict)}>{match}</button>
         ))
     )
 
