@@ -25,7 +25,7 @@ function LandingPage(props) {
                     <div class="StewieContent">
                         {/* <img src={Pea} alt="Pea" class="Pea"/> */}
                         <h3>
-                            The cooking helper that gives you the confidence and support to simply get in the kitchen and cook so that you can relax and eat some good food.
+                            The cooking helper that gives you the confidence and support to simply get in the kitchen and cook!
                         </h3>
                         <Button variant="contained" className="CookButton" onClick={routeChange}> Start Cooking </Button>
                     </div>
