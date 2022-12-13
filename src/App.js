@@ -1,5 +1,3 @@
-// import logo from './img/logo.svg';
-// import './App.css';
 import { db } from './firebase.js'
 import { useEffect, useState } from 'react';
 import { onValue, ref, get } from 'firebase/database';
@@ -7,11 +5,9 @@ import React from 'react';
 import * as ReactDOM from 'react-dom';
 import Recipe from './components/Recipe.js';
 import ExpandRecipe from './components/ExpandRecipe/ExpandRecipe.js';
-// import RecipeWalkthrough from './components/RecipeWalkthrough/RecipeWalkthrough.js';
 import LandingPage from './components/LandingPage/LandingPage.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header.js';
-import Footer from './components/Footer/Footer.js';
 
 
 function App() {
