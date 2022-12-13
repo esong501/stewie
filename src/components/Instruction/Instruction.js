@@ -42,8 +42,8 @@ function Instruction(props) { // later props can be like props.dictitem and prop
     }
 
     const dictionaryItem = (
-        reactStringReplace(props.step, find(), (match, i) => ( // dry is hardcoded but we can remove this later
-            <button class="DictButton" onClick={()=>setDict(!dict)}>{match}</button>
+        reactStringReplace(props.step, find(), (match, i) => ( 
+            <button class="DictButton" title="View Tip!" onClick={()=>setDict(!dict)}>{match}</button>
         ))
     )
 

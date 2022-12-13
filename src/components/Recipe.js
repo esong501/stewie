@@ -16,13 +16,13 @@ function DrawTags(props) {
 
   const diff = () => {
     if (props.level === 1){
-      return <Level1/>
+      return <Level1 title='Level 1'/>
     }
     if (props.level === 2){
-      return <Level2/>
+      return <Level2 title='Level 2'/>
     }
     if (props.level === 3){
-      return <Level3/>
+      return <Level3 title='Level 3'/>
     }
   }
   
@@ -30,10 +30,10 @@ function DrawTags(props) {
     <div className='attributes'>
       {diff()}
       <div className='dietatts'>
-        {props.gluten ? <GlutenF/> : null}
-        {props.veget ? <Veget/> : null}
-        {props.dairy ? <Dairy/> : null}
-        {props.pesca ? <Pesca/> : null}
+        {props.gluten ? <GlutenF title='Gluten Free'/> : null}
+        {props.veget ? <Veget title='Vegetarian'/> : null}
+        {props.dairy ? <Dairy titile='Dairy Free'/> : null}
+        {props.pesca ? <Pesca title='Pescatarian'/> : null}
       </div>
     </div>
   )
