@@ -9,7 +9,6 @@ import LandingPage from './components/LandingPage/LandingPage.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header.js';
 
-
 function App() {
   const [recipes, setRecipes] = useState([]);
   

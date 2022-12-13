@@ -14,7 +14,9 @@ function Instruction(props) { // later props can be like props.dictitem and prop
         ["braise", "cook food first by browning and then by gently simmering in a small amount of liquid in a covered pan until very tender"],
         ["broil", "to cook directly over or under high heat, usually in an oven"],
         ["butterfly", "to cut a piece of meat through the middle, without cutting completely in half, and then to spread it out so that it resembles a butterfly"],
-        ["chop", "to cut food smaller but not perfectly even (1/4-1/3 inch pieces)"]
+        ["chop", "to cut food smaller but not perfectly even (1/4-1/3 inch pieces)"],
+        ["simmer", "keep stove on lowest heat to keep liquids below boiling point"],
+        ["dice", "to cut food into very small (1/8 - 1/4 inch) cubes"]
     ]);
 
 
@@ -33,7 +35,7 @@ function Instruction(props) { // later props can be like props.dictitem and prop
         const step = props.step.toLowerCase();
         for (const key of termBank.keys()) {
             // console.log(key);
-            if (step.includes(" " + key + " ")){
+            if (step.includes(" " + key + " ") || step.includes(" " + key )){
                 if (foundTerm === "") {
                     setTerm(key)
                 }
