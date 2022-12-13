@@ -94,20 +94,19 @@ function ExpandRecipe(props) {
 
     const recipeTitle = (
         <div className='headerContain'>
+            <Button variant="text" class='backButton' href="/browse" startIcon={<BackArrow/>}>Back</Button>
             <div class = "RTitle">
-                {/* <Button variant="text" class='backButton' href="/browse" startIcon={<BackArrow/>}>Back</Button> */}
-                <h2>{props.recipe.label}</h2>
+                <h2 style={{margin:'auto'}}>{props.recipe.label}</h2>
             </div>
-            <Button variant="text" class='backButton' href="/browse"><BackArrow className='backArrow'/>Back</Button>
         </div>
     )
 
     const instructions = (
         <div className='headerContain'>
+            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)}><BackArrow className='backArrow'/>Exit</Button>
             <div className='IHeader'>
                 <h1  style={{color: 'var(--tomato)'}}>Instructions</h1>
             </div>
-            <Button variant="text" class='backButton' onClick={() => setIsCooking(!isCooking)}><BackArrow className='backArrow'/>Exit</Button>
         </div>
     )
 
