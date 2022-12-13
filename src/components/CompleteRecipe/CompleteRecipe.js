@@ -12,7 +12,6 @@ function CompleteRecipe() {
     let navigate = useNavigate();
     const routeChange = () => {
         let path = '/browse'
-        // navigate(path, {state:{image:{bchick}, label: 'hi', desc: 'hellohello'}});
         navigate(path);
     }
     const [open, setOpen] = useState(false);
@@ -38,7 +37,6 @@ function CompleteRecipe() {
                         <h3>You did it! Now enjoy, you've earned it!</h3>
                         <img src={congratsGIF} alt="congratsGIF"/>
                     </Typography>
-                    {/* <Button variant="contained" className="ReturnButton" onClick={routeChange}>Return To Home</Button> */}
                 </Box>
             </Modal>
            

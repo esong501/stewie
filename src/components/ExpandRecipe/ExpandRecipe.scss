@@ -128,10 +128,6 @@
     border-radius: 20px !important;
 }
 
-.headerContain{
-    // display: flex;
-}
-
 .backButton{
     display:flex;
     font-weight: 300 !important;
@@ -140,22 +136,15 @@
     color: #908B87;
     border: 0;
     background-color: var(--eggwhite);
-    // flex-grow: 2;
     text-align: center;
     position: relative;
     width: 163px;
-    // height:50px;
-    // left: 880px;
-    // top: 6px;
-    // line-height: 2.25;
     cursor: pointer;
-    // padding-top: 3em;
     text-decoration: none;
 }
 
 .backArrow{
     position: relative;
-    // top: 20%
 }
 
 .diettags{

@@ -1,15 +1,9 @@
 import { useState, useEffect, createContext } from 'react';
-import { Link, Route, Routes } from "react-router-dom";
-
 import './ExpandRecipe.scss';
-import Header from '../Header/Header.js';
-import Footer from '../Footer/Footer.js';
 import RecipeWalkthrough from '../RecipeWalkthrough/RecipeWalkthrough.js';
-import Recipe from '../Recipe.js';
 import TabBarRecipe from '../TabBarRecipe/TabBarRecipe.js';
 import { PropTypes } from 'prop-types';
 import { Typography, Checkbox, LinearProgress, Box, Button, FormControlLabel, FormGroup, SvgIcon, IconButton } from '@mui/material';
-import { KeyboardBackspace } from '@mui/icons-material/';
 import { ReactComponent as BackArrow } from '../../img/backarrow.svg';
 import { ReactComponent as Level1 } from './../../img/level1.svg'
 import { ReactComponent as Level2 } from './../../img/level2.svg'
@@ -20,9 +14,6 @@ import { ReactComponent as Veget } from './../../img/vegetarian.svg'
 import { ReactComponent as Pesca } from './../../img/pescatarian.svg'
 import { ReactComponent as Time } from './../../img/time.svg'
 
-// temp
-import bchick from '../../img/newbake.png';
-import { textTransform } from '@mui/system';
 
 function LinearProgressWithLabel(props) {
     return (
@@ -80,7 +71,6 @@ function LinearProgressWithLabel(props) {
 export const ProgressContext = createContext();
 
 function ExpandRecipe(props) {
-    // const navigate = useNavigate();
     const [isCooking, setIsCooking] = useState(false);
 
     const recipeOverview = (
@@ -141,7 +131,6 @@ function ExpandRecipe(props) {
                 </div>
             </div>
             </ProgressContext.Provider>
-            {/* <Footer /> */}
         </div>
     );
 }

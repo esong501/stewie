@@ -10,7 +10,6 @@
     height: 100vh;
     background-image: url('../../img/landingpage/home_page.png');
     background-size: contain;
-    // background-repeat: no-repeat;
     background-position: 50% 85px;
     animation: animatedBackground 40s linear infinite;
 }
@@ -54,15 +53,6 @@
 .StewieContent h3 {
     margin-block-end: 0.2em;
 }
-
-// .Pea {
-//     position: absolute;
-//     left: 31.71%;
-//     right: 51.28%;
-//     top: -130.78%; //  top: 30.78%;
-//     bottom: 48.35%;
-//     transform: matrix(1, 0.07, -0.07, 1, 0, 0);
-// }
 
 @keyframes animatedBackground {
     from { background-position: 0 85px; }

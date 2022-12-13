@@ -3,8 +3,7 @@ import './Instruction.scss';
 import Dictionary from '../Dictionary/Dictionary.js';
 import { FormGroup, FormControlLabel, Checkbox, LinearProgress, Box, Typography, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import reactStringReplace from 'react-string-replace';
-import { set } from 'firebase/database';
-import { useEffect } from 'react';
+
 
 
 function Instruction(props) { // later props can be like props.dictitem and props description
@@ -26,7 +25,6 @@ function Instruction(props) { // later props can be like props.dictitem and prop
 
     const showDictionary = (
         <div class="IndivDict">
-           {/* <Dictionary word="dry" def={termBank.get("dry")}/> */}
            <Dictionary word = {foundTerm} def = {termBank.get(foundTerm)}/>
         </div>
     );
@@ -34,7 +32,6 @@ function Instruction(props) { // later props can be like props.dictitem and prop
     function find() {
         const step = props.step.toLowerCase();
         for (const key of termBank.keys()) {
-            // console.log(key);
             if (step.includes(" " + key + " ") || step.includes(" " + key )){
                 if (foundTerm === "") {
                     setTerm(key)
