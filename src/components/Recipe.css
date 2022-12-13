@@ -93,8 +93,8 @@
     align-items: center;
     color: var(--eggwhite);
     background-image: url('../img/banner.jpg');
-    /* background-size: contain; */
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat-x;
   }
 
   .rtitle{
